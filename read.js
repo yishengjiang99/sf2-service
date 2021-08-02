@@ -31,11 +31,11 @@ export async function load(url, { onHeader, onSample, onZone } = {}) {
     );
 
     const [originalPitch] = new Uint8Array(dv, 20 + 5 * 4, 1);
-    const range =
-      "bytes=" + (sdtaStart + start * 2) + "-" + (sdtaStart + end * 2 + 1);
+    const range = [sdtaStart + start * 2, sdtaStart + end * 2 + 1];
+    //      "bytes=" + (sdtaStart + start * 2) + "-" + (sdtaStart + end * 2 + 1);
     const loops = [startloop - start, endloop - start];
     return {
-      byteLength: 2 * (end - start),
+      byteLength: 4 * (end - start + 1),
       range,
       loops,
       sampleRate,
@@ -50,39 +50,58 @@ export async function load(url, { onHeader, onSample, onZone } = {}) {
   function loadProgram(pid, bkid = 0) {
     const rootRef = presetZoneRef(pid, bkid);
     const zMap = [];
-
+    const f32buffers = {};
+    const shdrMap = {};
+    const shdrDataMap = {};
     for (
       let zref = rootRef, zone = zref2Zone(zref);
       zone && zone.SampleId != -1;
       zone = zref2Zone((zref += 120))
     ) {
       const mapKey = zone.SampleId;
-      if (!aggShdrMap[mapKey]) {
-        aggShdrMap[mapKey] = getShdr(zone.SampleId);
+      if (!shdrMap[mapKey]) {
+        shdrMap[mapKey] = getShdr(zone.SampleId);
+        shdrMap[mapKey].data = () =>
+          shdrMap[mapKey].pcm ||
+          fetch(shdrMap[mapKey].url, {
+            headers: {
+              Range: `bytes=${shdrMap[mapKey].range.join("-")}`,
+            },
+          })
+            .then((res) => res.arrayBuffer())
+            .then((ab) => {
+              shdrMap[mapKey].pcm = s16ArrayBuffer2f32(ab);
+              return shdrMap[mapKey].pcm;
+            });
       }
       zMap.push({
         ...zone,
-        ...aggShdrMap[mapKey],
+        get shdr() {
+          return shdrMap[this.SampleId];
+        },
         get pcm() {
-          return fetch(aggShdrMap[mapKey].url, {
-            headers: { Range: aggShdrMap[mapKey].range },
-          })
-            .then((r) => r.arrayBuffer())
-            .then((ab) => s16ArrayBuffer2f32(ab));
+          return shdrMap[this.SampleId].data();
         },
       });
     }
+    async function preload() {
+      await Promise.all(
+        Object.keys(shdrMap).map((sampleId) => shdrMap[sampleId].data())
+      );
+    }
 
+    var wkref = zMap;
     return {
       zMap,
+      preload,
+      shdrMap,
       zref: rootRef,
-      filter: function (key, vel = -1) {
-        return this.zMap.filter(
+      filterKV: (key, vel) =>
+        wkref.filter(
           (z) =>
             (vel == -1 || (z.VelRange.lo <= vel && z.VelRange.hi >= vel)) &&
             (key == -1 || (z.KeyRange.lo <= key && z.KeyRange.hi >= key))
-        );
-      },
+        ),
     };
   }
 
@@ -130,6 +149,5 @@ export async function load(url, { onHeader, onSample, onZone } = {}) {
     getFont,
     loadProgram,
     presetZoneRef,
-    readModule: module,
   };
 }
