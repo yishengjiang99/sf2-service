@@ -1,20 +1,24 @@
 export async function sfbkstream(url) {
-	const ab = await (await fetch(url, { headers: { Range: "bytes=0-6400" } })).arrayBuffer();
-	const [preample, r] = skipToSDTA(ab);
-	const sdtaSize = r.get32();
-	const sdtaStart = r.offset + 8;
-	const pdtastart = sdtaStart + sdtaSize + 4;
+  const ab = await (
+    await fetch(url, { headers: { Range: "bytes=0-6400" } })
+  ).arrayBuffer();
+  const [preample, r] = skipToSDTA(ab);
+  const sdtaSize = r.get32();
+  const sdtaStart = r.offset + 8;
+  const pdtastart = sdtaStart + sdtaSize + 4;
 
-	const pdtaHeader = {
-		headers: { Range: "bytes=" + pdtastart + "-" },
-	};
+  const pdtaHeader = {
+    headers: { Range: "bytes=" + pdtastart + "-" },
+  };
 
-	return {
-		nsamples: (pdtastart - sdtaStart) / 2,
-		sdtaStart,
-		infos: preample,
-		pdtaBuffer: new Uint8Array(await (await fetch(url, pdtaHeader)).arrayBuffer()),
-	};
+  return {
+    nsamples: (pdtastart - sdtaStart) / 2,
+    sdtaStart,
+    infos: preample,
+    pdtaBuffer: new Uint8Array(
+      await (await fetch(url, pdtaHeader)).arrayBuffer()
+    ),
+  };
 }
 function skipToSDTA(ab) {
   const infosection = new Uint8Array(ab);

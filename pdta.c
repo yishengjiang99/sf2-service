@@ -262,7 +262,7 @@ zone_t *findPresetZones(int i, int nregions) {
   dummy->SampleId = -1;
   return zones;
 }
-zone_t* filterForZone(zone_t *from, uint8_t key, uint8_t vel) {
+zone_t *filterForZone(zone_t *from, uint8_t key, uint8_t vel) {
   for (zone_t *z = from; z; z++) {
     if (z == 0 || z->SampleId == (short)-1) break;
     if (vel > 0 && (z->VelRange.lo > vel || z->VelRange.hi < vel)) continue;

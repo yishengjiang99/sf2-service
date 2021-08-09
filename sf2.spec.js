@@ -4,7 +4,8 @@ import {
   mkcanvas,
   chart,
   resetCanvas,
-} from "https://unpkg.com/draw-canvas-60fps@1.0.1/chart.js";
+  renderFrames,
+} from "https://unpkg.com/mk-60fps/chart.js";
 document.body.id = "mocha";
 // eslint-disable-next-line no-undef
 mocha.setup("bdd");
@@ -15,13 +16,10 @@ describe("pdtaquery", () => {
   it("parswes file and loads zones", () => {
     load("file.sf2").then(async ({ loadProgram, getFont }) => {
       const sfz = loadProgram(0, 0);
-      const z = sfz.filter(55, 64);
-      console.log(await z[0].pcm);
-      console.log(await sfz.filter(55, 22)[0].pcm);
-      console.log(await sfz.filter(57, 64)[0].pcm);
-      console.log(await sfz.filter(22, 11)[0].pcm);
-      console.log(await sfz.filter(22, 64)[0].pcm);
-      console.log(await sfz.filter(55, 56)[0].pcm);
+      const z = sfz.filterKV(55, 64);
+      renderFrames(mkcanvas(), await sfz.filterKV(55, 22).shift().pcm);
+      renderFrames(mkcanvas(), await sfz.filterKV(55, 66).shift().pcm);
+      renderFrames(mkcanvas(), await sfz.filterKV(55, 98).shift().pcm);
     });
   });
 });
