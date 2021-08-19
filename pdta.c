@@ -1,10 +1,8 @@
-#include <emscripten.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 #include "sf2.h"
-extern void emitHeader(int type, void *p);
+extern void emitHeader(int pid, int bid, void *p);
 extern void emitZone(int pid, void *ref);
 extern void emitSample(void *ref, int start, int len);
 extern void emitFilter(int type, uint8_t lo, uint8_t hi);
@@ -52,22 +50,19 @@ void *loadpdta(void *pdtabuffer) {
   read(igen);
   read(shdr);
 
-  // pdtabuffer += 46;
-
-  // nshdrs = sh->size / (sizeof(shdr) - 2);
-
   for (int i = 0; i < nphdrs; i++) {
     if (phdrs[i].bankId == 0) {
-      emitHeader(phdrs[i].pid, phdrs + i);
+      emitHeader(phdrs[i].pid, phdrs[i].bankId, phdrs + i);
       presets[phdrs[i].pid] = findPresetZones(i, findPresetZonesCount(i));
     } else if (phdrs[i].bankId == 128) {
-      emitHeader(phdrs[i].pid, phdrs + i);
+      emitHeader(phdrs[i].pid, phdrs[i].bankId, phdrs + i);
 
       presets[phdrs[i].pid | phdrs[i].bankId] =
           findPresetZones(i, findPresetZonesCount(i));
     }
   }
-  return presetZones;
+  // get mem end;
+  return malloc(4);
 }
 
 zone_t *findByPid(int pid, int bkid) {
@@ -109,12 +104,6 @@ int findPresetZonesCount(int i) {
     int lastPgenId = j < npbags - 1 ? pbags[j + 1].pgen_id : npgens - 1;
     for (int k = pgenId; k < lastPgenId; k++) {
       pgen *g = pgens + k;
-      if (g->genid == KeyRange) {
-        emitFilter(0, g->val.ranges.lo, g->val.ranges.hi);
-      }
-      if (g->genid == VelRange) {
-        emitFilter(1, g->val.ranges.lo, g->val.ranges.hi);
-      }
       if (g->genid == Instrument) {
         instID = g->val.uAmount;
         lastSampId = -1;
@@ -129,17 +118,7 @@ int findPresetZonesCount(int i) {
           for (pgen_t *g = igens + ibgg->igen_id; g->genid != 60 && g != lastig;
                g++) {
             if (g->genid == SampleId) {
-              shdrcast *sh = (shdr *)shdrs + g->val.uAmount;
-              emitSample(sh, sdtastart + sh->start * 2,
-                         sh->end * 2 - sh->start * 2);
-
               nregions++;
-            }
-            if (g->genid == KeyRange) {
-              emitFilter(2, g->val.ranges.lo, g->val.ranges.hi);
-            }
-            if (g->genid == VelRange) {
-              emitFilter(3, g->val.ranges.lo, g->val.ranges.hi);
             }
           }
         }
@@ -260,6 +239,7 @@ zone_t *findPresetZones(int i, int nregions) {
   }
   dummy = zones + found;
   dummy->SampleId = -1;
+  free(&attrs[0]);
   return zones;
 }
 zone_t *filterForZone(zone_t *from, uint8_t key, uint8_t vel) {
