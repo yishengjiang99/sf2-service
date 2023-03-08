@@ -16,4 +16,4 @@ clean:
 	rm *wasm pdta.js pdta.wasm
 
 check:
-	npx serve -l 1234 . && chrome-cli open 'http://localhost1234/test.html'
+	npx serve -l 1234 . && chrome-cli open 'http://localhost:1234/testing'

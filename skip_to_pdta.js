@@ -32,10 +32,9 @@ function skipToSDTA(ab) {
     r.readNString(4),
   ];
   let infosize = r.get32();
-  console.log(r.readNString(4), filesize, list, r.offset);
-  console.log(infosize, r.offset);
+  r.readNString(4);
+
   const infos = [];
-  console.assert(infosize < 10000);
   while (infosize >= 8) {
     const [section, size] = [r.readNString(4), r.get32()];
     infos.push({ section, text: r.readNString(size) });
@@ -99,3 +98,65 @@ export function readAB(arb) {
     },
   };
 }
+
+export const ASCII = [
+  "",
+  '"',
+  "#",
+  "$",
+  "%",
+  "&",
+  "'",
+  "(",
+  ")",
+  "*",
+  "+",
+  ",",
+  "-",
+  ".",
+  "/",
+  "0",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  ":",
+  ";",
+  "<",
+  "=",
+  ">",
+  "?",
+  "@",
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+  "[",
+];
