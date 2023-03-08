@@ -64,17 +64,6 @@ export default class SF2Service {
       const mapKey = zone.SampleId;
       if (!shdrMap[mapKey]) {
         shdrMap[mapKey] = getShdr(zone.SampleId);
-        shdrMap[mapKey].data = async function () {
-          if (shdrMap[mapKey].pcm) return shdrMap[mapKey].pcm;
-          const res = await fetch(url, {
-            headers: {
-              Range: `bytes=${shdrMap[mapKey].range.join("-")}`,
-            },
-          });
-          const ab = await res.arrayBuffer();
-          shdrMap[mapKey].pcm = s16ArrayBuffer2f32(ab);
-          return shdrMap[mapKey].pcm;
-        };
       }
       zMap.push({
         ...zone,
@@ -133,6 +122,17 @@ export default class SF2Service {
         originalPitch,
         url,
         name: nameStr,
+        data: async () => {
+          if (shdrMap[SampleId].pcm) return shdrMap[SampleId].pcm;
+          const res = await fetch(url, {
+            headers: {
+              Range: `bytes=${shdrMap[SampleId].range.join("-")}`,
+            },
+          });
+          const ab = await res.arrayBuffer();
+          shdrMap[SampleId].pcm = s16ArrayBuffer2f32(ab);
+          return shdrMap[SampleId].pcm;
+        },
       };
     }
     return {
