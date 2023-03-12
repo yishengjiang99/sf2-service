@@ -49,7 +49,7 @@ async function renderMain() {
       `<option value=${z.ref} ${z.ref + "" == zref ? "selected" : ""}>${
         z.SampleId
       } ${
-        Object.values(z.KeyRange).join("-") +
+        "key "+[z.KeyRange.lo, z.KeyRange.hi].join("-") +
         " vel " +
         [z.VelRange.lo, z.VelRange.hi].join("-")
       }</option>`
@@ -86,10 +86,12 @@ async function renderMain() {
   const articleMain = mkdiv("div", { class: "note-preview" }, [
     mkdiv(
       "div",
-      { style: "display:flex flex-direction:row; gap:0 50px 20px" },
+      { style: "display:flex flex-direction:row; max-height:50vh; overflow-y:scroll; gap:0 20px 20px" },
       [
         mkdiv("div", [
           "smpl: ",
+          zoneSelect.shdr.SampleId,
+          " ",
           zoneSelect.shdr.name,
           "<br>nsample: ",
           zoneSelect.shdr.nsamples,
@@ -100,9 +102,9 @@ async function renderMain() {
           "loop: ",
           zoneSelect.shdr.loops.join("-"),
         ]),
-        ..."Addr,VolEnv,Filter,LFO".split(",").map((keyword) =>
+        ..."Addr,Attenuation,VolEnv,Filter,LFO".split(",").map((keyword) =>
           mkdiv(
-            "div",
+            "div",{style:"padding:10px;color:gray;"},
             zattrs
               .filter(([k]) => k.includes(keyword))
               .map(([k, v]) => k + ": " + v)

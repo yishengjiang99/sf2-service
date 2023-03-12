@@ -1,8 +1,8 @@
 {
   "name": "sf2-service",
-  "version": "1.2.3",
+  "version": "1.2.5",
   "description": "fast",
-  "main": "index.js",
+  "main": "read.js",
   "scripts": {
     "build": "make",
     "test": "make check"

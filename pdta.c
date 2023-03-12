@@ -6,7 +6,7 @@
 #include "add_generator_vals.c"
 extern void emitHeader(int pid, int bid, void *p);
 extern void emitZone(int pid, void *ref);
-extern void emitSample(void *ref, int start, int len);
+extern void emitSample(void *ref, int id, void*p);
 extern void emitFilter(int type, uint8_t lo, uint8_t hi);
 int nphdrs, npbags, npgens, npmods, nshdrs, ninsts, nimods, nigens, nibags;
 
@@ -85,6 +85,12 @@ zone_t *findByPid(int pid, int bkid)
 
   return NULL;
 }
+
+#define filter_zone(g, ig) \
+  if(g->val.ranges.lo > ig->val.ranges.hi \
+  || g->val.ranges.hi < ig->val.ranges.lo) \
+    continue;
+
 int findPresetZonesCount(int i)
 {
   int nregions = 0;
@@ -97,27 +103,42 @@ int findPresetZonesCount(int i)
     int pgenId = pg->pgen_id;
     instID = -1;
     int lastPgenId = j < npbags - 1 ? pbags[j + 1].pgen_id : npgens - 1;
+		unsigned char plokey = 0, phikey = 127, plovel = 0, phivel = 127;
     for (int k = pgenId; k < lastPgenId; k++)
     {
       pgen *g = pgens + k;
+      if(k==VelRange){
+        plovel=g->val.ranges.lo;
+        phivel=g->val.ranges.hi;
+        continue;
+      }
+      if(k==KeyRange){
+        plokey=g->val.ranges.lo;
+        phikey=g->val.ranges.hi;
+        continue;
+      }
       if (g->genid == Instrument)
       {
         instID = g->val.uAmount;
-        lastSampId = -1;
         inst *ihead = insts + instID;
         int ibgId = ihead->ibagNdx;
         int lastibg = (ihead + 1)->ibagNdx;
         for (int ibg = ibgId; ibg < lastibg; ibg++)
         {
-          lastSampId = -1;
           ibag *ibgg = ibags + ibg;
           pgen_t *lastig = ibg < nibags - 1 ? igens + (ibgg + 1)->igen_id
                                             : igens + nigens - 1;
+          unsigned char ilokey = 0, ihikey = 127, ilovel = 0, ihivel = 127;
+
           for (pgen_t *g = igens + ibgg->igen_id; g->genid != 60 && g != lastig;
                g++)
           {
+           	if (g->genid== KeyRange) { ilokey = g->val.ranges.lo; ihikey = g->val.ranges.hi; continue; }
+	    			if (g->genid == VelRange) { ilovel = g->val.ranges.lo; ihivel = g->val.ranges.hi; continue; }
+
             if (g->genid == SampleId)
             {
+              if(g->val.uAmount>=nshdrs) break;
               nregions++;
               break;
             }
@@ -128,7 +149,6 @@ int findPresetZonesCount(int i)
   }
   return nregions;
 }
-
 zone_t *findPresetZones(int presetId, int nregions)
 {
   short defvals[60] = defattrs;
@@ -141,7 +161,7 @@ zone_t *findPresetZones(int presetId, int nregions)
   int instID = -1;
   int lastbag = phdrs[presetId + 1].pbagNdx;
 
-  for (int j = phdrs[presetId].pbagNdx; j < phdrs[presetId+ 1].pbagNdx; j++)
+  for (int j = phdrs[presetId].pbagNdx; j < phdrs[presetId + 1].pbagNdx; j++)
   {
     pbag *pg = pbags + j;
     pgen_t *lastg = pgens + pg[j + 1].pgen_id;
@@ -152,8 +172,8 @@ zone_t *findPresetZones(int presetId, int nregions)
     for (int k = pgenId; k < lastPgenId; k++)
     {
       pgen *g = pgens + k;
-      int inRange = combine_pattrs(g->genid, pbagLegion, presetDefault[g->genid]);
-      if(!inRange) continue;
+      
+      combine_pattrs(g->genid, pbagLegion, g->val.shAmount);
       if (g->genid == Instrument){
         pbagLegion[Instrument]= g->val.uAmount;
         int sampleID = -1;
@@ -169,19 +189,24 @@ zone_t *findPresetZones(int presetId, int nregions)
           memcpy(instZone, instDefault, 120);
           ibag *ibgg = ibags + ibg;
           pgen_t *lastig = igens + (ibgg + 1)->igen_id;
-          for (pgen_t *g = igens + ibgg->igen_id; g != lastig; g++)
+          for (pgen_t *ig = igens + ibgg->igen_id; ig != lastig; ig++)
           {
-            if(g->genid==SampleId){
-              instZone[SampleId]=g->val.uAmount;
+            if(k==VelRange || k==KeyRange){
+              filter_zone(g, ig)
+            }
+            if(ig->genid==SampleId){
+              if(ig->val.uAmount>=nshdrs) break;
+
+              instZone[SampleId]=ig->val.uAmount;
               for(int i=0;i<60;i++){
                 add_pbag_val_to_zone(i, instZone, pbagLegion[i]);
               }
               memcpy(zones + found, instZone, 120);
               emitZone(phdrs[presetId].pid, zones+found);
+              emitSample(shdrs+instZone[SampleId], presetId, (shdrs+instZone[SampleId])->name);
               found++;
-              if(found==nregions) return zones;
             }else{
-              combine_pattrs(g->genid, instZone, g->val.shAmount);
+              combine_pattrs(ig->genid, instZone, ig->val.shAmount);
             }
           }
           if (instZone[SampleId] == -1)
@@ -196,6 +221,8 @@ zone_t *findPresetZones(int presetId, int nregions)
       memcpy(presetDefault, pbagLegion, 120);
     }
   }
+  zone_t *dummy = zones + found;
+  dummy->SampleId = -1;
   return zones;
 }
 

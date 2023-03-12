@@ -1,4 +1,4 @@
-import { sfbkstream, ASCII } from "./skip_to_pdta.js";
+import { sfbkstream } from "./skip_to_pdta.js";
 import { newSFZoneMap } from "./zoneProxy.js";
 import { s16ArrayBuffer2f32 } from "./s16tof32.js";
 export default class SF2Service {
@@ -8,15 +8,19 @@ export default class SF2Service {
   async load({ onHeader, onSample, onZone } = {}) {
     const Module = await import("./pdta.js");
     const module = await Module.default();
-    const { pdtaBuffer, sdtaStart, fullUrl } = await sfbkstream(this.url);
+    const { pdtaBuffer, sdtaStart, fullUrl, infos } = await sfbkstream(
+      this.url
+    );
     const programNames = [];
 
     function devnull() {}
     const pdtaRef = module._malloc(pdtaBuffer.byteLength);
 
-    module.onHeader = (pid, bid, name) => (programNames[pid | bid] = name);
+    module.onHeader = (pid, bid, name) => {
+      programNames[pid | bid] = name;
+      if (onHeader) onHeader(pid, bid, name);
+    };
     module.onSample = (...args) => {
-      console.log(args);
       if (onSample) onSample(args);
     };
     module.onZone = onZone || devnull;
@@ -39,7 +43,11 @@ export default class SF2Service {
       shdrref,
       programNames,
       sdtaStart,
+      infos,
     };
+  }
+  get meta() {
+    return this.state.infos;
   }
   get programNames() {
     return this.state.programNames;
@@ -52,9 +60,7 @@ export default class SF2Service {
     const rootRef = presetRefs[pid | bkid];
 
     const zMap = [];
-    const f32buffers = {};
     const shdrMap = {};
-    const shdrDataMap = {};
     let url = this.url;
     for (
       let zref = rootRef, zone = zref2Zone(zref);
@@ -100,6 +106,7 @@ export default class SF2Service {
       const hdrRef = shdrref + SampleId * 46;
       const dv = heap.slice(hdrRef, hdrRef + 46);
       const ascii = new Uint8Array(dv, 0, 20);
+
       let nameStr = "";
       for (const b of ascii) {
         if (!b) break;

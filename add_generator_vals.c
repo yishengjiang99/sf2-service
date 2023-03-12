@@ -86,9 +86,9 @@ static inline int combine_pattrs(int genop, short *zoneAttr, short psetAttr){
     irange[1] = zoneAttr[genop] >> 8;
     prange[0] = psetAttr & 0x007f;
     prange[1] = psetAttr >> 8;
-    if (prange[1] < irange[1])
+    if (irange[1] > prange[1])
       irange[1] = prange[1];
-    if (prange[0] > irange[0])
+    if (irange[0] < prange[0])
       irange[0] = prange[0];
     zoneAttr[genop] = irange[0] | (irange[1] << 8);
     return 1;

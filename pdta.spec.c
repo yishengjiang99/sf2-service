@@ -4,25 +4,27 @@
 void emitHeader(int pid, int bid, void *p)
 {
     phdr *pset = (phdr *)p;
-// printf("\nheader %20s\n", pset->name);
+    printf("\n\nheader %s", pset->name);
 }
 void emitZone(int pid, void *ref)
 {
     zone_t *zone = (zone_t *)ref;
     shdrcast *shdr = (shdrcast *)(shdrs + zone->SampleId);
-    printf("\t v %d %d k %u %u", zone->VelRange.lo, zone->VelRange.hi, zone->KeyRange.lo, zone->KeyRange.hi);
-    printf("\t sampleID %d %d %d\n", zone->SampleId, zone->Attenuation, zone->FilterFc);
+        printf("\n\tStart Addr: %u %u",zone->StartAddrOfs,zone->StartLoopAddrOfs);
+    printf("\n\t Val/key ranges %d %d  %u %u", zone->VelRange.lo, zone->VelRange.hi, zone->KeyRange.lo, zone->KeyRange.hi);
+    printf("\n\t sampleID %d \n\t Attentuation: %d\n\tFilterfc %d\n", zone->SampleId, zone->Attenuation, zone->FilterFc);
 }
-void emitSample(void *ref, int start, int len)
+void emitSample(void *ref, int pid, void* name)
 {
     shdrcast *shdr = (shdrcast *)ref;
-    //   printf("\t\t sample id: %s %d\n", shdr->name, shdr->start);
+    printf("\n\tsample id: %s %d", shdr->name, shdr->start);
 }
 void emitFilter(int type, uint8_t lo, uint8_t hi) {}
+
 int main()
 {
     printf("hello\n");
-    char *filename = "test.sf2";
+    char *filename = "file.sf2";
 
     FILE *fd = fopen(filename, "r");
     sheader_t *header = (sheader_t *)malloc(sizeof(sheader_t));
