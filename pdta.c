@@ -1,7 +1,9 @@
+#include <math.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include <stdio.h>
 #include "sf2.h"
+#include "add_generator_vals.c"
 extern void emitHeader(int pid, int bid, void *p);
 extern void emitZone(int pid, void *ref);
 extern void emitSample(void *ref, int start, int len);
@@ -25,7 +27,8 @@ int sdtastart;
 zone_t *presetZones;
 zone_t *root;
 zone_t *presets[0xff];
-enum {
+enum
+{
   phdrHead = 0x1000,
   instHead = 0x2000,
   shdrHead = 0x4000,
@@ -37,7 +40,8 @@ enum {
   section##s = (section *)pdtabuffer;         \
   pdtabuffer += sh->size;
 
-void *loadpdta(void *pdtabuffer) {
+void *loadpdta(void *pdtabuffer)
+{
   section_header *sh;
 
   read(phdr);
@@ -50,11 +54,15 @@ void *loadpdta(void *pdtabuffer) {
   read(igen);
   read(shdr);
 
-  for (int i = 0; i < nphdrs; i++) {
-    if (phdrs[i].bankId == 0) {
+  for (int i = 0; i < nphdrs; i++)
+  {
+    if (phdrs[i].bankId == 0)
+    {
       emitHeader(phdrs[i].pid, phdrs[i].bankId, phdrs + i);
       presets[phdrs[i].pid] = findPresetZones(i, findPresetZonesCount(i));
-    } else if (phdrs[i].bankId == 128) {
+    }
+    else if (phdrs[i].bankId == 128)
+    {
       emitHeader(phdrs[i].pid, phdrs[i].bankId, phdrs + i);
 
       presets[phdrs[i].pid | phdrs[i].bankId] =
@@ -65,60 +73,53 @@ void *loadpdta(void *pdtabuffer) {
   return malloc(4);
 }
 
-zone_t *findByPid(int pid, int bkid) {
-  for (int i = 0; i < nphdrs - 1; i++) {
-    if (phdrs[i].pid == pid && phdrs[i].bankId == bkid) {
+zone_t *findByPid(int pid, int bkid)
+{
+  for (int i = 0; i < nphdrs - 1; i++)
+  {
+    if (phdrs[i].pid == pid && phdrs[i].bankId == bkid)
+    {
       return presets[phdrs[i].pid | phdrs[i].bankId];
     }
   }
 
   return NULL;
 }
-void sanitizedInsert(short *attrs, int i, pgen_t *g) {
-  switch (i % 60) {
-    case StartAddrOfs:
-    case EndAddrOfs:
-    case StartLoopAddrOfs:
-    case EndLoopAddrOfs:
-    case StartAddrCoarseOfs:
-    case EndAddrCoarseOfs:
-    case StartLoopAddrCoarseOfs:
-    case EndLoopAddrCoarseOfs:
-    case OverrideRootKey:
-      attrs[i] = g->val.uAmount & 0x7f;
-      break;
-    default:
-      attrs[i] = g->val.shAmount;
-      break;
-  }
-}
-int findPresetZonesCount(int i) {
+int findPresetZonesCount(int i)
+{
   int nregions = 0;
   int instID = -1, lastSampId = -1;
   phdr phr = phdrs[i];
-  for (int j = phr.pbagNdx; j < phdrs[i + 1].pbagNdx; j++) {
+  for (int j = phr.pbagNdx; j < phdrs[i + 1].pbagNdx; j++)
+  {
     pbag *pg = pbags + j;
     pgen_t *lastg = pgens + pg[j + 1].pgen_id;
     int pgenId = pg->pgen_id;
     instID = -1;
     int lastPgenId = j < npbags - 1 ? pbags[j + 1].pgen_id : npgens - 1;
-    for (int k = pgenId; k < lastPgenId; k++) {
+    for (int k = pgenId; k < lastPgenId; k++)
+    {
       pgen *g = pgens + k;
-      if (g->genid == Instrument) {
+      if (g->genid == Instrument)
+      {
         instID = g->val.uAmount;
         lastSampId = -1;
         inst *ihead = insts + instID;
         int ibgId = ihead->ibagNdx;
         int lastibg = (ihead + 1)->ibagNdx;
-        for (int ibg = ibgId; ibg < lastibg; ibg++) {
+        for (int ibg = ibgId; ibg < lastibg; ibg++)
+        {
           lastSampId = -1;
           ibag *ibgg = ibags + ibg;
           pgen_t *lastig = ibg < nibags - 1 ? igens + (ibgg + 1)->igen_id
                                             : igens + nigens - 1;
           for (pgen_t *g = igens + ibgg->igen_id; g->genid != 60 && g != lastig;
-               g++) {
-            if (g->genid == SampleId) {
+               g++)
+          {
+            if (g->genid == SampleId)
+            {
               nregions++;
+              break;
             }
           }
         }
@@ -127,130 +128,93 @@ int findPresetZonesCount(int i) {
   }
   return nregions;
 }
-zone_t *findPresetZones(int i, int nregions) {
+
+zone_t *findPresetZones(int presetId, int nregions)
+{
   short defvals[60] = defattrs;
 
-  enum {
-    default_pbg_cache_index = 0,
-    pbg_attr_cache_index = 60,
-    default_ibagcache_idex = 120,
-    ibg_attr_cache_index = 180
-  };
+  // generator attributes
+  short presetDefault[60] = {0};
+  short pbagLegion[60] = {0};
   zone_t *zones = (zone_t *)malloc((nregions + 1) * sizeof(zone_t));
-  zone_t *dummy;
   int found = 0;
-  short attrs[240] = {0};
   int instID = -1;
-  int lastbag = phdrs[i + 1].pbagNdx;
-  bzero(&attrs[default_pbg_cache_index], 240 * sizeof(short));
-  memcpy(attrs, defvals, 2 * 60);
-  memcpy(attrs + pbg_attr_cache_index, defvals, 2 * 60);
+  int lastbag = phdrs[presetId + 1].pbagNdx;
 
-  for (int j = phdrs[i].pbagNdx; j < phdrs[i + 1].pbagNdx; j++) {
-    int attr_inex =
-        j == phdrs[i].pbagNdx ? default_pbg_cache_index : pbg_attr_cache_index;
-    bzero(&attrs[pbg_attr_cache_index], 180 * sizeof(short));
-    memcpy(attrs + pbg_attr_cache_index, defvals, 2 * 60);
-
+  for (int j = phdrs[presetId].pbagNdx; j < phdrs[presetId+ 1].pbagNdx; j++)
+  {
     pbag *pg = pbags + j;
     pgen_t *lastg = pgens + pg[j + 1].pgen_id;
     int pgenId = pg->pgen_id;
     int lastPgenId = j < npbags - 1 ? pbags[j + 1].pgen_id : npgens - 1;
-    attrs[Unused1 + pbg_attr_cache_index] = j;
-    for (int k = pgenId; k < lastPgenId; k++) {
+    bzero(pbagLegion, 120);
+    pbagLegion[Instrument] = -1;
+    for (int k = pgenId; k < lastPgenId; k++)
+    {
       pgen *g = pgens + k;
-      if (g->genid != Instrument) {
-        sanitizedInsert(attrs, g->genid + attr_inex, g);
-      } else {
-        instID = g->val.shAmount;
-        sanitizedInsert(attrs, g->genid + attr_inex, g);
-        bzero(&attrs[default_ibagcache_idex], 120 * sizeof(short));
-        memcpy(attrs + default_ibagcache_idex, defvals, 2 * 60);
+      int inRange = combine_pattrs(g->genid, pbagLegion, presetDefault[g->genid]);
+      if(!inRange) continue;
+      if (g->genid == Instrument){
+        pbagLegion[Instrument]= g->val.uAmount;
+        int sampleID = -1;
+        inst *instrument_ptrs = insts +   pbagLegion[Instrument];
+        int ibgId = instrument_ptrs->ibagNdx;
+        int lastibg = (instrument_ptrs + 1)->ibagNdx;
+        short instDefault[60] = defattrs;
+        short instZone[60] = {0};
 
-        inst *ihead = insts + instID;
-        int ibgId = ihead->ibagNdx;
-        int lastibg = (ihead + 1)->ibagNdx;
-        for (int ibg = ibgId; ibg < lastibg; ibg++) {
-          bzero((&attrs[0] + ibg_attr_cache_index), 60 * sizeof(short));
+        for (int ibg = ibgId; ibg < lastibg; ibg++)
+        {
 
-          memcpy(attrs + ibg_attr_cache_index, defvals, 2 * 60);
-
-          attr_inex =
-              ibg == ibgId ? default_ibagcache_idex : ibg_attr_cache_index;
+          memcpy(instZone, instDefault, 120);
           ibag *ibgg = ibags + ibg;
-          attrs[Unused2 + default_ibagcache_idex] = ibg;
-
-          pgen_t *lastig = ibg < nibags - 1 ? igens + (ibgg + 1)->igen_id
-                                            : igens + nigens - 1;
-
-          for (pgen_t *g = igens + ibgg->igen_id; g->genid != 60 && g != lastig;
-               g++) {
-            sanitizedInsert(attrs, attr_inex + g->genid, g);
-
-            if (g->genid == SampleId) {
-              short zoneattr[60];
-              bzero(zoneattr, 120);
-
-              memcpy(zoneattr, defvals, 120);
-              int add = 1;
-              shdrcast *sh = (shdrcast *)shdrs + g->val.shAmount;
-              for (int i = 0; i < 60; i++) {
-                if (attrs[ibg_attr_cache_index + i]) {
-                  zoneattr[i] = attrs[ibg_attr_cache_index + i];
-                } else if (attrs[default_ibagcache_idex + i]) {
-                  zoneattr[i] = attrs[default_ibagcache_idex + i];
-                }
-                short pbagAttr = attrs[pbg_attr_cache_index + i];
-
-                if (i == VelRange || i == KeyRange) {
-                  int irange[2] = {zoneattr[i] & 0x007f, zoneattr[i] >> 8};
-                  int prange[2] = {pbagAttr & 0x007f, pbagAttr >> 8};
-                  if (prange[0] > irange[1] || prange[1] < irange[0]) {
-                    add = 0;
-
-                    break;
-                  }
-                  if (prange[1] < irange[1]) irange[1] = prange[1];
-
-                  if (prange[0] > irange[0]) irange[0] = prange[0];
-
-                  zoneattr[i] = irange[0] | (irange[1] << 8);
-                } else {
-                  if (attrs[pbg_attr_cache_index + i] != defvals[i]) {
-                    zoneattr[i] +=
-                        attrs[pbg_attr_cache_index + i];  // - defvals[i];
-                  } else if (attrs[default_pbg_cache_index + i] != defvals[i]) {
-                    zoneattr[i] +=
-                        attrs[default_pbg_cache_index + i];  // - defvals[i];
-                  }
-                }
+          pgen_t *lastig = igens + (ibgg + 1)->igen_id;
+          for (pgen_t *g = igens + ibgg->igen_id; g != lastig; g++)
+          {
+            if(g->genid==SampleId){
+              instZone[SampleId]=g->val.uAmount;
+              for(int i=0;i<60;i++){
+                add_pbag_val_to_zone(i, instZone, pbagLegion[i]);
               }
-              zone_t *zz = (zone_t *)zoneattr;
-              if (add) {
-                memcpy(zones + found, zoneattr, 60 * sizeof(short));
-                emitZone(phdrs[i].pid, zz);
-                found++;
-              }
+              memcpy(zones + found, instZone, 120);
+              emitZone(phdrs[presetId].pid, zones+found);
+              found++;
+              if(found==nregions) return zones;
+            }else{
+              combine_pattrs(g->genid, instZone, g->val.shAmount);
             }
+          }
+          if (instZone[SampleId] == -1)
+          {
+            memcpy(instDefault, instZone, 120);
           }
         }
       }
     }
+    if (pbagLegion[Instrument] == -1)
+    {
+      memcpy(presetDefault, pbagLegion, 120);
+    }
   }
-  dummy = zones + found;
-  dummy->SampleId = -1;
-  free(&attrs[0]);
   return zones;
 }
-zone_t *filterForZone(zone_t *from, uint8_t key, uint8_t vel) {
-  for (zone_t *z = from; z; z++) {
-    if (z == 0 || z->SampleId == (short)-1) break;
-    if (vel > 0 && (z->VelRange.lo > vel || z->VelRange.hi < vel)) continue;
-    if (key > 0 && (z->KeyRange.lo > key || z->KeyRange.hi < key)) continue;
+
+zone_t *filterForZone(zone_t *from, uint8_t key, uint8_t vel)
+{
+  for (zone_t *z = from; z; z++)
+  {
+    if (z == 0 || z->SampleId == (short)-1)
+      break;
+    if (vel > 0 && (z->VelRange.lo > vel || z->VelRange.hi < vel))
+      continue;
+    if (key > 0 && (z->KeyRange.lo > key || z->KeyRange.hi < key))
+      continue;
     return z;
   }
-  if (vel > 0) return filterForZone(from, key, 0);
-  if (key > 0) return filterForZone(from, 0, vel);
+  if (vel > 0)
+    return filterForZone(from, key, 0);
+  if (key > 0)
+    return filterForZone(from, 0, vel);
   return &presetZones[0];
 }
 
