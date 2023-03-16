@@ -57,18 +57,16 @@ void *loadpdta(void *pdtabuffer)
   for (uint16_t i = 0; i < 128; i++)
   { 
     phdr* phr = findPreset(i, 0x00);
-    // printf("[%u %u] %s \n", phr->pid, phr->bankId,phr->name);
     if(phr){
-      int n = findPresetZonesCount(phr);
-      // printf("\t num %d\n",n);
-      presets[(uint32_t)i] = findPresetZones(phr,n);
       emitHeader(i, 0, phr->name);
+      int n = findPresetZonesCount(phr);
+      presets[(uint32_t)i] = findPresetZones(phr,n);
     }
     phdr* drumPhr = findPreset(i, 0x7f);
     if(!drumPhr) continue;
-    int n = findPresetZonesCount(phr);
-    presets[i+128] = findPresetZones(phr,n);
-    emitHeader(i, 128, phr->name);
+    int n = findPresetZonesCount(drumPhr);
+    presets[i+128] = findPresetZones(drumPhr,n);
+    emitHeader(i, 128, drumPhr->name);
   }
   // get mem end;
   return malloc(4);

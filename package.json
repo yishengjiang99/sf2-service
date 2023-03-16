@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "make",
-    "test": "gcc pdta.spec.c; ./a.out"
+    "test": "gcc pdta.spec.c; ./a.out > test.txt"
   },
   "keywords": [],
   "author": "Yisheng Jiang",

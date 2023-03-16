@@ -17,7 +17,6 @@ export default class SF2Service {
     const pdtaRef = module._malloc(pdtaBuffer.byteLength);
 
     module.onHeader = (pid, bid, name) => {
-      console.log(pid, bid, name);
       programNames[pid | bid] = name;
       if (onHeader) onHeader(pid, bid, name);
     };
@@ -33,6 +32,7 @@ export default class SF2Service {
       module._presetRef(),
       255
     );
+
     const heap = module.HEAPU8.buffer.slice(0, memend);
     const heapref = new WeakRef(heap);
     this.state = {
@@ -57,17 +57,23 @@ export default class SF2Service {
   }
   loadProgram(pid, bkid) {
     const { presetRefs, heap, shdrref, sdtaStart, programNames } = this.state;
-    const rootRef = presetRefs[pid | bkid];
+    const rootRef = presetRefs[pid + bkid];
+    const lastRef = presetRefs[pid+bkid +1];
 
     const zMap = [];
     const shdrMap = {};
     let url = this.url;
+
     for (
-      let zref = rootRef, zone = zref2Zone(zref);
-      zone && zone.SampleId != -1;
-      zone = zref2Zone((zref += 120))
+      let zref = rootRef;
+      zref < lastRef;
+      zref += 120
     ) {
-      if(zone.SampleId==0) continue;
+      let zone = zref2Zone(zref);
+      if(zone.SampleId<0) {
+        console.log(zone);
+        continue;
+      }
       const mapKey = zone.SampleId;
       if (!shdrMap[mapKey]) {
         shdrMap[mapKey] = getShdr(zone.SampleId);
