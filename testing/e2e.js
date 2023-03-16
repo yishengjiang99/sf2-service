@@ -39,10 +39,10 @@ async function renderMain() {
     mkdiv("div", { class: "col note-viewer" }),
   ];
   const main = mkdiv("div", { class: "main" }, [leftNav, rightPanel]);
-  console.log(sf2file.programNames);
   const [presetId, zref] = document.location.hash.substring(1).split("|");
-  const pid = presetId % 128;
-  const bid = presetId ^ 128;
+  const intpre = parseInt(presetId);
+  const pid = intpre < 128 ? intpre : presetId - 128;
+  const bid = presetId < 128 ? 0 : 128;
   const program = sf2file.loadProgram(pid, bid);
   const kRangeList = program.zMap.map(
     (z) =>
@@ -55,7 +55,6 @@ async function renderMain() {
         [z.VelRange.lo, z.VelRange.hi].join("-")
       }</option>`
   );
-
   const articleHeader = mkdiv("div", { class: "note-header" }, [
     mkdiv(
       "div",
@@ -71,67 +70,67 @@ async function renderMain() {
       )
     ),
   ]);
-
-  const zoneSelect = zref
-    ? program.zMap.find((z) => z.ref + "" == zref)
-    : program.filterKV(60, -1)?.[0] ?? program.zMap[0];
-
-  if (!zoneSelect) {
-    return;
-  }
-  const zattrs = Object.entries(zoneSelect).filter(
-    ([_, val], idx) => val && idx < 60
-  );
-  const canvas = mkcanvas({ container: main });
-
-  const articleMain = mkdiv("div", { class: "note-preview" }, [
-    mkdiv(
-      "div",
-      {
-        style:
-          "display:flex flex-direction:row; max-height:50vh; overflow-y:scroll; gap:0 20px 20px",
-      },
-      [
-        mkdiv("div", [
-          "smpl: ",
-          zoneSelect.shdr.SampleId,
-          " ",
-          zoneSelect.shdr.name,
-          "<br>nsample: ",
-          zoneSelect.shdr.nsamples,
-          "<br>srate: " + zoneSelect.shdr.originalPitch,
-          "<br>Range: ",
-          zoneSelect.shdr.range.join("-"),
-          "<br>",
-          "loop: ",
-          zoneSelect.shdr.loops.join("-"),
-
-          JSON.stringify(zoneSelect.KeyRange),
-        ]),
-        ..."Addr,KeyRange,Attenuation,VolEnv,Filter,LFO"
-          .split(",")
-          .map((keyword) =>
-            mkdiv(
-              "div",
-              { style: "padding:10px;color:gray;" },
-              zattrs
-                .filter(([k]) => k.includes(keyword))
-                .map(([k, v]) => k + ": " + v)
-                .join("<br>")
-            )
-          ),
-      ]
-    ),
-  ]);
-
-  const mainRight = mkdiv("div", { class: "note" }, [
-    mkdiv("div", { class: "note-title" }, [sf2file.programNames[presetId]]),
-    articleHeader,
-    articleMain,
-  ]);
   main.attachTo(document.body);
-  mainRight.attachTo(main);
+
+  let zoneSelect = zref
+    ? program.zMap.find((z) => z.ref + "" == zref)
+    : program.zMap[0];
+
+  if (zoneSelect) {
+    const zattrs = Object.entries(zoneSelect).filter(
+      ([attr, val], idx) => val && idx < 60
+    );
+
+    const articleMain = mkdiv("div", { class: "note-preview" }, [
+      mkdiv(
+        "div",
+        {
+          style:
+            "display:flex flex-direction:row; max-height:50vh; overflow-y:scroll; gap:0 20px 20px",
+        },
+        [
+          mkdiv("div", [
+            "smpl: ",
+            zoneSelect.shdr.SampleId,
+            " ",
+            zoneSelect.shdr.name,
+            "<br>nsample: ",
+            zoneSelect.shdr.nsamples,
+            "<br>srate: " + zoneSelect.shdr.originalPitch,
+            "<br>Range: ",
+            zoneSelect.shdr.range.join("-"),
+            "<br>",
+            "loop: ",
+            zoneSelect.shdr.loops.join("-"),
+
+            JSON.stringify(zoneSelect.KeyRange),
+          ]),
+          ..."Addr,KeyRange,Attenuation,VolEnv,Filter,LFO"
+            .split(",")
+            .map((keyword) =>
+              mkdiv(
+                "div",
+                { style: "padding:10px;color:gray;" },
+                zattrs
+                  .filter(([k]) => k.includes(keyword))
+                  .map(([k, v]) => k + ": " + v)
+                  .join("<br>")
+              )
+            ),
+        ]
+      ),
+    ]);
+    const pcm = await zoneSelect.shdr.data();
+    const canvas = mkcanvas({container:articleHeader});
+    chart(canvas, pcm);
+    const mainRight = mkdiv("div", { class: "note" }, [
+      mkdiv("div", { class: "note-title" }, [sf2file.programNames[presetId]]),
+      articleHeader,
+      articleMain,
+    ]);
+
+    mainRight.attachTo(main);
+  }
+  console.log(program);
   await program.preload();
-  const pcm = await zoneSelect.shdr.data();
-  chart(canvas, pcm);
 }
