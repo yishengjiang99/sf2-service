@@ -26,7 +26,7 @@ int nsamples;
 float *sdta;
 int sdtastart;
 phdr *presetHeaders[128];
-phdr *phdrRoot = &presetHeaders[0];
+phdr *phdrRoot = 0;
 phdr drumHeaders[128];
 zone_t *presetZones;
 zone_t *root;
