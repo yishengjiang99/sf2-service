@@ -55,6 +55,7 @@ async function renderMain() {
         [z.VelRange.lo, z.VelRange.hi].join("-")
       }</option>`
   );
+
   const articleHeader = mkdiv("div", { class: "note-header" }, [
     mkdiv(
       "div",
@@ -79,7 +80,7 @@ async function renderMain() {
     return;
   }
   const zattrs = Object.entries(zoneSelect).filter(
-    ([attr, val], idx) => val && idx < 60
+    ([_, val], idx) => val && idx < 60
   );
   const canvas = mkcanvas({ container: main });
 
@@ -132,6 +133,5 @@ async function renderMain() {
   mainRight.attachTo(main);
   await program.preload();
   const pcm = await zoneSelect.shdr.data();
-  console.log(pcm);
   chart(canvas, pcm);
 }

@@ -1,4 +1,3 @@
-
 //let Module = Module || {};
 mergeInto(LibraryManager.library, {
   emitHeader: function (pid, bid, offset) {
@@ -12,4 +11,3 @@ mergeInto(LibraryManager.library, {
   },
   emitFilter: function (type, lo, hi) {},
 });
-

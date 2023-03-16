@@ -8,16 +8,13 @@ export default class SF2Service {
   async load({ onHeader, onSample, onZone } = {}) {
     const Module = await import("./pdta.js");
     const module = await Module.default();
-    const { pdtaBuffer, sdtaStart, fullUrl, infos } = await sfbkstream(
-      this.url
-    );
+    const { pdtaBuffer, sdtaStart, infos } = await sfbkstream(this.url);
     const programNames = [];
 
     function devnull() {}
     const pdtaRef = module._malloc(pdtaBuffer.byteLength);
 
     module.onHeader = (pid, bid, name) => {
-      console.log(pid, bid, name);
       programNames[pid | bid] = name;
       if (onHeader) onHeader(pid, bid, name);
     };
@@ -45,6 +42,7 @@ export default class SF2Service {
       sdtaStart,
       infos,
     };
+    return this.state;
   }
   get meta() {
     return this.state.infos;
@@ -67,7 +65,7 @@ export default class SF2Service {
       zone && zone.SampleId != -1;
       zone = zref2Zone((zref += 120))
     ) {
-      if(zone.SampleId==0) continue;
+      if (zone.SampleId == 0) continue;
       const mapKey = zone.SampleId;
       if (!shdrMap[mapKey]) {
         shdrMap[mapKey] = getShdr(zone.SampleId);
