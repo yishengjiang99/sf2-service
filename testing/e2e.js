@@ -80,7 +80,6 @@ async function renderMain() {
     const zattrs = Object.entries(zoneSelect).filter(
       ([attr, val], idx) => val && idx < 60
     );
-    const canvas = mkcanvas({ container: main });
 
     const articleMain = mkdiv("div", { class: "note-preview" }, [
       mkdiv(
@@ -122,12 +121,14 @@ async function renderMain() {
       ),
     ]);
     const pcm = await zoneSelect.shdr.data();
+    const canvas = mkcanvas({container:articleMain});
     chart(canvas, pcm);
     const mainRight = mkdiv("div", { class: "note" }, [
       mkdiv("div", { class: "note-title" }, [sf2file.programNames[presetId]]),
       articleHeader,
       articleMain,
     ]);
+
     mainRight.attachTo(main);
   }
   console.log(program);

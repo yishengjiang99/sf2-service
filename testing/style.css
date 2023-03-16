@@ -423,7 +423,6 @@ ul.notes-list {
   height: 95%;
   width: 95%;
   min-width: 400px;
-  padding: 8%;
   overflow-y: auto;
 }
 .note--empty-state {
