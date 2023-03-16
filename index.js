@@ -8,9 +8,7 @@ export default class SF2Service {
   async load({ onHeader, onSample, onZone } = {}) {
     const Module = await import("./pdta.js");
     const module = await Module.default();
-    const { pdtaBuffer, sdtaStart, fullUrl, infos } = await sfbkstream(
-      this.url
-    );
+    const { pdtaBuffer, sdtaStart, infos } = await sfbkstream(this.url);
     const programNames = [];
 
     function devnull() {}
@@ -45,6 +43,7 @@ export default class SF2Service {
       sdtaStart,
       infos,
     };
+    return this.state;
   }
   get meta() {
     return this.state.infos;

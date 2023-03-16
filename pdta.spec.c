@@ -1,4 +1,5 @@
 #include "pdta.c"
+
 #include <assert.h>
 #include <stdio.h>
 #include "sf2.h"
@@ -23,10 +24,9 @@ void emitSample(int id, int pid, void* name)
 }
 void emitFilter(int type, uint8_t lo, uint8_t hi) {}
 
-int main()
-{
-    printf("hello\n");
-    char *filename = "file.sf2";
+int main() {
+  printf("hello\n");
+  char *filename = "file.sf2";
 
     FILE *fd = fopen(filename, "r");
     sheader_t *header = (sheader_t *)malloc(sizeof(sheader_t));

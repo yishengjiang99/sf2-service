@@ -133,4 +133,6 @@ async function renderMain() {
   }
   console.log(program);
   await program.preload();
+  const pcm = await zoneSelect.shdr.data();
+  chart(canvas, pcm);
 }
