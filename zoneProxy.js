@@ -83,12 +83,23 @@ export function newSFZoneMap(ref, attrs) {
  * @param attrs csv strings
  * @returns Proxy<string,number>
  */
-export function newSFZone(attrs) {
-  const attributeValues = attrs.map((s) => parseInt(s));
-  return new Proxy(attributeValues, {
+export function newSFZone(zone) {
+  return new Proxy(zone, {
     get: (target, key) => {
+      if (key == "arr") return zone.arr;
+      if (key == "ref") return zone.ref;
+
       const idx = attributeKeys.indexOf(key);
-      return idx > -1 ? target[idx] : null;
+      if (idx > -1) return target.arr[idx];
+      if (key == "calcPitchRatio") return target.calcPitchRatio;
+    },
+    set: (target, key, val) => {
+      const idx = attributeKeys.indexOf(key);
+      if (idx > -1) {
+        target.arr[idx] = parseInt(val);
+        return true;
+      }
+      return false;
     },
   });
 }
