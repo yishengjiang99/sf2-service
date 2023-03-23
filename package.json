@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/yishengjiang99/sf2-service/issues"
   },
-  "homepage": "https://github.com/yishengjiang99/sf2-service#readme"
+  "homepage": "https://github.com/yishengjiang99/sf2-service#readme",
+  "dependencies": {
+    "sf2rend": "file:.."
+  }
 }

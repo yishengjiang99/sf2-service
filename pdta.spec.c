@@ -4,7 +4,7 @@
 #include <stdio.h>
 void emitHeader(int pid, int bid, void *p) {
   phdr *pset = (phdr *)p;
-  printf("\n\nheader %s %d %d", pset->name, pid, bid);
+  // printf("\n\nheader %s %d %d", pset->name, pid, bid);
 }
 void emitZone(int pid, void *ref) {
   zone_t *zone = (zone_t *)ref;
@@ -16,7 +16,6 @@ void emitSample(int id, int pid, void *name) {
 void emitFilter(int type, uint8_t lo, uint8_t hi) {}
 
 int main() {
-  printf("hello\n");
   char *filename = "file.sf2";
 
   FILE *fd = fopen(filename, "r");
@@ -36,7 +35,9 @@ int main() {
   char *pdtabuffer = malloc(h2->size);
   fread(pdtabuffer, h2->size, h2->size, fd);
   loadpdta(pdtabuffer);
-  zone_t *z = presets[0];
-  printf("%hd aaa", z->Attenuation);
+  zone_t **pzone = &presets[0];
+  zone_t **lastZone = &presets[1];
+  zone_t *a = filterForZone(&pzone, 55, 55);
+  printf("ff %d", a->SampleId);
   return 1;
 }
