@@ -1,14 +1,5 @@
-
-> sf2-service@1.3.4 test
-> gcc pdta.spec.c; ./a.out
-
-hello
-RIFF sfbk LIST 31281178
-INFO 2394
-sdta 31026308
-pdta 252448
-- Stereo Grand 0 0 : 
- - preset globals: 
+- Stereo Grand 0 0 :
+ - preset globals:
     - ReverbSend (16): 70
     - ModLFODelay (21): 7973
     - ModLFOFreq (22): 64680
@@ -16,7 +7,7 @@ pdta 252448
     - VolEnvAttack (34): -7973
     - VolEnvDecay (36): 867
     - VolEnvRelease (38): 64790
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 0-35
      - VelRange: 0-49
     - FilterFc (8): 759
@@ -277,7 +268,7 @@ pdta 252448
     - FineTune (52): 11
     - SampleModes (54): 1
     - SampleId (53): 312
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 0-35
      - VelRange: 50-65
     - FilterFc (8): -1382
@@ -290,7 +281,7 @@ pdta 252448
     - Attenuation (48): -60
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 0-35
      - VelRange: 66-79
     - FilterFc (8): -1200
@@ -302,7 +293,7 @@ pdta 252448
     - Attenuation (48): -50
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 0-35
      - VelRange: 80-91
     - FilterFc (8): -1035
@@ -314,7 +305,7 @@ pdta 252448
     - Attenuation (48): -40
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 0-35
      - VelRange: 92-101
     - FilterFc (8): -884
@@ -326,7 +317,7 @@ pdta 252448
     - Attenuation (48): -30
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 0-35
      - VelRange: 102-110
     - FilterFc (8): -884
@@ -338,7 +329,7 @@ pdta 252448
     - Attenuation (48): -20
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 0-35
      - VelRange: 111-119
     - FilterFc (8): -884
@@ -350,7 +341,7 @@ pdta 252448
     - Attenuation (48): -10
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 0-35
      - VelRange: 120-127
     - FilterFc (8): -884
@@ -361,7 +352,7 @@ pdta 252448
     - VolEnvRelease (38): 65128
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 36-50
      - VelRange: 0-49
     - FilterFc (8): 919
@@ -374,7 +365,7 @@ pdta 252448
     - Attenuation (48): -80
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 36-50
      - VelRange: 50-65
     - FilterFc (8): -1271
@@ -387,7 +378,7 @@ pdta 252448
     - Attenuation (48): -60
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 36-50
      - VelRange: 66-79
     - FilterFc (8): -1132
@@ -399,7 +390,7 @@ pdta 252448
     - Attenuation (48): -50
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 36-50
      - VelRange: 80-91
     - FilterFc (8): -1004
@@ -411,7 +402,7 @@ pdta 252448
     - Attenuation (48): -40
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 36-50
      - VelRange: 92-101
     - FilterFc (8): -884
@@ -423,7 +414,7 @@ pdta 252448
     - Attenuation (48): -30
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 36-50
      - VelRange: 102-110
     - FilterFc (8): -884
@@ -435,7 +426,7 @@ pdta 252448
     - Attenuation (48): -20
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 36-50
      - VelRange: 111-119
     - FilterFc (8): -884
@@ -447,7 +438,7 @@ pdta 252448
     - Attenuation (48): -10
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 36-50
      - VelRange: 120-127
     - FilterFc (8): -884
@@ -458,7 +449,7 @@ pdta 252448
     - VolEnvRelease (38): 65128
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 51-65
      - VelRange: 0-49
     - FilterFc (8): 1065
@@ -471,7 +462,7 @@ pdta 252448
     - Attenuation (48): -80
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 51-65
      - VelRange: 50-65
     - FilterFc (8): -1166
@@ -484,7 +475,7 @@ pdta 252448
     - Attenuation (48): -60
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 51-65
      - VelRange: 66-79
     - FilterFc (8): -1067
@@ -496,7 +487,7 @@ pdta 252448
     - Attenuation (48): -50
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 51-65
      - VelRange: 80-91
     - FilterFc (8): -973
@@ -508,7 +499,7 @@ pdta 252448
     - Attenuation (48): -40
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 51-65
      - VelRange: 92-101
     - FilterFc (8): -884
@@ -520,7 +511,7 @@ pdta 252448
     - Attenuation (48): -30
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 51-65
      - VelRange: 102-110
     - FilterFc (8): -884
@@ -532,7 +523,7 @@ pdta 252448
     - Attenuation (48): -20
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 51-65
      - VelRange: 111-119
     - FilterFc (8): -884
@@ -544,7 +535,7 @@ pdta 252448
     - Attenuation (48): -10
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 51-65
      - VelRange: 120-127
     - FilterFc (8): -884
@@ -555,7 +546,7 @@ pdta 252448
     - VolEnvRelease (38): 65128
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 66-80
      - VelRange: 0-49
     - FilterFc (8): 1200
@@ -568,7 +559,7 @@ pdta 252448
     - Attenuation (48): -80
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 66-80
      - VelRange: 50-65
     - FilterFc (8): -1067
@@ -581,7 +572,7 @@ pdta 252448
     - Attenuation (48): -60
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 66-80
      - VelRange: 66-79
     - FilterFc (8): -1004
@@ -593,7 +584,7 @@ pdta 252448
     - Attenuation (48): -50
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 66-80
      - VelRange: 80-91
     - FilterFc (8): -943
@@ -605,7 +596,7 @@ pdta 252448
     - Attenuation (48): -40
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 66-80
      - VelRange: 92-101
     - FilterFc (8): -884
@@ -617,7 +608,7 @@ pdta 252448
     - Attenuation (48): -30
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 66-80
      - VelRange: 102-110
     - FilterFc (8): -884
@@ -629,7 +620,7 @@ pdta 252448
     - Attenuation (48): -20
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 66-80
      - VelRange: 111-119
     - FilterFc (8): -884
@@ -641,7 +632,7 @@ pdta 252448
     - Attenuation (48): -10
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 66-80
      - VelRange: 120-127
     - FilterFc (8): -884
@@ -652,7 +643,7 @@ pdta 252448
     - VolEnvRelease (38): 65128
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 81-87
      - VelRange: 0-49
     - FilterFc (8): 1325
@@ -665,7 +656,7 @@ pdta 252448
     - Attenuation (48): -80
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 81-87
      - VelRange: 50-65
     - FilterFc (8): -973
@@ -678,7 +669,7 @@ pdta 252448
     - Attenuation (48): -60
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 81-87
      - VelRange: 66-79
     - FilterFc (8): -943
@@ -691,7 +682,7 @@ pdta 252448
     - Attenuation (48): -50
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 81-87
      - VelRange: 80-91
     - FilterFc (8): -913
@@ -703,7 +694,7 @@ pdta 252448
     - Attenuation (48): -40
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 81-87
      - VelRange: 92-101
     - FilterFc (8): -884
@@ -715,7 +706,7 @@ pdta 252448
     - Attenuation (48): -30
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 81-87
      - VelRange: 102-110
     - FilterFc (8): -884
@@ -727,7 +718,7 @@ pdta 252448
     - Attenuation (48): -20
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 81-87
      - VelRange: 111-119
     - FilterFc (8): -884
@@ -739,7 +730,7 @@ pdta 252448
     - Attenuation (48): -10
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 81-87
      - VelRange: 120-127
     - FilterFc (8): -884
@@ -750,7 +741,7 @@ pdta 252448
     - VolEnvRelease (38): 65128
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 88-127
      - VelRange: 0-49
     - FilterFc (8): 1434
@@ -763,7 +754,7 @@ pdta 252448
     - Attenuation (48): -80
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 88-127
      - VelRange: 50-65
     - FilterFc (8): -884
@@ -775,7 +766,7 @@ pdta 252448
     - Attenuation (48): -60
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 88-127
      - VelRange: 66-79
     - FilterFc (8): -884
@@ -787,7 +778,7 @@ pdta 252448
     - Attenuation (48): -50
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 88-127
      - VelRange: 80-91
     - FilterFc (8): -884
@@ -798,7 +789,7 @@ pdta 252448
     - Attenuation (48): -40
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 88-127
      - VelRange: 92-101
     - FilterFc (8): -884
@@ -809,7 +800,7 @@ pdta 252448
     - Attenuation (48): -30
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 88-127
      - VelRange: 102-110
     - FilterFc (8): -884
@@ -820,7 +811,7 @@ pdta 252448
     - Attenuation (48): -20
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 88-127
      - VelRange: 111-119
     - FilterFc (8): -884
@@ -831,7 +822,7 @@ pdta 252448
     - Attenuation (48): -10
     - Instrument (41): 105
   Repeat inst: 105
- - pbag zone: 
+ - pbag zone:
      - KeyRange: 88-127
      - VelRange: 120-127
     - FilterFc (8): -884

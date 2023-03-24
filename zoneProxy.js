@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 export const attributeKeys = [
   "StartAddrOfs",
   "EndAddrOfs",
@@ -84,11 +85,14 @@ export function newSFZoneMap(ref, attrs) {
  * @returns Proxy<string,number>
  */
 export function newSFZone(zone) {
+  let lastUpdate = new Date();
+  let lastSync = 0;
   return new Proxy(zone, {
     get: (target, key) => {
       if (key == "arr") return zone.arr;
       if (key == "ref") return zone.ref;
-
+      if (key == "sample" || key == "shdr") return zone.sample;
+      if (key == "isDirty") return lastUpdate > lastSync;
       const idx = attributeKeys.indexOf(key);
       if (idx > -1) return target.arr[idx];
       if (key == "calcPitchRatio") return target.calcPitchRatio;
@@ -96,6 +100,7 @@ export function newSFZone(zone) {
     set: (target, key, val) => {
       const idx = attributeKeys.indexOf(key);
       if (idx > -1) {
+        lastUpdate = new Date();
         target.arr[idx] = parseInt(val);
         return true;
       }

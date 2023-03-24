@@ -1,6 +1,0 @@
-services:
-  emcc:
-    image: emscripten/emsdk:latest
-    volumes:
-      - .:.
-    entrypoint: build.sh
