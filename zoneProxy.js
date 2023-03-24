@@ -91,7 +91,7 @@ export function newSFZone(zone) {
     get: (target, key) => {
       if (key == "arr") return zone.arr;
       if (key == "ref") return zone.ref;
-      if (key == "sample" || key == "shdr") return zone.sample;
+      if (key == "sample" || key == "shdr") return zone.shdr;
       if (key == "isDirty") return lastUpdate > lastSync;
       const idx = attributeKeys.indexOf(key);
       if (idx > -1) return target.arr[idx];
