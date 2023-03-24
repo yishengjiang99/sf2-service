@@ -7,39 +7,33 @@ typedef unsigned short uint16_t;
 typedef int int32_t;
 typedef short int16_t;
 
-typedef struct
-{
+typedef struct {
   uint8_t lo, hi;
-} rangesType; //  Four-character code
+} rangesType;  //  Four-character code
 
-typedef union
-{
+typedef union {
   rangesType ranges;
   short shAmount;
   unsigned short uAmount;
 } genAmountType;
 
-typedef struct
-{
+typedef struct {
   char name[4];
   unsigned int size;
   char sfbk[4];
   char list[4];
 } sheader_t;
 
-typedef struct
-{
+typedef struct {
   unsigned int size;
   char name[4];
 } header2_t;
 
-typedef struct
-{
+typedef struct {
   char name[4];
   unsigned int size;
 } section_header;
-typedef enum
-{
+typedef enum {
   monoSample = 1,
   rightSample = 2,
   leftSample = 4,
@@ -50,23 +44,19 @@ typedef enum
   RomLinkedSample = 0x8008
 } SFSampleLink;
 
-typedef struct
-{
+typedef struct {
   unsigned short pgen_id, pmod_id;
 } pbag;
-typedef struct
-{
+typedef struct {
   unsigned short igen_id, imod_id;
 } ibag;
-typedef struct
-{
+typedef struct {
   unsigned short genid;
   genAmountType val;
 
 } pgen_t;
 typedef pgen_t pgen;
-typedef struct
-{
+typedef struct {
   char sfModSrcOper[2];
   unsigned short gen_operator;
   short modAmount;
@@ -74,34 +64,29 @@ typedef struct
   short fModTransOper;
 } pmod;
 
-typedef struct
-{
+typedef struct {
   char name[20];
   unsigned short ibagNdx;
 } inst;
 typedef pmod imod;
-typedef union
-{
+typedef union {
   uint8_t hi, lo;
   unsigned short val;
   short word;
 } gen_val;
 
 typedef pgen_t igen;
-typedef struct
-{
+typedef struct {
   char name[46];
 } shdr;
 
-typedef struct
-{
+typedef struct {
   char name[20];
   uint16_t pid, bankId, pbagNdx;
   char idc[12];
 } phdr;
 
-typedef struct
-{
+typedef struct {
   char name[20];
   uint32_t start, end, startloop, endloop, sampleRate;
 
@@ -109,8 +94,7 @@ typedef struct
   signed char pitchCorrection;
   uint16_t wSampleLink, sampleType;
 } shdrcast;
-typedef struct
-{
+typedef struct {
   unsigned short StartAddrOfs, EndAddrOfs, StartLoopAddrOfs, EndLoopAddrOfs,
       StartAddrCoarseOfs;
   short ModLFO2Pitch, VibLFO2Pitch, ModEnv2Pitch, FilterFc, FilterQ,
@@ -129,12 +113,10 @@ typedef struct
 } zone_t;
 
 phdr* findPreset(int pid, int bank_id);
-zone_t *findPresetZones(phdr* phr,int n);
+zone_t* findPresetZones(phdr* phr, int n);
 int findPresetZonesCount(phdr* phr);
-zone_t *filterForZone(zone_t *pset, uint8_t key, uint8_t vel);
 
-enum grntypes
-{
+enum grntypes {
   StartAddrOfs,
   EndAddrOfs,
   StartLoopAddrOfs,
@@ -208,7 +190,7 @@ enum grntypes
         /*EndAddrCoarseOfs:*/ 0, /*ModLFO2Vol:*/ 0, /*Unused1:*/ 0,            \
         /*ChorusSend:*/ 0, /*ReverbSend:*/ 0, /*Pan:*/ 0, /*Unused2:*/ 0,      \
         /*Unused3:*/ 0, /*Unused4:*/ 0, /*ModLFODelay:*/ 0, /*ModLFOFreq:*/ 0, \
-        /*VibLFODelay:*/ 0, /*VibLFOFreq:*/ 0, /*ModEnvDelay:*/ -12000,    \
+        /*VibLFODelay:*/ 0, /*VibLFOFreq:*/ 0, /*ModEnvDelay:*/ -12000,        \
         /*ModEnvAttack:*/ -12000, /*ModEnvHold:*/ -12000,                      \
         /*ModEnvDecay:*/ -12000, /*ModEnvSustain:*/ 0,                         \
         /*ModEnvRelease:*/ -12000, /*Key2ModEnvHold:*/ 0,                      \

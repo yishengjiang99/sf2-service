@@ -4,18 +4,25 @@
 #include <stdio.h>
 void emitHeader(int pid, int bid, void *p) {
   phdr *pset = (phdr *)p;
-  // printf("\n\nheader %s %d %d", pset->name, pid, bid);
+  printf("\n\nheader %s", pset->name);
 }
 void emitZone(int pid, void *ref) {
   zone_t *zone = (zone_t *)ref;
   shdrcast *shdr = (shdrcast *)(shdrs + zone->SampleId);
+  printf("\n\tStart Addr: %u %u", zone->StartAddrOfs, zone->StartLoopAddrOfs);
+  printf("\n\t Val/key ranges %d %d  %u %u", zone->VelRange.lo,
+         zone->VelRange.hi, zone->KeyRange.lo, zone->KeyRange.hi);
+  printf("\n\t sampleID %d \n\t Attentuation: %d\n\tFilterfc %d\n",
+         zone->SampleId, zone->Attenuation, zone->FilterFc);
 }
-void emitSample(int id, int pid, void *name) {
-  // printf("\n\tsample id: %d pid %d, %s",id, pid,name);
+void emitSample(int sampleId, int pid, void *name) {
+  shdrcast *shdr = (shdrcast *)shdrHead + sampleId;
+  // printf("\n\tsample id: %s %d", shdr->name, shdr->start);
 }
 void emitFilter(int type, uint8_t lo, uint8_t hi) {}
 
 int main() {
+  printf("hello\n");
   char *filename = "file.sf2";
 
   FILE *fd = fopen(filename, "r");
@@ -35,9 +42,7 @@ int main() {
   char *pdtabuffer = malloc(h2->size);
   fread(pdtabuffer, h2->size, h2->size, fd);
   loadpdta(pdtabuffer);
-  zone_t **pzone = &presets[0];
-  zone_t **lastZone = &presets[1];
-  zone_t *a = filterForZone(&pzone, 55, 55);
-  printf("ff %d", a->SampleId);
+
+  printf("\n");
   return 1;
 }
