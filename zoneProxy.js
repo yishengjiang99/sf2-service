@@ -86,16 +86,17 @@ export function newSFZoneMap(ref, attrs) {
  */
 export function newSFZone(zone) {
   let lastUpdate = new Date();
-  let lastSync = 0;
+  let lastSync = new Date();
   return new Proxy(zone, {
     get: (target, key) => {
-      if (key == "arr") return zone.arr;
-      if (key == "ref") return zone.ref;
-      if (key == "sample" || key == "shdr") return zone.shdr;
+      if (key == "arr") return target.arr;
+      if (key == "ref") return target.ref;
+      if (key == "sample" || key == "shdr") return target.shdr;
       if (key == "isDirty") return lastUpdate > lastSync;
       const idx = attributeKeys.indexOf(key);
       if (idx > -1) return target.arr[idx];
       if (key == "calcPitchRatio") return target.calcPitchRatio;
+      if (key == "export_string") return URL.createObjectURL(target.arr);
     },
     set: (target, key, val) => {
       const idx = attributeKeys.indexOf(key);
@@ -104,6 +105,7 @@ export function newSFZone(zone) {
         target.arr[idx] = parseInt(val);
         return true;
       }
+      if (key === "lastSync") lastSync = val;
       return false;
     },
   });

@@ -1,9 +1,9 @@
 {
   "name": "sf2-service",
-  "version": "1.3.4",
-  "description": "lol",
+  "version": "1.3.5",
+  "description": "e",
   "type": "module",
-  "main": "index.js",
+  "main": "bundle.js",
   "scripts": {
     "build": "make",
     "test": "npx karma start karma.conf.cjs"
@@ -19,9 +19,6 @@
     "url": "https://github.com/yishengjiang99/sf2-service/issues"
   },
   "homepage": "https://github.com/yishengjiang99/sf2-service#readme",
-  "dependencies": {
-    "sf2rend": "file:.."
-  },
   "devDependencies": {
     "chia": "^0.0.1",
     "eslint-plugin-mocha": "^10.1.0",

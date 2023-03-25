@@ -24,6 +24,7 @@ export default class SF2Service {
     module.onZone = onZone || devnull;
     module.HEAPU8.set(pdtaBuffer, pdtaRef);
     const memend = module._loadpdta(pdtaRef);
+    const instRef = (instrumentID) => module._instRef();
     const shdrref = module._shdrref(pdtaRef);
     const presetRefs = new Uint32Array(module.HEAPU32.buffer, module._presetRef(), 255);
     const heap = module.HEAPU8.buffer.slice(0, memend);
@@ -31,6 +32,7 @@ export default class SF2Service {
     this.state = {
       pdtaRef,
       heapref,
+      instRef,
       presetRefs,
       heap,
       shdrref,
@@ -50,7 +52,7 @@ export default class SF2Service {
     return this.state.presetRefs;
   }
   loadProgram(pid, bkid) {
-    const { presetRefs, heap, shdrref, sdtaStart, programNames } = this.state;
+    const { presetRefs, heap, shdrref, sdtaStart, programNames, instRef } = this.state;
     const rootRef = presetRefs[pid | bkid];
 
     const zMap = [];
@@ -69,6 +71,10 @@ export default class SF2Service {
         },
         get pcm() {
           return shdrMap[zone.SampleId].data();
+        },
+        get instrument() {
+          const instREf = instRef(zone.Instrument);
+          return readASCIIHIlariously(heap, instREf);
         },
         calcPitchRatio(key, sr) {
           const rootkey = zone.OverrideRootKey > -1 ? zone.OverrideRootKey : shdrMap[zone.SampleId].originalPitch;
@@ -139,4 +145,14 @@ export default class SF2Service {
       },
     };
   }
+}
+function readASCIIHIlariously(heap, instREf) {
+  const dv = heap.slice(instREf, instREf + 20);
+  const ascii = new Uint8Array(dv, 0, 20);
+  let nameStr = "";
+  for (const b of ascii) {
+    if (!b) break;
+    nameStr += String.fromCharCode(b);
+  }
+  return nameStr;
 }

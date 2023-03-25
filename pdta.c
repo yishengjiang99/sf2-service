@@ -241,3 +241,4 @@ zone_t *filterForZone(zone_t *from, uint8_t key, uint8_t vel) {
 
 void *shdrref() { return shdrs; }
 void *presetRef() { return presets; }
+void *instRef(int instId) { return insts + instId; }
