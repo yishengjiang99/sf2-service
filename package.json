@@ -2,10 +2,11 @@
   "name": "sf2-service",
   "version": "1.3.4",
   "description": "lol",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "build": "make",
-    "test": "gcc pdta.spec.c; ./a.out"
+    "test": "npx karma start karma.conf.cjs"
   },
   "keywords": [],
   "author": "Yisheng Jiang",
@@ -20,5 +21,17 @@
   "homepage": "https://github.com/yishengjiang99/sf2-service#readme",
   "dependencies": {
     "sf2rend": "file:.."
+  },
+  "devDependencies": {
+    "chia": "^0.0.1",
+    "eslint-plugin-mocha": "^10.1.0",
+    "jasmine-core": "^4.6.0",
+    "karma": "^6.4.1",
+    "karma-chai": "github:xdissent/karma-chai",
+    "karma-chrome-launcher": "^3.1.1",
+    "karma-firefox-launcher": "^2.1.2",
+    "karma-jasmine": "^5.1.0",
+    "karma-mocha": "^2.0.1",
+    "mocha": "^10.2.0"
   }
 }

@@ -1,9 +1,9 @@
 import { mkcanvas, chart } from "https://unpkg.com/mk-60fps@1.1.0/chart.js";
-import { mkdiv, wrapList } from "https://unpkg.com/mkdiv@3.1.0/mkdiv.js";
+import { mkdiv } from "https://unpkg.com/mkdiv@3.1.0/mkdiv.js";
 import { SpinNode } from "../node_modules/sf2rend/spin/spin.js";
 
 import SF2Service from "../index.js";
-const sf2url = "../file.sf2";
+const sf2url = "https://raw.githubusercontent.com/FluidSynth/fluidsynth/master/sf2/VintageDreamsWaves-v2.sf2";
 
 const sf2file = new SF2Service(sf2url);
 const loadWait = sf2file.load();
@@ -29,6 +29,7 @@ async function start() {
     console.log(zones.length);
     i++;
   }
+  console.log(sf2file.programNames);
   console.log(zones);
   window.addEventListener("click", start, { once: true });
 }
@@ -58,13 +59,7 @@ async function renderMain() {
   const progList = mkdiv(
     "ul",
     { class: "notes-list" },
-    sf2file.programNames.map((n, presetId) =>
-      mkdiv(
-        "div",
-        { class: "menu-link" },
-        mkdiv("a", { href: `#${presetId}` }, n)
-      )
-    )
+    sf2file.programNames.map((n, presetId) => mkdiv("div", { class: "menu-link" }, mkdiv("a", { href: `#${presetId}` }, n)))
   );
   const [leftNav, rightPanel] = [
     mkdiv(
@@ -72,14 +67,7 @@ async function renderMain() {
       {
         class: "col sidebar",
       },
-      [
-        mkdiv(
-          "section",
-          { class: "sidebar-header" },
-          sf2file.url.split("/").pop()
-        ),
-        mkdiv("nav", {}, progList),
-      ]
+      [mkdiv("section", { class: "sidebar-header" }, sf2file.url.split("/").pop()), mkdiv("nav", {}, progList)]
     ),
     mkdiv("div", { class: "col note-viewer" }),
   ];
@@ -91,13 +79,8 @@ async function renderMain() {
   const program = sf2file.loadProgram(pid, bid);
   const kRangeList = program.zMap.map(
     (z) =>
-      `<option value=${z.ref} ${z.ref + "" == zref ? "selected" : ""}>${
-        z.SampleId
-      } ${
-        "key " +
-        [z.KeyRange.lo, z.KeyRange.hi].join("-") +
-        " vel " +
-        [z.VelRange.lo, z.VelRange.hi].join("-")
+      `<option value=${z.ref} ${z.ref + "" == zref ? "selected" : ""}>${z.SampleId} ${
+        "key " + [z.KeyRange.lo, z.KeyRange.hi].join("-") + " vel " + [z.VelRange.lo, z.VelRange.hi].join("-")
       }</option>`
   );
   const articleHeader = mkdiv("div", { class: "note-header" }, [
@@ -117,21 +100,16 @@ async function renderMain() {
   ]);
   main.attachTo(document.body);
 
-  let zoneSelect = zref
-    ? program.zMap.find((z) => z.ref + "" == zref)
-    : program.zMap[0];
+  let zoneSelect = zref ? program.zMap.find((z) => z.ref + "" == zref) : program.zMap[0];
 
   if (zoneSelect) {
-    const zattrs = Object.entries(zoneSelect).filter(
-      ([attr, val], idx) => val && idx < 60
-    );
+    const zattrs = Object.entries(zoneSelect).filter(([attr, val], idx) => val && idx < 60);
 
     const articleMain = mkdiv("div", { class: "note-preview" }, [
       mkdiv(
         "div",
         {
-          style:
-            "display:flex flex-direction:row; max-height:50vh; overflow-y:scroll; gap:0 20px 20px",
+          style: "display:flex flex-direction:row; max-height:50vh; overflow-y:scroll; gap:0 20px 20px",
         },
         [
           mkdiv("div", [
@@ -150,18 +128,16 @@ async function renderMain() {
 
             JSON.stringify(zoneSelect.KeyRange),
           ]),
-          ..."Addr,KeyRange,Attenuation,VolEnv,Filter,LFO"
-            .split(",")
-            .map((keyword) =>
-              mkdiv(
-                "div",
-                { style: "padding:10px;color:gray;" },
-                zattrs
-                  .filter(([k]) => k.includes(keyword))
-                  .map(([k, v]) => k + ": " + v)
-                  .join("<br>")
-              )
-            ),
+          ..."Addr,KeyRange,Attenuation,VolEnv,Filter,LFO".split(",").map((keyword) =>
+            mkdiv(
+              "div",
+              { style: "padding:10px;color:gray;" },
+              zattrs
+                .filter(([k]) => k.includes(keyword))
+                .map(([k, v]) => k + ": " + v)
+                .join("<br>")
+            )
+          ),
         ]
       ),
     ]);
