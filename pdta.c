@@ -174,7 +174,7 @@ zone_t *findPresetZones(phdr *phr, int nregions) {
     int lastPgenId = j < npbags - 1 ? pbags[j + 1].pgen_id : npgens - 1;
     memcpy(pbagLegion, presetDefault, 120);
     pbagLegion[Instrument] = -1;
-    pbagLegion[Unused1] = j;
+    pbagLegion[Unused3] = j;
     for (int k = pgenId; k < lastPgenId; k++) {
       pgen *g = pgens + k;
       combine_pattrs(g->genid, pbagLegion, g->val.shAmount);

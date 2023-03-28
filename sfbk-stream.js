@@ -5,7 +5,8 @@ export async function sfbkstream(url) {
 
   const [infos, readOffset, meta] = readInfoSection(ab);
   const sdtaSize = readOffset.get32();
-  console.assert(bytesToString(readOffset.readNString(4)) === "sdta");
+  if (bytesToString(readOffset.readNString(4)) !== "sdta")
+    throw new Error("read failed " + url);
   console.assert(bytesToString(readOffset.readNString(4)) === "smpl");
 
   const sdtaStart = readOffset.offset;
@@ -20,14 +21,21 @@ export async function sfbkstream(url) {
     sdtaStart,
     infos,
     meta,
-    pdtaBuffer: new Uint8Array(await (await fetch(url, pdtaHeader)).arrayBuffer()),
+    pdtaBuffer: new Uint8Array(
+      await (await fetch(url, pdtaHeader)).arrayBuffer()
+    ),
     fullUrl: res.url,
   };
 }
 function readInfoSection(ab) {
   const infosection = new Uint8Array(ab);
   const r = readAB(infosection);
-  const [riff, filesize, sig, list] = [r.readNString(4), r.get32(), r.readNString(4), r.readNString(4)];
+  const [riff, filesize, sig, list] = [
+    r.readNString(4),
+    r.get32(),
+    r.readNString(4),
+    r.readNString(4),
+  ];
   console.log([riff, filesize, sig, list]);
   let infosize = r.get32();
   console.assert(bytesToString(r.readNString(4)) === "INFO");

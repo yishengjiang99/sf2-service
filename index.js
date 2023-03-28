@@ -107,8 +107,7 @@ export default class SF2Service {
     }
     function zref2Zone(zref) {
       const zone = new Int16Array(heap, zref, 60);
-      console.log(zref - gRefRoot);
-      return newSFZoneMap((zref - gRefRoot) / 120, zone);
+      return newSFZoneMap(zref - gRefRoot, zone);
     }
     function getShdr(SampleId) {
       const hdrRef = shdrref + SampleId * 46;
