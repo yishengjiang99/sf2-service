@@ -5,10 +5,13 @@
 #include "add_generator_vals.c"
 #include "sf2.h"
 
+#ifndef skipthis
 extern void emitHeader(int pid, int bid, void *p);
 extern void emitZone(int pid, void *ref);
 extern void emitSample(int id, int pid, void *p);
 extern void emitFilter(int type, uint8_t lo, uint8_t hi);
+#endif
+
 int nphdrs, npbags, npgens, npmods, nshdrs, ninsts, nimods, nigens, nibags;
 
 phdr *phdrs;
