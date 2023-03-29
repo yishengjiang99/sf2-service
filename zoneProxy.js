@@ -64,7 +64,6 @@ export const attributeKeys = [
 
 export function newSFZoneMap(ref, attrs) {
   var obj = { ref };
-  console.log(ref, ref / 120);
   for (let i = 0; i < 60; i++) {
     if (attributeKeys[i] == "VelRange" || attributeKeys[i] == "KeyRange") {
       obj[attributeKeys[i]] = {

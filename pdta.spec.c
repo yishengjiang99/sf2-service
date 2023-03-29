@@ -9,6 +9,8 @@ void emitHeader(int pid, int bid, void *p) {
 void emitZone(int pid, void *ref) {
   zone_t *zone = (zone_t *)ref;
   shdrcast *shdr = (shdrcast *)(shdrs + zone->SampleId);
+  printf("\ninst %d release %d smnode %d %d", zone->SampleId,
+         zone->VolEnvRelease, zone->SampleModes);
 }
 void emitSample(int id, int pid, void *name) {
   // printf("\n\tsample id: %d pid %d, %s",id, pid,name);
@@ -35,8 +37,11 @@ int main() {
   printf("\n%.4s %u", h2->name, h2->size);
   char *pdtabuffer = malloc(h2->size);
   fread(pdtabuffer, h2->size, h2->size, fd);
+
   loadpdta(pdtabuffer);
-  zone_t *z = presets[0];
-  printf("%hd aaa", z->Attenuation);
+  printf("\n\n%d", npmods);
+  phdr *phr = findPreset(0, 0);
+  printf("\n%s\n", phr->name);
+
   return 1;
 }

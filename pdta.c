@@ -34,21 +34,15 @@ phdr drumHeaders[128];
 zone_t *presetZones;
 zone_t *root;
 zone_t *presets[0xff];
-enum {
-  phdrHead = 0x1000,
-  instHead = 0x2000,
-  shdrHead = 0x4000,
-} headertype;
+
+void *readpdta(void *pdtabuffer) {
 #define read(section)                         \
   sh = (section_header *)pdtabuffer;          \
   pdtabuffer += 8;                            \
   n##section##s = sh->size / sizeof(section); \
   section##s = (section *)pdtabuffer;         \
   pdtabuffer += sh->size;
-
-void *loadpdta(void *pdtabuffer) {
   section_header *sh;
-
   read(phdr);
   read(pbag);
   read(pmod);
@@ -58,7 +52,10 @@ void *loadpdta(void *pdtabuffer) {
   read(imod);
   read(igen);
   read(shdr);
-
+  return malloc(4);
+}
+void *loadpdta(void *pdtabuffer) {
+  readpdta(pdtabuffer);
   for (uint16_t i = 0; i < 128; i++) {
     phdr *phr = findPreset(i, 0x00);
 
@@ -159,9 +156,10 @@ int findPresetZonesCount(phdr *phr) {
   }
   return nregions;
 }
+
 zone_t *findPresetZones(phdr *phr, int nregions) {
   // generator attributes
-  short presetDefault[60] = defattrs;
+  short presetDefault[60];  // = defattrs;
   short pbagLegion[60] = {0};
   zone_t *zones = (zone_t *)malloc((nregions + 1) * sizeof(zone_t));
   int found = 0;
@@ -193,30 +191,17 @@ zone_t *findPresetZones(phdr *phr, int nregions) {
           pgen_t *lastig = igens + (ibgg + 1)->igen_id;
           for (pgen_t *ig = igens + ibgg->igen_id; ig != lastig; ig++) {
             instZone[ig->genid] = ig->val.shAmount;
-            if (k == VelRange || k == KeyRange) {
-              filter_zone(g, ig);
-              if (ig->val.ranges.lo == ig->val.ranges.hi) break;
-            }
-            if (ig->genid == SampleId) {
-              if (ig->val.uAmount >= nshdrs) break;
-              instZone[SampleId] = ig->val.shAmount;
-              instZone[Unused2] = ibg;
-
-              for (int i = 0; i < 60; i++) {
-                add_pbag_val_to_zone(i, instZone, pbagLegion[i]);
-              }
-
-              memcpy(zones + found, instZone, 120);
-              emitZone(phr->pid, zones + found);
-              //  emitZone(phr->pid, zones + found);
-
-              found++;
-            } else {
-              //  combine_pattrs(ig->genid, instZone, ig->val.shAmount);
-            }
           }
           if (instZone[SampleId] == -1) {
             memcpy(instDefault, instZone, 120);
+          } else {
+            instZone[Unused2] = ibg;
+            for (int i = 0; i < 60; i++) {
+              add_pbag_val_to_zone(i, instZone, pbagLegion[i]);
+            }
+
+            memcpy(zones + found, instZone, 120);
+            emitZone(phr->pid, zones + found);
           }
         }
       }

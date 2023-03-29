@@ -1,5 +1,4 @@
 
-[36m[1m//→ index.js:[22m[39m
 async function sfbkstream(url) {
   const res = await fetch(url, { headers: { Range: "bytes=0-6400" } });
 
