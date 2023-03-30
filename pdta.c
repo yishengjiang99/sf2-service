@@ -159,7 +159,7 @@ int findPresetZonesCount(phdr *phr) {
 
 zone_t *findPresetZones(phdr *phr, int nregions) {
   // generator attributes
-  short presetDefault[60];  // = defattrs;
+  short presetDefault[60] = defattrs;
   short pbagLegion[60] = {0};
   zone_t *zones = (zone_t *)malloc((nregions + 1) * sizeof(zone_t));
   int found = 0;

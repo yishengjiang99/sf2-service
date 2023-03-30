@@ -1,2 +1,2 @@
-all: 
-        docker build .
+all:
+	docker build .
