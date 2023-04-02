@@ -75,13 +75,15 @@ export default class SF2Service {
         shdrMap[mapKey] = getShdr(zone.SampleId);
       }
       zMap.push({
+        pid,
+        bkid,
         ...zone,
         get shdr() {
           return shdrMap[zone.SampleId];
         },
-        get pcm() {
-          return shdrMap[zone.SampleId].data();
-        },
+        // get pcm() {
+        //   return shdrMap[zone.SampleId].data();
+        // },
         get instrument() {
           const instREf = instRef(zone.Instrument);
           return readASCIIHIlariously(heap, instREf);
@@ -151,6 +153,8 @@ export default class SF2Service {
     }
     return {
       zMap,
+      pid,
+      bkid,
       preload,
       shdrMap,
       url: this.url,

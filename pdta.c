@@ -172,19 +172,16 @@ zone_t *findPresetZones(phdr *phr, int nregions) {
     int lastPgenId = j < npbags - 1 ? pbags[j + 1].pgen_id : npgens - 1;
     memcpy(pbagLegion, presetDefault, 120);
     pbagLegion[Instrument] = -1;
-    pbagLegion[Unused3] = j;
+    pbagLegion[PBagId] = j;
     for (int k = pgenId; k < lastPgenId; k++) {
       pgen *g = pgens + k;
-      combine_pattrs(g->genid, pbagLegion, g->val.shAmount);
+      pbagLegion[g->genid] = g->val.shAmount;
       if (g->genid == Instrument) {
-        pbagLegion[Instrument] = g->val.uAmount;
-        int sampleID = -1;
-        inst *instrument_ptrs = insts + pbagLegion[Instrument];
-        int ibgId = instrument_ptrs->ibagNdx;
-        int lastibg = (instrument_ptrs + 1)->ibagNdx;
+        inst *instptr = insts + pbagLegion[Instrument];
+        int ibgId = instptr->ibagNdx;
+        int lastibg = (instptr + 1)->ibagNdx;
         short instDefault[60] = defattrs;
         short instZone[60] = {0};
-        instZone[SampleId] = -1;
         for (int ibg = ibgId; ibg < lastibg; ibg++) {
           memcpy(instZone, instDefault, 120);
           ibag *ibgg = ibags + ibg;
@@ -195,13 +192,16 @@ zone_t *findPresetZones(phdr *phr, int nregions) {
           if (instZone[SampleId] == -1) {
             memcpy(instDefault, instZone, 120);
           } else {
-            instZone[Unused2] = ibg;
+            instZone[IBAGID] = ibg;
+            instZone[PBagId] = j;
+
             for (int i = 0; i < 60; i++) {
               add_pbag_val_to_zone(i, instZone, pbagLegion[i]);
             }
 
             memcpy(zones + found, instZone, 120);
             emitZone(phr->pid, zones + found);
+            found++;
           }
         }
       }

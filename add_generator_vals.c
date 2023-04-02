@@ -24,13 +24,13 @@ static inline int combine_pattrs(int genop, short *zoneAttr, short psetAttr) {
     case EndAddrOfs:
     case StartLoopAddrOfs:
     case EndLoopAddrOfs:
-      zoneAttr[genop] += (unsigned int)psetAttr;
+      zoneAttr[genop] += psetAttr;
       break;
     case StartAddrCoarseOfs:
     case EndAddrCoarseOfs:
     case StartLoopAddrCoarseOfs:
     case EndLoopAddrCoarseOfs:
-      zoneAttr[genop] += (unsigned int)psetAttr << 15;
+      zoneAttr[genop] += psetAttr << 15;
       break;
     case ExclusiveClass:
       zoneAttr[genop] = (unsigned int)psetAttr;
@@ -47,8 +47,6 @@ static inline int add_pbag_val_to_zone(int genop, short *zoneAttr,
     case EndAddrOfs:
     case StartLoopAddrOfs:
     case EndLoopAddrOfs:
-      zoneAttr[genop] += (unsigned int)psetAttr;
-      break;
     case StartAddrCoarseOfs:
     case EndAddrCoarseOfs:
     case StartLoopAddrCoarseOfs:
@@ -82,8 +80,8 @@ static inline int add_pbag_val_to_zone(int genop, short *zoneAttr,
           (float)zoneAttr[genop] + (float)psetAttr * 0.001f, -.5f, .5f);
       break;
     case Attenuation:
-      zoneAttr[genop] = (short)fclamp(
-          (float)zoneAttr[genop] + (float)psetAttr * 0.1f, 0.0f, 144.0f);
+      zoneAttr[genop] = (short)fclamp((float)zoneAttr[genop] + (float)psetAttr,
+                                      0.0f, 1440.0f);
       break;
     case ModEnvSustain:
       zoneAttr[genop] = (short)clamp(zoneAttr[genop] + psetAttr, 0, 1000);
@@ -116,8 +114,8 @@ static inline int add_pbag_val_to_zone(int genop, short *zoneAttr,
     case KeyRange:
       combine_pattrs(genop, zoneAttr, psetAttr);
       break;
-    case Unused1:
-      zoneAttr[genop] = psetAttr;
+    case PBagId:
+      zoneAttr[genop] = 33;
       break;
     default:
       break;

@@ -6,6 +6,7 @@ typedef unsigned char uint8_t;
 typedef unsigned short uint16_t;
 typedef int int32_t;
 typedef short int16_t;
+typedef unsigned short WORD;
 
 typedef struct {
   uint8_t lo, hi;
@@ -57,11 +58,11 @@ typedef struct {
 } pgen_t;
 typedef pgen_t pgen;
 typedef struct {
-  char sfModSrcOper[2];
-  unsigned short gen_operator;
+  unsigned short sfModSrcOper;
+  unsigned short sfModDestOper;
   short modAmount;
-  char sfModAmtSrcOper;
-  short fModTransOper;
+  unsigned short sfModAmtSrcOper;
+  unsigned short sfModTransOper;
 } pmod;
 
 typedef struct {
@@ -95,11 +96,11 @@ typedef struct {
   uint16_t wSampleLink, sampleType;
 } shdrcast;
 typedef struct {
-  unsigned short StartAddrOfs, EndAddrOfs, StartLoopAddrOfs, EndLoopAddrOfs,
+  short StartAddrOfs, EndAddrOfs, StartLoopAddrOfs, EndLoopAddrOfs,
       StartAddrCoarseOfs;
   short ModLFO2Pitch, VibLFO2Pitch, ModEnv2Pitch, FilterFc, FilterQ,
       ModLFO2FilterFc, ModEnv2FilterFc, EndAddrCoarseOfs, ModLFO2Vol, Unused1,
-      ChorusSend, ReverbSend, Pan, Unused2, Unused3, Unused4, ModLFODelay,
+      ChorusSend, ReverbSend, Pan, IBAGID, PBagId, Unused4, ModLFODelay,
       ModLFOFreq, VibLFODelay, VibLFOFreq, ModEnvDelay, ModEnvAttack,
       ModEnvHold, ModEnvDecay, ModEnvSustain, ModEnvRelease, Key2ModEnvHold,
       Key2ModEnvDecay, VolEnvDelay, VolEnvAttack, VolEnvHold, VolEnvDecay,
@@ -135,8 +136,8 @@ enum grntypes {
   ChorusSend,
   ReverbSend,
   Pan,
-  Unused2,
-  Unused3,
+  IBAGID,
+  PBagId,
   Unused4,
   ModLFODelay,
   ModLFOFreq,
@@ -188,8 +189,8 @@ enum grntypes {
         /*VibLFO2Pitch:*/ 0, /*ModEnv2Pitch:*/ 0, /*FilterFc:*/ 13500,         \
         /*FilterQ:*/ 0, /*ModLFO2FilterFc:*/ 0, /*ModEnv2FilterFc:*/ 0,        \
         /*EndAddrCoarseOfs:*/ 0, /*ModLFO2Vol:*/ 0, /*Unused1:*/ 0,            \
-        /*ChorusSend:*/ 0, /*ReverbSend:*/ 0, /*Pan:*/ 0, /*Unused2:*/ 0,      \
-        /*Unused3:*/ 0, /*Unused4:*/ 0, /*ModLFODelay:*/ 0, /*ModLFOFreq:*/ 0, \
+        /*ChorusSend:*/ 0, /*ReverbSend:*/ 0, /*Pan:*/ 0, /*IBAGID:*/ 0,       \
+        /*PBagId:*/ 0, /*Unused4:*/ 0, /*ModLFODelay:*/ 0, /*ModLFOFreq:*/ 0, \
         /*VibLFODelay:*/ 0, /*VibLFOFreq:*/ 0, /*ModEnvDelay:*/ -12000,        \
         /*ModEnvAttack:*/ -12000, /*ModEnvHold:*/ -12000,                      \
         /*ModEnvDecay:*/ -12000, /*ModEnvSustain:*/ 0,                         \
