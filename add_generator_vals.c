@@ -34,6 +34,7 @@ static inline int combine_pattrs(int genop, short *zoneAttr, short psetAttr) {
       break;
     case ExclusiveClass:
       zoneAttr[genop] = (unsigned int)psetAttr;
+      break;
     default:
       zoneAttr[genop] = psetAttr;
       break;

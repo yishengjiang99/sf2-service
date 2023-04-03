@@ -86,7 +86,7 @@ phdr *findPreset(int pid, int bank_id) {
       return &phdrs[i];
     }
   }
-  return (void *)0;
+  return 0;
 }
 
 #define filter_zone(g, ig)                    \
@@ -194,7 +194,7 @@ zone_t *findPresetZones(phdr *phr, int nregions) {
           } else {
             instZone[IBAGID] = ibg;
             instZone[PBagId] = j;
-
+            printf("\n %hu inst id ", pbagLegion[Instrument]);
             for (int i = 0; i < 60; i++) {
               add_pbag_val_to_zone(i, instZone, pbagLegion[i]);
             }

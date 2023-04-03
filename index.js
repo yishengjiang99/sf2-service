@@ -126,9 +126,14 @@ export default class SF2Service {
         20,
         5
       );
-      const [originalPitch] = new Uint8Array(dv, 20 + 5 * 4, 1);
+      const [originalPitch, pitchCorrection] = new Uint8Array(
+        dv,
+        20 + 5 * 4,
+        2
+      );
       const range = [sdtaStart + start * 2, sdtaStart + end * 2 + 1];
       const loops = [startloop - start, endloop - start];
+  console.log({ loops, pitchCorrection, SampleId, sampleRate, originalPitch });
       return {
         nsamples: end - start + 1,
         range,

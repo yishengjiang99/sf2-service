@@ -9,11 +9,11 @@ void emitHeader(int pid, int bid, void *p) {
 void emitZone(int pid, void *ref) {
   zone_t *zone = (zone_t *)ref;
   shdrcast *shdr = (shdrcast *)(shdrs + zone->SampleId);
-  printf("\ninst %d release %d pbag %d,smode %d", zone->SampleId,
-         zone->VolEnvRelease, zone->PBagId, zone->SampleModes);
-  printf("\n %s start %d end %d loopstart %d loopend %d", phdrs[pid].name,
-         zone->StartAddrOfs, zone->EndAddrOfs, zone->StartLoopAddrOfs,
-         zone->EndAddrOfs);
+  printf("\ninst key **%d** %d** origpitch %hu corr%d", zone->SampleId,
+         zone->OverrideRootKey, shdr->originalPitch, shdr->pitchCorrection);
+  printf("\n\t %s %d", insts[zone->Instrument].name, zone->Instrument);
+  printf("\n start %d end %d loopstart %d loopend %hu", zone->StartAddrOfs,
+         zone->EndAddrOfs, zone->StartLoopAddrOfs, zone->EndLoopAddrOfs);
 }
 void emitSample(int id, int pid, void *name) {
   // printf("\n\tsample id: %d pid %d, %s",id, pid,name);
@@ -42,11 +42,23 @@ int main() {
   fread(pdtabuffer, h2->size, h2->size, fd);
 
   readpdta(pdtabuffer);
-  printf("\n\n%d", npmods);
-  phdr *phr = findPreset(0, 0);
+  phdr *phr = findPreset(24, 0);
   findPresetZonesCount(phr);
   findPresetZones(phr, findPresetZonesCount(phr));
-  printf("\n%s\n", phr->name);
+  phr = findPreset(0, 0);
+  findPresetZonesCount(phr);
+  findPresetZones(phr, findPresetZonesCount(phr));
+  return 1;
+  for (int i = 0; i < 127; i += 1) {
+    phr = findPreset(i, 0);
 
+    printf("\n****\n%s %d %p\n***", phr->name, phr->pid, phr);
+    continue;
+    // phr = findPreset(i, 0);
+    if (!phr) continue;
+
+    findPresetZonesCount(phr);
+    findPresetZones(phr, findPresetZonesCount(phr));
+  }
   return 1;
 }
