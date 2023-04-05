@@ -133,7 +133,6 @@ export default class SF2Service {
       );
       const range = [sdtaStart + start * 2, sdtaStart + end * 2 + 1];
       const loops = [startloop - start, endloop - start];
-  console.log({ loops, pitchCorrection, SampleId, sampleRate, originalPitch });
       return {
         nsamples: end - start + 1,
         range,
