@@ -1,6 +1,7 @@
 docker run --rm -v $(pwd):/src -u $(id -u):$(id -g) emscripten/emsdk \
 emcc pdta.c -Oz -o pdta.js \
 -s EXTRA_EXPORTED_RUNTIME_METHODS=['ccall','AsciiToString'] \
+-g3 \
 -s EXPORTED_FUNCTIONS=['_malloc','_free','_loadpdta','_shdrref','_instRef','_presetRef',"_findPreset"] \
 -s INITIAL_MEMORY=64mb              \
 -s USE_ES6_IMPORT_META=0 \

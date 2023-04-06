@@ -114,13 +114,8 @@ export default class SF2Service {
     function getShdr(SampleId) {
       const hdrRef = shdrref + SampleId * 46;
       const dv = heap.slice(hdrRef, hdrRef + 46);
-      const ascii = new Uint8Array(dv, 0, 20);
+      const nameStr = readASCIIHIlariously(heap, hdrRef);
 
-      let nameStr = "";
-      for (const b of ascii) {
-        if (!b) break;
-        nameStr += String.fromCharCode(b);
-      }
       const [start, end, startloop, endloop, sampleRate] = new Uint32Array(
         dv,
         20,
@@ -177,12 +172,16 @@ export default class SF2Service {
   }
 }
 function readASCIIHIlariously(heap, instREf) {
-  const dv = heap.slice(instREf, instREf + 20);
-  const ascii = new Uint8Array(dv, 0, 20);
-  let nameStr = "";
-  for (const b of ascii) {
-    if (!b) break;
-    nameStr += String.fromCharCode(b);
+  try {
+    const dv = heap.slice(instREf, instREf + 20);
+    const ascii = new Uint8Array(dv, 0, 20);
+    let nameStr = "";
+    for (const b of ascii) {
+      if (!b) break;
+      nameStr += String.fromCharCode(b);
+    }
+    return nameStr;
+  } catch (e) {
+    return "xxxxdasfsaf";
   }
-  return nameStr;
 }

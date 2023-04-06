@@ -59,13 +59,16 @@ void *loadpdta(void *pdtabuffer) {
   for (uint16_t i = 0; i < 128; i++) {
     phdr *phr = findPreset(i, 0x00);
 
+    // printf("[%u %u] %s \n", phr->pid, phr->bankId,phr->name);
     if (phr) {
       int n = findPresetZonesCount(phr);
+      // printf("\t num %d\n",n);
       presets[(uint32_t)i] = findPresetZones(phr, n);
       emitHeader(phr->pid, phr->bankId, phr->name);
     }
     phr = findPreset(i, 128);
 
+    // printf("[%u %u] %s \n", phr->pid, phr->bankId,phr->name);
     if (phr) {
       int n = findPresetZonesCount(phr);
       presets[(uint32_t)i + 128] = findPresetZones(phr, n);
@@ -82,7 +85,7 @@ phdr *findPreset(int pid, int bank_id) {
       return &phdrs[i];
     }
   }
-  return 0;
+  return (void *)0;
 }
 
 #define filter_zone(g, ig)                    \
@@ -93,9 +96,10 @@ phdr *findPreset(int pid, int bank_id) {
 
 int findPresetZonesCount(phdr *phr) {
   int nregions = 0;
-  int instID = -1;
+  int instID = -1, lastSampId = -1;
   for (int j = phr->pbagNdx; j < (phr + 1)->pbagNdx; j++) {
     pbag *pg = pbags + j;
+    pgen_t *lastg = pgens + pg[j + 1].pgen_id;
     int pgenId = pg->pgen_id;
     instID = -1;
     int lastPgenId = j < npbags - 1 ? pbags[j + 1].pgen_id : npgens - 1;
@@ -136,11 +140,13 @@ int findPresetZonesCount(phdr *phr) {
               ihivel = g->val.ranges.hi;
               continue;
             }
+            if (k == VelRange || k == KeyRange) {
+              if (g->val.ranges.lo == g->val.ranges.hi) break;
+            }
             if (g->genid == SampleId) {
-              if (ihikey >= plokey && ilokey <= phikey && ihivel >= plovel &&
-                  ilovel <= phivel) {
-                nregions++;
-              }
+              if (g->val.uAmount >= nshdrs) break;
+              nregions++;
+              break;
             }
           }
         }
@@ -152,56 +158,50 @@ int findPresetZonesCount(phdr *phr) {
 
 zone_t *findPresetZones(phdr *phr, int nregions) {
   // generator attributes
-  short presetDefault[60] = {0};
+  short presetDefault[60] = defattrs;
   short pbagLegion[60] = {0};
-  zone_t *zones = (zone_t *)malloc((nregions + 10) * sizeof(zone_t));
+  zone_t *zones = (zone_t *)malloc((nregions + 1) * sizeof(zone_t));
   int found = 0;
+  int instID = -1;
+  int lastbag = (phr + 1)->pbagNdx;
   for (int j = phr->pbagNdx; j < (phr + 1)->pbagNdx; j++) {
-    printf("\n **** nbag %d", (phr + 1)->pbagNdx);
     pbag *pg = pbags + j;
+    pgen_t *lastg = pgens + pg[j + 1].pgen_id;
     int pgenId = pg->pgen_id;
     int lastPgenId = j < npbags - 1 ? pbags[j + 1].pgen_id : npgens - 1;
     memcpy(pbagLegion, presetDefault, 120);
     pbagLegion[Instrument] = -1;
     pbagLegion[PBagId] = j;
-
     for (int k = pgenId; k < lastPgenId; k++) {
       pgen *g = pgens + k;
       pbagLegion[g->genid] = g->val.shAmount;
       if (g->genid == Instrument) {
-        if (g->val.uAmount >= ninsts - 1) continue;
-        inst *instptr = insts + pbagLegion[g->val.uAmount];
-        printf("\n **** instbgg %hu %s  %d", g->val.uAmount, instptr->name,
-               nibags);
-
-        int ibagId = instptr->ibagNdx;
-        int lastIbagId = (instptr + 1)->ibagNdx;
+        inst *instptr = insts + pbagLegion[Instrument];
+        int ibgId = instptr->ibagNdx;
+        int lastibg = (instptr + 1)->ibagNdx;
         short instDefault[60] = defattrs;
         short instZone[60] = {0};
-        for (int ibg = ibagId; ibg < lastIbagId && ibg < nibags; ibg++) {
+        for (int ibg = ibgId; ibg < lastibg; ibg++) {
           memcpy(instZone, instDefault, 120);
           ibag *ibgg = ibags + ibg;
           pgen_t *lastig = igens + (ibgg + 1)->igen_id;
           for (pgen_t *ig = igens + ibgg->igen_id; ig != lastig; ig++) {
             instZone[ig->genid] = ig->val.shAmount;
-            if (ig->genid == SampleId) {
-              uint16_t sampleId = ig->val.uAmount;
-              if (sampleId >= nshdrs - 3) continue;
-            }
           }
           if (instZone[SampleId] == -1) {
             memcpy(instDefault, instZone, 120);
-            continue;
-          }
+          } else {
+            instZone[IBAGID] = ibg;
+            instZone[PBagId] = j;
 
-          instZone[IBAGID] = ibg;
-          instZone[PBagId] = j;
-          for (int i = 0; i < 60; i++) {
-            add_pbag_val_to_zone(i, instZone, pbagLegion[i]);
+            for (int i = 0; i < 60; i++) {
+              add_pbag_val_to_zone(i, instZone, pbagLegion[i]);
+            }
+
+            memcpy(zones + found, instZone, 120);
+            emitZone(phr->pid, zones + found);
+            found++;
           }
-          memcpy(zones + found, instZone, 120);
-          //   emitZone(phr->pid, zones + found);
-          found++;
         }
       }
     }
