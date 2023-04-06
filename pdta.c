@@ -59,19 +59,15 @@ void *loadpdta(void *pdtabuffer) {
   for (uint16_t i = 0; i < 128; i++) {
     phdr *phr = findPreset(i, 0x00);
 
-    // printf("[%u %u] %s \n", phr->pid, phr->bankId,phr->name);
     if (phr) {
       int n = findPresetZonesCount(phr);
-      // printf("\t num %d\n",n);
       presets[(uint32_t)i] = findPresetZones(phr, n);
       emitHeader(phr->pid, phr->bankId, phr->name);
     }
     phr = findPreset(i, 128);
 
-    // printf("[%u %u] %s \n", phr->pid, phr->bankId,phr->name);
     if (phr) {
       int n = findPresetZonesCount(phr);
-      // printf("\t num %d\n",n);
       presets[(uint32_t)i + 128] = findPresetZones(phr, n);
       emitHeader(phr->pid, phr->bankId, phr->name);
     }
