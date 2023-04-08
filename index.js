@@ -158,6 +158,41 @@ export default class SF2Service {
       shdrMap,
       url: this.url,
       zref: rootRef,
+      get sampleSet() {
+        return new Set(zMap.map((z) => z.SampleId));
+      },
+      fetch_drop_ship_to(port) {
+        return Promise.all(
+          Array.from(new Set(zMap.map((z) => z.SampleId)))
+            .map((sampleId) => this.shdrMap[sampleId])
+            .map((shdr) =>
+              fetch(url, {
+                cache: "no-store",
+                headers: {
+                  Range: `bytes=${shdr.range.join("-")}`,
+                },
+              }).then((res) => {
+                port.postMessage(
+                  {
+                    segments: shdrSegment(),
+                    stream: res.body,
+                  },
+                  [res.body]
+                );
+                return res.body.closed;
+
+                function shdrSegment() {
+                  return {
+                    sampleId: shdr.SampleId,
+                    nSamples: (shdr.range[1] + 1 - shdr.range[0]) / 2,
+                    loops: shdr.loops,
+                    sampleRate: shdr.sampleRate,
+                  };
+                }
+              })
+            )
+        );
+      },
       get name() {
         return programNames[pid | bkid];
       },
@@ -167,7 +202,6 @@ export default class SF2Service {
             (vel == -1 || (z.VelRange.lo <= vel && z.VelRange.hi >= vel)) &&
             (key == -1 || (z.KeyRange.lo <= key && z.KeyRange.hi >= key))
         );
-        console.log(f.map(f => f));
         return f;
       },
     };

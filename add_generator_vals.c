@@ -69,7 +69,6 @@ static inline short add_pbag_val_to_zone(int genop, short ival, short pval) {
       if (irange[1] > prange[1]) irange[1] = prange[1];
       if (irange[0] < prange[0]) irange[0] = prange[0];
       ival = (short)(irange[0] + (irange[1] << 8));
-      printf("hi lo def %d %d\n %hu\n", irange[1], irange[0], ival);
       return ival;
     default:
       return ival;

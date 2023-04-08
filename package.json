@@ -6,8 +6,8 @@
   "main": "index.js",
   "scripts": {
     "build": "make",
-    "test": "gcc pdta.spec.c; ./a.out",
-    "test2": "npx karma start karma.conf.cjs"
+    "test1": "gcc pdta.spec.c; ./a.out",
+    "test": "npx karma start karma.conf.cjs"
   },
   "keywords": [],
   "author": "Yisheng Jiang",
@@ -27,6 +27,7 @@
     "karma": "^6.4.1",
     "karma-chai": "github:xdissent/karma-chai",
     "karma-chrome-launcher": "^3.1.1",
+    "karma-coverage": "^2.2.0",
     "karma-firefox-launcher": "^2.1.2",
     "karma-jasmine": "^5.1.0",
     "karma-mocha": "^2.0.1",

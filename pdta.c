@@ -206,9 +206,7 @@ zone_t *findPresetZones(phdr *phr, int nregions) {
             memcpy(zones + found, instZone, 120);
             emitZone(phr->pid, zones + found);
             found++;
-            printf("%hu %hu %hu *** \n", instZone[VelRange],
-                   zones[found - 1].VelRange.lo, zones[found - 1].VelRange.hi);
-          }
+                   }
         }
       }
     }

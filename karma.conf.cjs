@@ -7,7 +7,10 @@ module.exports = function (config) {
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: "./",
 
-
+    coverageReporter: {
+      type: 'html',
+      dir: 'coverage/'
+    },
     // frameworks to use
     frameworks: ['mocha', 'chai'],
     // list of files / patterns to load in the browser
@@ -27,24 +30,26 @@ module.exports = function (config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://www.npmjs.com/search?q=keywords:karma-preprocessor
     preprocessors: {
+      '*.js': ['coverage']
     },
 
+    reporters: ['progress', 'coverage'],
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
-    // available reporters: https://www.npmjs.com/search?q=keywords:karma-reporter
-    reporters: {
-      client: {
-        mocha: {
-          // change Karma's debug.html to the mocha web reporter
-          reporter: 'html',
+    // // available reporters: https://www.npmjs.com/search?q=keywords:karma-reporter
+    // reporters: {
+    //   client: {
+    //     mocha: {
+    //       // change Karma's debug.html to the mocha web reporter
+    //       reporter: 'html',
 
-          // require specific files after Mocha is initialized
+    //       // require specific files after Mocha is initialized
 
-          // custom ui, defined in required file above
-        }
-      }
-    },
+    //       // custom ui, defined in required file above
+    //     }
+    //   }
+    // },
 
 
     // web server port

@@ -1,8 +1,31 @@
 import SF2Service from "../index.js";
-const sf2url = "https://raw.githubusercontent.com/FluidSynth/fluidsynth/master/sf2/VintageDreamsWaves-v2.sf2";
+import {newSFZone} from "../zoneProxy.js"
+//const sf2url = "https://raw.githubusercontent.com/FluidSynth/fluidsynth/master/sf2/VintageDreamsWaves-v2.sf2";
 let sf2;
+const sf2url = "https://yishengjiang99.github.io/sf2rend/static/GeneralUserGS.sf2"
 describe("load sf2 file", () => {
   before(async () => ((sf2 = new SF2Service(sf2url)), await sf2.load()));
+  it("parallel download stream with transferrable buffer to message port on another thread", async () => {
+    const port = new MessageChannel();
+    const program = sf2.loadProgram(0, 0);
+    port.port2.onmessage = async ({data: {stream, segments}}) => {
+      const reader = stream.getReader();
+      expect(reader).to.exist;
+      const pcm = new Uint8Array(segments.nSamples * 2);
+      let offset = 0;
+      while (true) {
+        const {value, done} = await reader.read();
+        if (done) break;
+        if (!value) continue;
+        pcm.set(new Uint8Array(value.buffer), offset);
+        offset += value.byteLength;
+      }
+      expect(offset / 2).eq(segments.nSamples);
+      stream.closed;
+    }
+    await program.fetch_drop_ship_to(port.port1);
+    expect(true);
+  })
   it("Can load SF2 meta data", async () => {
     expect(sf2.programNames[0].length).gt(0, "filens");
     expect(sf2.presets.length).gt(0, "asb");
@@ -19,20 +42,37 @@ describe("load sf2 file", () => {
 
   it("can filter key/velocity for zone", async () => {
     const program = sf2.loadProgram(0, 0);
+    for (let i = 0;i < 88;i += 4) {
     const zones = program.filterKV(55, 55);
     expect(zones.length).gt(0);
+      expect(zones.length).lt(3);
     expect(program.shdrMap[zones[0].SampleId].range).exist;
+    }
+
   });
   it("can load sample pcm", async () => {
     const program = sf2.loadProgram(0, 0);
     const zones = program.filterKV(55, 55);
     expect(await zones[0].shdr.data).exist;
+
   });
   it("preload all", async () => {
     const program = sf2.loadProgram(0, 0);
     const gg = await program.preload();
     for (const zone of program.zMap) {
-      expect(zone.shdr.nsamples).gt(0);
+      expect(zone.shdr.nsamples).gt(0); expect(zone.shdr.loops[1]).gt(zone.shdr.loops[0]);
+
     }
   }).slow(10);
+  it("has sample set with unique sample ids", async () => {
+    const program = sf2.loadProgram(0, 0);
+    expect(program.sampleSet).to.be.instanceof(Set);
+  }); it("makes proxy objects for sf zones", async () => {
+    const program = sf2.loadProgram(0, 0);
+    const obj = newSFZone(program.zMap[0]);
+    expect(obj.sample.loops).be.instanceof(Array);
+    obj.VolEnvAttack = -1111;
+    expect(obj.isDirty);
+  });
+
 });
