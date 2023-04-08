@@ -1,0 +1,7207 @@
+RIFF sfbk LIST 1090316
+INFO 102
+sdta 1047600
+pdta 42586
+preset Piano 1     ,0,0:
+  Global Generators: 0
+      - Instrument: 0
+      - inst ref: 0, 0
+  Instruments:
+    - inst 0: piano1
+      default izone: 0
+        - FilterFc: 10856
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - SampleModes: 1
+        - VolEnvHold: -799
+        - VolEnvDecay: 4386
+        - VolEnvRelease: -148
+        - Key2VolEnvHold: 0
+        - Key2VolEnvDecay: 33
+        - Attenuation: 150
+      izone: 1
+        - KeyRange: 12800
+        - FineTune: -43
+        - OverrideRootKey: 75
+        - SampleId: 0
+      izone: 2
+        - KeyRange: 14643
+        - FineTune: 8
+        - OverrideRootKey: 81
+        - SampleId: 1
+      izone: 3
+        - KeyRange: 16954
+        - FineTune: 4
+        - OverrideRootKey: 77
+        - FilterFc: 9617
+        - SampleId: 3
+      izone: 4
+        - KeyRange: 19523
+        - FineTune: 2
+        - OverrideRootKey: 83
+        - SampleId: 2
+      izone: 5
+        - KeyRange: 20813
+        - FineTune: 2
+        - OverrideRootKey: 89
+        - VolEnvDecay: 3417
+        - SampleId: 4
+      izone: 6
+        - KeyRange: 22610
+        - FineTune: 29
+        - OverrideRootKey: 106
+        - SampleId: 5
+      izone: 7
+        - KeyRange: 23385
+        - FineTune: 30
+        - OverrideRootKey: 111
+        - SampleId: 6
+      izone: 8
+        - KeyRange: 32604
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Piano 2     ,1,0:
+  Global Generators: 1
+      - Instrument: 1
+      - inst ref: 1, 1
+  Instruments:
+    - inst 1: piano2
+      default izone: 9
+        - FilterFc: 14400
+        - VolEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - ModEnv2FilterFc: 112
+        - ModEnvAttack: -8856
+        - ModEnvHold: -8358
+        - ModEnvDecay: -1586
+        - ModEnvRelease: 0
+        - FilterQ: 75
+        - SampleModes: 1
+        - VolEnvHold: -799
+        - VolEnvDecay: 4386
+        - VolEnvRelease: -148
+        - Key2VolEnvHold: 0
+        - Key2VolEnvDecay: 33
+        - Attenuation: 67
+      izone: 10
+        - KeyRange: 12800
+        - FineTune: -43
+        - OverrideRootKey: 75
+        - SampleId: 0
+      izone: 11
+        - KeyRange: 14643
+        - FineTune: 8
+        - OverrideRootKey: 81
+        - SampleId: 1
+      izone: 12
+        - KeyRange: 16954
+        - FineTune: 4
+        - OverrideRootKey: 77
+        - SampleId: 3
+      izone: 13
+        - KeyRange: 19523
+        - FineTune: 2
+        - OverrideRootKey: 83
+        - SampleId: 2
+      izone: 14
+        - KeyRange: 20813
+        - FineTune: 2
+        - OverrideRootKey: 89
+        - SampleId: 4
+      izone: 15
+        - KeyRange: 22610
+        - FineTune: 29
+        - OverrideRootKey: 106
+        - SampleId: 5
+      izone: 16
+        - KeyRange: 23385
+        - FineTune: 30
+        - OverrideRootKey: 111
+        - SampleId: 6
+      izone: 17
+        - KeyRange: 32604
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Piano 3     ,2,0:
+  Global Generators: 2
+      - Instrument: 2
+      - inst ref: 2, 2
+  Instruments:
+    - inst 2: piano3
+      default izone: 18
+        - FilterFc: 14400
+        - VolEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - ModEnv2FilterFc: 112
+        - ModEnvAttack: -8856
+        - ModEnvHold: -8358
+        - ModEnvDecay: -1586
+        - ModEnvRelease: 0
+        - SampleModes: 1
+        - VolEnvHold: -799
+        - VolEnvDecay: 4386
+        - VolEnvRelease: -148
+        - Key2VolEnvHold: 0
+        - Key2VolEnvDecay: 33
+        - Attenuation: 172
+      izone: 19
+        - KeyRange: 14336
+        - FineTune: -43
+        - OverrideRootKey: 75
+        - SampleId: 0
+      izone: 20
+        - KeyRange: 16185
+        - FineTune: 8
+        - OverrideRootKey: 81
+        - SampleId: 1
+      izone: 21
+        - KeyRange: 18496
+        - FineTune: 4
+        - OverrideRootKey: 77
+        - SampleId: 3
+      izone: 22
+        - KeyRange: 21065
+        - FineTune: 2
+        - OverrideRootKey: 83
+        - SampleId: 2
+      izone: 23
+        - KeyRange: 24147
+        - FineTune: 29
+        - OverrideRootKey: 106
+        - SampleId: 5
+      izone: 24
+        - KeyRange: 32607
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Honky-Tonk  ,3,0:
+  Global Generators: 3
+      - Instrument: 3
+      - inst ref: 3, 3
+    Preset Generators: 4
+      - Instrument: 4
+      - inst ref: 4, 4
+  Instruments:
+    - inst 3: honkytonk
+      default izone: 25
+        - SampleModes: 1
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - Pan: -287
+        - VolEnvAttack: -8856
+        - VolEnvHold: -799
+        - VolEnvDecay: 4386
+        - VolEnvRelease: -148
+        - Key2VolEnvHold: 0
+        - Key2VolEnvDecay: 33
+        - Attenuation: 202
+      izone: 26
+        - KeyRange: 12800
+        - FineTune: -35
+        - OverrideRootKey: 75
+        - SampleId: 0
+      izone: 27
+        - KeyRange: 14643
+        - FineTune: 16
+        - OverrideRootKey: 81
+        - SampleId: 1
+      izone: 28
+        - KeyRange: 16954
+        - FineTune: 11
+        - OverrideRootKey: 77
+        - SampleId: 3
+      izone: 29
+        - KeyRange: 19523
+        - FineTune: 10
+        - OverrideRootKey: 83
+        - SampleId: 2
+      izone: 30
+        - KeyRange: 20813
+        - FineTune: 10
+        - OverrideRootKey: 89
+        - SampleId: 4
+      izone: 31
+        - KeyRange: 22610
+        - FineTune: 36
+        - OverrideRootKey: 106
+        - SampleId: 5
+      izone: 32
+        - KeyRange: 23385
+        - FineTune: 38
+        - OverrideRootKey: 111
+        - SampleId: 6
+      izone: 33
+        - KeyRange: 32604
+        - FineTune: -40
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 4: shonkytonk
+      default izone: 34
+        - SampleModes: 1
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - Pan: 146
+        - VolEnvAttack: -12000
+        - VolEnvHold: -799
+        - VolEnvDecay: 4386
+        - VolEnvRelease: -148
+        - Key2VolEnvHold: 0
+        - Key2VolEnvDecay: 33
+        - Attenuation: 202
+      izone: 35
+        - KeyRange: 12800
+        - FineTune: 50
+        - OverrideRootKey: 76
+        - SampleId: 0
+      izone: 36
+        - KeyRange: 14643
+        - FineTune: 2
+        - OverrideRootKey: 81
+        - SampleId: 1
+      izone: 37
+        - KeyRange: 17466
+        - FineTune: -3
+        - OverrideRootKey: 77
+        - SampleId: 3
+      izone: 38
+        - KeyRange: 19525
+        - FineTune: -4
+        - OverrideRootKey: 83
+        - SampleId: 2
+      izone: 39
+        - KeyRange: 20813
+        - FineTune: -4
+        - OverrideRootKey: 89
+        - SampleId: 4
+      izone: 40
+        - KeyRange: 22610
+        - FineTune: 22
+        - OverrideRootKey: 106
+        - SampleId: 5
+      izone: 41
+        - KeyRange: 23385
+        - FineTune: 24
+        - OverrideRootKey: 111
+        - SampleId: 6
+      izone: 42
+        - KeyRange: 32604
+        - FineTune: 46
+        - OverrideRootKey: 112
+        - SampleId: 7
+preset E Piano 1   ,4,0:
+  Global Generators: 5
+      - Instrument: 5
+      - inst ref: 5, 5
+    Preset Generators: 6
+      - Instrument: 6
+      - inst ref: 6, 6
+  Instruments:
+    - inst 5: epiano1
+      default izone: 43
+        - ChorusSend: 384
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterFc: 11151
+        - SampleModes: 1
+        - VolEnvAttack: -12000
+        - VolEnvHold: -6772
+        - VolEnvDecay: -386
+        - VolEnvSustain: 496
+        - VolEnvRelease: -667
+        - Attenuation: 232
+      izone: 44
+        - KeyRange: 12288
+        - FineTune: 21
+        - OverrideRootKey: 65
+        - VolEnvDecay: -386
+        - VolEnvSustain: 496
+        - SampleId: 138
+      izone: 45
+        - KeyRange: 15409
+        - FineTune: 21
+        - OverrideRootKey: 65
+        - VolEnvDecay: -261
+        - VolEnvSustain: 475
+        - SampleId: 138
+      izone: 46
+        - KeyRange: 20541
+        - FineTune: 21
+        - OverrideRootKey: 65
+        - VolEnvDecay: 1200
+        - SampleId: 138
+      izone: 47
+        - KeyRange: 26449
+        - FineTune: 29
+        - OverrideRootKey: 82
+        - SampleId: 8
+      izone: 48
+        - KeyRange: 32616
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - FilterFc: 14400
+        - FilterQ: 190
+        - SampleId: 7
+    - inst 6: sepiano1
+      default izone: 49
+        - ChorusSend: 419
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FineTune: 29
+        - OverrideRootKey: 76
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: 3565
+        - VolEnvRelease: -667
+        - Attenuation: 232
+      izone: 50
+        - KeyRange: 15360
+        - FineTune: 29
+        - OverrideRootKey: 76
+        - SampleId: 149
+      izone: 51
+        - KeyRange: 25149
+        - FineTune: -21
+        - OverrideRootKey: 76
+        - SampleId: 127
+      izone: 52
+        - KeyRange: 32611
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset E Piano 2   ,5,0:
+  Global Generators: 7
+      - Instrument: 7
+      - inst ref: 7, 7
+  Instruments:
+    - inst 7: epiano2
+      default izone: 53
+        - FilterFc: 5074
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - ModEnv2FilterFc: 6412
+        - ModEnvSustain: 65
+        - ModEnvRelease: 1017
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: 4301
+        - VolEnvRelease: -949
+        - Attenuation: 127
+      izone: 54
+        - KeyRange: 26368
+        - FineTune: 29
+        - OverrideRootKey: 82
+        - SampleId: 8
+      izone: 55
+        - KeyRange: 32616
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Harpsichord ,6,0:
+  Global Generators: 8
+      - Instrument: 8
+      - inst ref: 8, 8
+    Preset Generators: 9
+      - Instrument: 179
+      - inst ref: 179, 9
+  Instruments:
+    - inst 8: harpsichord
+      default izone: 56
+        - FilterFc: 14400
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - VolEnvDecay: -12000
+        - VolEnvHold: -12000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - ModEnv2FilterFc: 3487
+        - ModEnvHold: -693
+        - ModEnvDecay: 330
+        - ModEnvSustain: 412
+        - Attenuation: 315
+      izone: 57
+        - KeyRange: 26624
+        - FineTune: -45
+        - OverrideRootKey: 82
+        - SampleModes: 1
+        - VolEnvRelease: 91
+        - VolEnvHold: -2470
+        - VolEnvDecay: 4301
+        - VolEnvSustain: 149
+        - SampleId: 10
+      izone: 58
+        - KeyRange: 32617
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 179: banjo #02
+      default izone: 743
+        - SampleModes: 1
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvHold: -2544
+        - VolEnvDecay: 1544
+        - VolEnvRelease: -542
+        - Attenuation: 112
+      izone: 744
+        - KeyRange: 16896
+        - FineTune: 44
+        - OverrideRootKey: 78
+        - SampleId: 71
+      izone: 745
+        - KeyRange: 27459
+        - FineTune: -31
+        - OverrideRootKey: 85
+        - SampleId: 72
+      izone: 746
+        - KeyRange: 32620
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Clavinet    ,7,0:
+  Global Generators: 10
+      - Instrument: 9
+      - inst ref: 9, 10
+  Instruments:
+    - inst 9: clav
+      default izone: 59
+        - FilterFc: 8083
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - VolEnvDecay: -12000
+        - VolEnvHold: -12000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - ModEnv2FilterFc: 3487
+        - ModEnvHold: -693
+        - ModEnvDecay: 330
+        - ModEnvSustain: 412
+        - Attenuation: 150
+      izone: 60
+        - KeyRange: 26368
+        - FineTune: 29
+        - OverrideRootKey: 82
+        - SampleModes: 1
+        - VolEnvHold: -2470
+        - VolEnvDecay: 3393
+        - VolEnvSustain: 937
+        - VolEnvRelease: -3986
+        - SampleId: 9
+      izone: 61
+        - KeyRange: 32616
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Celesta     ,8,0:
+  Global Generators: 11
+      - Instrument: 10
+      - inst ref: 10, 11
+    Preset Generators: 12
+      - Instrument: 11
+      - inst ref: 11, 12
+  Instruments:
+    - inst 10: celesta
+      default izone: 62
+        - FilterFc: 9027
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterQ: 24
+        - SampleModes: 1
+        - VolEnvHold: -4372
+        - VolEnvDecay: 3049
+        - VolEnvRelease: 575
+        - Attenuation: 60
+      izone: 63
+        - KeyRange: 24064
+        - FineTune: 33
+        - OverrideRootKey: 73
+        - SampleId: 123
+    - inst 11: scelesta
+      default izone: 64
+        - FilterFc: 9499
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: 3049
+        - VolEnvRelease: 575
+        - Attenuation: 60
+      izone: 65
+        - KeyRange: 27136
+        - FineTune: -21
+        - OverrideRootKey: 84
+        - SampleId: 130
+      izone: 66
+        - KeyRange: 32619
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Glockenspiel,9,0:
+  Global Generators: 13
+      - Instrument: 12
+      - inst ref: 12, 13
+    Preset Generators: 14
+      - Instrument: 13
+      - inst ref: 13, 14
+  Instruments:
+    - inst 12: glockenspiel
+      default izone: 67
+        - ModEnv2FilterFc: 3487
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - ModEnvHold: -693
+        - ModEnvDecay: 330
+        - ModEnvSustain: 412
+        - FilterFc: 5841
+        - VolEnvRelease: -2050
+        - VolEnvHold: -2470
+        - VolEnvDecay: 413
+        - VolEnvSustain: 149
+        - Attenuation: 52
+      izone: 68
+        - KeyRange: 15104
+        - FineTune: 11
+        - OverrideRootKey: 52
+        - SampleId: 146
+      izone: 69
+        - KeyRange: 18748
+        - FineTune: 11
+        - OverrideRootKey: 52
+        - SampleId: 146
+    - inst 13: sglockenspiel
+      default izone: 70
+        - FilterFc: 9617
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: 3049
+        - VolEnvRelease: 1591
+        - Attenuation: 52
+      izone: 71
+        - KeyRange: 27904
+        - FineTune: 32
+        - OverrideRootKey: 88
+        - SampleId: 145
+      izone: 72
+        - KeyRange: 32622
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Music Box   ,10,0:
+  Global Generators: 15
+      - Instrument: 14
+      - inst ref: 14, 15
+    Preset Generators: 16
+      - Instrument: 15
+      - inst ref: 15, 16
+  Instruments:
+    - inst 14: musicbox
+      default izone: 73
+        - FilterQ: 190
+        - ModEnvAttack: -8800
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - ModEnv2FilterFc: 3487
+        - ModEnvHold: -693
+        - ModEnvDecay: 330
+        - ModEnvSustain: 412
+        - SampleModes: 1
+        - VolEnvAttack: -7656
+        - VolEnvHold: -2470
+        - VolEnvDecay: 1017
+        - VolEnvSustain: 937
+        - VolEnvRelease: 1035
+        - Attenuation: 82
+      izone: 74
+        - KeyRange: 15360
+        - FineTune: -21
+        - OverrideRootKey: 76
+        - SampleId: 127
+      izone: 75
+        - KeyRange: 25149
+        - FineTune: -21
+        - OverrideRootKey: 76
+        - SampleId: 127
+      izone: 76
+        - KeyRange: 32611
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 15: smusicbox
+      default izone: 77
+        - FilterFc: 10325
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterQ: 136
+        - ModEnv2FilterFc: 7087
+        - ModEnvRelease: 2311
+        - SampleModes: 1
+        - VolEnvDelay: -5572
+        - VolEnvAttack: -8856
+        - VolEnvHold: -6772
+        - VolEnvDecay: 813
+        - VolEnvRelease: 213
+        - VolEnvSustain: 769
+        - Attenuation: 82
+      izone: 78
+        - KeyRange: 15360
+        - FineTune: -21
+        - OverrideRootKey: 64
+        - VolEnvAttack: -5053
+        - SampleId: 131
+      izone: 79
+        - KeyRange: 22077
+        - FineTune: -21
+        - OverrideRootKey: 64
+        - VolEnvAttack: -8590
+        - SampleId: 131
+      izone: 80
+        - KeyRange: 32599
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Vibraphone  ,11,0:
+  Global Generators: 17
+      - Instrument: 16
+      - inst ref: 16, 17
+  Instruments:
+    - inst 16: vibraphone
+      default izone: 81
+        - ChorusSend: 250
+        - VolEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - FilterFc: 4779
+        - ModEnv2FilterFc: 7087
+        - ModLFO2Vol: 20
+        - ModLFOFreq: -646
+        - ModEnvAttack: -8856
+        - ModEnvHold: -7972
+        - ModEnvDecay: -386
+        - ModEnvSustain: 412
+        - ModEnvRelease: 1365
+        - SampleModes: 1
+        - VolEnvAttack: -8856
+        - VolEnvHold: -6772
+        - VolEnvDecay: 4301
+        - VolEnvRelease: 688
+        - Attenuation: 82
+      izone: 82
+        - KeyRange: 24064
+        - FineTune: 24
+        - OverrideRootKey: 73
+        - VolEnvDecay: 3049
+        - SampleId: 123
+      izone: 83
+        - KeyRange: 24064
+        - FineTune: 24
+        - OverrideRootKey: 73
+        - VolEnvDecay: 1544
+        - SampleId: 123
+      izone: 84
+        - KeyRange: 32607
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - FilterQ: 190
+        - SampleId: 7
+preset Marimba     ,12,0:
+  Global Generators: 18
+      - Instrument: 17
+      - inst ref: 17, 18
+  Instruments:
+    - inst 17: marimba
+      default izone: 85
+        - ChorusSend: 250
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - ModEnv2FilterFc: 7087
+        - ModEnvAttack: -8856
+        - ModEnvHold: -7972
+        - ModEnvRelease: 1365
+        - SampleModes: 1
+        - VolEnvAttack: -6772
+        - VolEnvHold: -3986
+        - VolEnvDecay: 2013
+        - VolEnvSustain: 989
+        - VolEnvRelease: 811
+        - Attenuation: 0
+      izone: 86
+        - KeyRange: 29440
+        - FineTune: 29
+        - OverrideRootKey: 94
+        - SampleId: 125
+      izone: 87
+        - KeyRange: 32628
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Xylophone   ,13,0:
+  Global Generators: 19
+      - Instrument: 18
+      - inst ref: 18, 19
+  Instruments:
+    - inst 18: xylophone
+      default izone: 88
+        - VolEnvHold: -6772
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvDecay: 1544
+        - VolEnvRelease: -24
+        - Attenuation: 67
+      izone: 89
+        - KeyRange: 32512
+        - FineTune: -45
+        - OverrideRootKey: 98
+        - SampleId: 121
+      izone: 90
+        - KeyRange: 32633
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Tubular Bell,14,0:
+  Global Generators: 20
+      - Instrument: 19
+      - inst ref: 19, 20
+  Instruments:
+    - inst 19: tubularbell
+      default izone: 91
+        - FilterFc: 10266
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - SampleModes: 1
+        - VolEnvAttack: -8856
+        - VolEnvHold: -1003
+        - VolEnvDecay: 4182
+        - VolEnvRelease: 1699
+        - Attenuation: 0
+      izone: 92
+        - FineTune: 50
+        - OverrideRootKey: 109
+        - SampleId: 130
+preset Santur    ,15,0:
+  Global Generators: 21
+      - Instrument: 20
+      - inst ref: 20, 21
+  Instruments:
+    - inst 20: dulcimer
+      default izone: 93
+        - SampleModes: 1
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvHold: -1132
+        - VolEnvDecay: 2198
+        - VolEnvRelease: 1145
+        - Attenuation: 180
+      izone: 94
+        - KeyRange: 29184
+        - FineTune: -32
+        - OverrideRootKey: 92
+        - SampleId: 68
+      izone: 95
+        - KeyRange: 32627
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Organ 1     ,16,0:
+  Global Generators: 22
+      - Instrument: 21
+      - inst ref: 21, 22
+    Preset Generators: 23
+      - Instrument: 22
+      - inst ref: 22, 23
+  Instruments:
+    - inst 21: organ1
+      default izone: 96
+        - FilterFc: 9617
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - SampleModes: 1
+        - VolEnvAttack: -8856
+        - VolEnvHold: -2968
+        - VolEnvDecay: 3784
+        - VolEnvSustain: 0
+        - VolEnvRelease: -2786
+        - Attenuation: 217
+      izone: 97
+        - KeyRange: 22016
+        - FineTune: -15
+        - OverrideRootKey: 64
+        - SampleId: 134
+      izone: 98
+        - KeyRange: 32599
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 22: sorgan1
+      default izone: 99
+        - FilterFc: 9617
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - SampleModes: 1
+        - VolEnvAttack: -8856
+        - VolEnvHold: -2968
+        - VolEnvDecay: 3784
+        - VolEnvSustain: 0
+        - VolEnvRelease: -2786
+        - Attenuation: 217
+      izone: 100
+        - KeyRange: 28160
+        - FineTune: -15
+        - OverrideRootKey: 88
+        - VolEnvHold: 241
+        - VolEnvDecay: 4037
+        - SampleId: 131
+      izone: 101
+        - KeyRange: 32623
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Organ 2     ,17,0:
+  Global Generators: 24
+      - Instrument: 23
+      - inst ref: 23, 24
+  Instruments:
+    - inst 23: organ2
+      default izone: 102
+        - FilterFc: 7906
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - ModEnv2FilterFc: 7087
+        - ModEnvSustain: 811
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: -1586
+        - VolEnvSustain: 0
+        - VolEnvRelease: -2786
+        - Attenuation: 90
+      izone: 103
+        - KeyRange: 19200
+        - FineTune: -37
+        - OverrideRootKey: 91
+        - StartLoopAddrOfs: -1
+        - EndLoopAddrOfs: -1
+        - SampleId: 132
+      izone: 104
+        - KeyRange: 31052
+        - FineTune: 30
+        - OverrideRootKey: 100
+        - StartLoopAddrOfs: -1
+        - EndLoopAddrOfs: -1
+        - SampleId: 133
+      izone: 105
+        - KeyRange: 32634
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Organ 3     ,18,0:
+  Global Generators: 25
+      - Instrument: 24
+      - inst ref: 24, 25
+    Preset Generators: 26
+      - Instrument: 25
+      - inst ref: 25, 26
+  Instruments:
+    - inst 24: organ3
+      default izone: 106
+        - ChorusSend: 419
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterFc: 7906
+        - ModEnv2FilterFc: 7087
+        - VibLFO2Pitch: 28
+        - VibLFOFreq: -1374
+        - ModEnvSustain: 811
+        - SampleModes: 1
+        - Pan: 75
+        - VolEnvHold: -6772
+        - VolEnvDecay: -1270
+        - VolEnvSustain: 0
+        - VolEnvRelease: -2786
+        - Attenuation: 187
+      izone: 107
+        - KeyRange: 19200
+        - FineTune: -35
+        - OverrideRootKey: 91
+        - StartLoopAddrOfs: -1
+        - EndLoopAddrOfs: -1
+        - SampleId: 132
+      izone: 108
+        - KeyRange: 31052
+        - FineTune: 32
+        - OverrideRootKey: 100
+        - SampleId: 133
+      izone: 109
+        - KeyRange: 32634
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 25: sorgan3
+      default izone: 110
+        - ModLFO2FilterFc: 450
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - ModLFO2Vol: 20
+        - ChorusSend: 482
+        - ModLFOFreq: -2285
+        - FilterQ: 118
+        - ModLFO2Vol: 65
+        - ModLFOFreq: -2921
+        - SampleModes: 1
+        - VolEnvSustain: 0
+        - VolEnvHold: 241
+        - VolEnvDecay: 4037
+        - VolEnvRelease: -2786
+        - Attenuation: 367
+      izone: 111
+        - KeyRange: 29184
+        - FineTune: 5
+        - OverrideRootKey: 93
+        - SampleId: 43
+      izone: 112
+        - KeyRange: 32627
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Church Org 1,19,0:
+  Global Generators: 27
+      - Instrument: 26
+      - inst ref: 26, 27
+    Preset Generators: 28
+      - Instrument: 27
+      - inst ref: 27, 28
+  Instruments:
+    - inst 26: churchorg1
+      default izone: 113
+        - FilterFc: 14400
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - ModLFO2Vol: -3
+        - ModLFOFreq: -7925
+        - SampleModes: 1
+        - VolEnvAttack: -1603
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: -667
+        - Attenuation: 277
+      izone: 114
+        - KeyRange: 28160
+        - FineTune: -20
+        - OverrideRootKey: 88
+        - VolEnvAttack: -1603
+        - SampleId: 131
+      izone: 115
+        - KeyRange: 32623
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 27: schurchorgan
+      default izone: 116
+        - FilterFc: 10325
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterQ: 30
+        - ModEnv2FilterFc: -112
+        - ModEnv2Pitch: -8
+        - ModEnvHold: -6772
+        - ModEnvRelease: 4400
+        - SampleModes: 1
+        - VolEnvAttack: -6772
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: -667
+        - Attenuation: 277
+      izone: 117
+        - KeyRange: 15360
+        - FineTune: -28
+        - OverrideRootKey: 65
+        - SampleId: 24
+      izone: 118
+        - KeyRange: 22333
+        - FineTune: -28
+        - OverrideRootKey: 65
+        - SampleId: 24
+      izone: 119
+        - KeyRange: 32600
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - FilterQ: 190
+        - VolEnvAttack: -2911
+        - SampleId: 7
+preset Reed Organ  ,20,0:
+  Global Generators: 29
+      - Instrument: 28
+      - inst ref: 28, 29
+    Preset Generators: 30
+      - Instrument: 29
+      - inst ref: 29, 30
+  Instruments:
+    - inst 28: reedorgan
+      default izone: 120
+        - StartLoopAddrOfs: -1
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - EndLoopAddrOfs: -1
+        - SampleModes: 1
+        - VolEnvAttack: -6530
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: -3986
+        - Attenuation: 157
+      izone: 121
+        - KeyRange: 21504
+        - FineTune: 33
+        - OverrideRootKey: 92
+        - SampleId: 46
+      izone: 122
+        - KeyRange: 25173
+        - FineTune: -15
+        - OverrideRootKey: 76
+        - SampleId: 131
+      izone: 123
+        - KeyRange: 32611
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 29: sreedorgan
+      default izone: 124
+        - SampleModes: 1
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvAttack: -1382
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: -1224
+        - Attenuation: 157
+      izone: 125
+        - KeyRange: 28160
+        - FineTune: -20
+        - OverrideRootKey: 88
+        - SampleId: 134
+      izone: 126
+        - KeyRange: 32623
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Accordian ,21,0:
+  Global Generators: 31
+      - Instrument: 30
+      - inst ref: 30, 31
+    Preset Generators: 32
+      - Instrument: 180
+      - inst ref: 180, 32
+  Instruments:
+    - inst 30: accordian
+      default izone: 127
+        - ModLFO2Vol: 16
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - ModLFOFreq: -194
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: -1378
+        - Attenuation: 240
+      izone: 128
+        - KeyRange: 14080
+        - FineTune: -46
+        - OverrideRootKey: 76
+        - SampleId: 87
+      izone: 129
+        - KeyRange: 16952
+        - FineTune: -1
+        - OverrideRootKey: 81
+        - SampleId: 88
+      izone: 130
+        - KeyRange: 28483
+        - FineTune: 15
+        - OverrideRootKey: 90
+        - SampleId: 89
+      izone: 131
+        - KeyRange: 32624
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 180: sbandneon #02
+      default izone: 747
+        - SampleModes: 1
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvAttack: -955
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: -3986
+        - Attenuation: 240
+        - VibLFO2Pitch: 9
+        - VibLFOFreq: -1297
+        - CoarseTune: 12
+        - FineTune: 2
+      izone: 748
+        - KeyRange: 25088
+        - FineTune: -20
+        - OverrideRootKey: 76
+        - SampleId: 79
+      izone: 749
+        - KeyRange: 32611
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Harmonica   ,22,0:
+  Global Generators: 33
+      - Instrument: 31
+      - inst ref: 31, 33
+  Instruments:
+    - inst 31: harmonica
+      default izone: 132
+        - ModLFO2Vol: 16
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - ModLFOFreq: -498
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: -3986
+        - Attenuation: 105
+      izone: 133
+        - KeyRange: 28928
+        - FineTune: 33
+        - OverrideRootKey: 92
+        - StartLoopAddrOfs: -1
+        - EndLoopAddrOfs: -1
+        - SampleId: 46
+      izone: 134
+        - KeyRange: 32626
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Bandneon    ,23,0:
+  Global Generators: 34
+      - Instrument: 32
+      - inst ref: 32, 34
+    Preset Generators: 35
+      - Instrument: 33
+      - inst ref: 33, 35
+  Instruments:
+    - inst 32: bandneon
+      default izone: 135
+        - ModLFO2Vol: 16
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - ModLFOFreq: -498
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: -3986
+        - Attenuation: 262
+      izone: 136
+        - KeyRange: 15104
+        - FineTune: -46
+        - OverrideRootKey: 76
+        - StartLoopAddrOfs: -1
+        - EndLoopAddrOfs: -1
+        - SampleId: 87
+      izone: 137
+        - KeyRange: 28476
+        - FineTune: 15
+        - OverrideRootKey: 90
+        - StartLoopAddrOfs: -1
+        - EndLoopAddrOfs: -1
+        - SampleId: 89
+      izone: 138
+        - KeyRange: 32624
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 33: sbandneon
+      default izone: 139
+        - SampleModes: 1
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvAttack: -955
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: -3986
+        - Attenuation: 262
+      izone: 140
+        - KeyRange: 25088
+        - FineTune: -20
+        - OverrideRootKey: 76
+        - SampleId: 79
+      izone: 141
+        - KeyRange: 32611
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Nylon str.Gt,24,0:
+  Global Generators: 36
+      - Instrument: 34
+      - inst ref: 34, 36
+  Instruments:
+    - inst 34: nylonstrgtr
+      default izone: 142
+        - ModLFOFreq: -698
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - ReverbSend: 109
+        - ModLFODelay: -3670
+        - ModLFO2Vol: -1
+        - ModLFO2Pitch: -8
+        - VibLFOFreq: 1701
+        - VibLFO2Pitch: -8
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: 4301
+        - VolEnvRelease: -3986
+        - Attenuation: 75
+      izone: 143
+        - KeyRange: 14336
+        - FineTune: 46
+        - OverrideRootKey: 70
+        - SampleId: 80
+      izone: 144
+        - KeyRange: 19769
+        - FineTune: -1
+        - OverrideRootKey: 77
+        - SampleId: 81
+      izone: 145
+        - KeyRange: 24910
+        - FineTune: 32
+        - OverrideRootKey: 76
+        - SampleId: 75
+      izone: 146
+        - KeyRange: 32610
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Steel-str.Gt,25,0:
+  Global Generators: 37
+      - Instrument: 35
+      - inst ref: 35, 37
+  Instruments:
+    - inst 35: steelstrgtr
+      default izone: 147
+        - ModLFOFreq: -698
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - ReverbSend: 109
+        - ModLFODelay: -3670
+        - ModLFO2Vol: -1
+        - ModLFO2Pitch: -8
+        - VibLFOFreq: 1701
+        - VibLFO2Pitch: -8
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: 3417
+        - VolEnvRelease: -3986
+        - Attenuation: 135
+      izone: 148
+        - KeyRange: 18432
+        - FineTune: 47
+        - OverrideRootKey: 74
+        - SampleId: 74
+      izone: 149
+        - KeyRange: 24905
+        - FineTune: 32
+        - OverrideRootKey: 76
+        - SampleId: 75
+      izone: 150
+        - KeyRange: 32610
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Jazz Gt.    ,26,0:
+  Global Generators: 38
+      - Instrument: 36
+      - inst ref: 36, 38
+    Preset Generators: 39
+      - Instrument: 37
+      - inst ref: 37, 39
+  Instruments:
+    - inst 36: jazzgtr
+      default izone: 151
+        - FilterFc: 9263
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - ReverbSend: 109
+        - ModLFOFreq: -698
+        - ModLFODelay: -3670
+        - ModLFO2Vol: -1
+        - VibLFOFreq: -837
+        - VibLFO2Pitch: -8
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: 2854
+        - VolEnvSustain: 895
+        - VolEnvRelease: -3986
+        - Attenuation: 97
+      izone: 152
+        - KeyRange: 24576
+        - FineTune: 0
+        - OverrideRootKey: 74
+        - SampleId: 76
+      izone: 153
+        - KeyRange: 32609
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 37: sjazzgt
+      default izone: 154
+        - FilterFc: 10089
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - ModLFOFreq: -837
+        - ModLFO2Vol: -1
+        - SampleModes: 1
+        - VolEnvHold: -1132
+        - VolEnvDecay: 3417
+        - VolEnvSustain: 601
+        - VolEnvRelease: -3986
+        - Attenuation: 97
+      izone: 155
+        - KeyRange: 27904
+        - FineTune: -18
+        - OverrideRootKey: 87
+        - SampleId: 82
+      izone: 156
+        - KeyRange: 32622
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Clean Gt.   ,27,0:
+  Global Generators: 40
+      - Instrument: 38
+      - inst ref: 38, 40
+  Instruments:
+    - inst 38: cleangtr
+      default izone: 157
+        - ChorusSend: 462
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - SampleModes: 1
+        - VolEnvHold: -3172
+        - VolEnvDecay: 2626
+        - VolEnvRelease: -3986
+        - Attenuation: 180
+      izone: 158
+        - KeyRange: 24320
+        - FineTune: 7
+        - OverrideRootKey: 74
+        - SampleId: 76
+      izone: 159
+        - KeyRange: 32608
+        - FineTune: -4
+        - OverrideRootKey: 91
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: -3986
+        - SampleId: 86
+preset Muted Gt.   ,28,0:
+  Global Generators: 41
+      - Instrument: 39
+      - inst ref: 39, 41
+  Instruments:
+    - inst 39: mutedgtr
+      default izone: 160
+        - FilterFc: 14400
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - ModLFOFreq: -753
+        - ModLFO2Pitch: 9
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: 2941
+        - VolEnvRelease: -3986
+        - Attenuation: 0
+      izone: 161
+        - KeyRange: 25088
+        - FineTune: -46
+        - OverrideRootKey: 76
+        - SampleId: 77
+      izone: 162
+        - KeyRange: 32611
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Overdrive Gt,29,0:
+  Global Generators: 42
+      - Instrument: 40
+      - inst ref: 40, 42
+    Preset Generators: 43
+      - Instrument: 41
+      - inst ref: 41, 43
+  Instruments:
+    - inst 40: overdrivegt
+      default izone: 163
+        - SampleModes: 1
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvHold: -6772
+        - VolEnvDecay: 3667
+        - VolEnvSustain: 34
+        - VolEnvRelease: -3986
+        - Attenuation: 202
+      izone: 164
+        - KeyRange: 15872
+        - FineTune: -45
+        - OverrideRootKey: 72
+        - SampleId: 84
+      izone: 165
+        - KeyRange: 16959
+        - FineTune: -35
+        - OverrideRootKey: 79
+        - SampleId: 85
+      izone: 166
+        - KeyRange: 26947
+        - FineTune: 38
+        - OverrideRootKey: 84
+        - SampleId: 83
+      izone: 167
+        - KeyRange: 32618
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 41: soverdrivegt
+      default izone: 168
+        - SampleModes: 1
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvHold: -1132
+        - VolEnvDecay: 3667
+        - VolEnvRelease: -3986
+        - Attenuation: 202
+      izone: 169
+        - KeyRange: 27904
+        - FineTune: -18
+        - OverrideRootKey: 87
+        - SampleId: 82
+      izone: 170
+        - KeyRange: 32622
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Distortion G,30,0:
+  Global Generators: 44
+      - Instrument: 42
+      - inst ref: 42, 44
+  Instruments:
+    - inst 42: distortiongt
+      default izone: 171
+        - SampleModes: 1
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvHold: -6772
+        - VolEnvDecay: 5151
+        - VolEnvSustain: 916
+        - VolEnvRelease: -3986
+        - Attenuation: 75
+      izone: 172
+        - KeyRange: 15872
+        - FineTune: -45
+        - OverrideRootKey: 72
+        - SampleId: 84
+      izone: 173
+        - KeyRange: 16959
+        - FineTune: -35
+        - OverrideRootKey: 79
+        - SampleId: 85
+      izone: 174
+        - KeyRange: 18499
+        - FineTune: 38
+        - OverrideRootKey: 84
+        - SampleId: 83
+      izone: 175
+        - KeyRange: 29001
+        - FineTune: -4
+        - OverrideRootKey: 91
+        - SampleId: 86
+      izone: 176
+        - KeyRange: 32626
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Gt.Harmonics,31,0:
+  Global Generators: 45
+      - Instrument: 43
+      - inst ref: 43, 45
+  Instruments:
+    - inst 43: gtharmonics
+      default izone: 177
+        - SampleModes: 1
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvHold: -1344
+        - VolEnvDecay: 5151
+        - VolEnvSustain: 916
+        - VolEnvRelease: -2420
+        - Attenuation: 22
+      izone: 178
+        - KeyRange: 29696
+        - FineTune: 8
+        - OverrideRootKey: 85
+        - StartLoopAddrOfs: -1
+        - EndLoopAddrOfs: -1
+        - SampleId: 78
+      izone: 179
+        - KeyRange: 32629
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Accoustic Bs,32,0:
+  Global Generators: 46
+      - Instrument: 44
+      - inst ref: 44, 46
+  Instruments:
+    - inst 44: accousticbs
+      default izone: 180
+        - SampleModes: 1
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvHold: -6772
+        - VolEnvDecay: 2837
+        - VolEnvRelease: -1378
+        - Attenuation: 0
+      izone: 181
+        - KeyRange: 22272
+        - FineTune: 44
+        - OverrideRootKey: 66
+        - SampleId: 61
+      izone: 182
+        - KeyRange: 28248
+        - FineTune: 25
+        - OverrideRootKey: 89
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: 2521
+        - VolEnvRelease: 1591
+        - SampleId: 69
+      izone: 183
+        - KeyRange: 32623
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Fingered Bs.,33,0:
+  Global Generators: 47
+      - Instrument: 45
+      - inst ref: 45, 47
+  Instruments:
+    - inst 45: fingeredbs
+      default izone: 184
+        - FilterFc: 8024
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - ModEnv2FilterFc: 7087
+        - ModEnvDecay: -2786
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: 2521
+        - VolEnvRelease: -1378
+        - Attenuation: 157
+      izone: 185
+        - KeyRange: 21504
+        - FineTune: 0
+        - OverrideRootKey: 62
+        - SampleId: 62
+      izone: 186
+        - KeyRange: 28245
+        - FineTune: 25
+        - OverrideRootKey: 89
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: 2521
+        - VolEnvRelease: 1591
+        - SampleId: 69
+      izone: 187
+        - KeyRange: 32623
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Picked Bs.  ,34,0:
+  Global Generators: 48
+      - Instrument: 46
+      - inst ref: 46, 48
+  Instruments:
+    - inst 46: pickedbs
+      default izone: 188
+        - Attenuation: 112
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterFc: 7552
+        - FilterQ: 18
+        - ModEnv2FilterFc: 7087
+        - ModEnvDecay: 0
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: 5254
+        - VolEnvSustain: 212
+        - VolEnvRelease: -1224
+      izone: 189
+        - KeyRange: 22784
+        - FineTune: -20
+        - OverrideRootKey: 67
+        - SampleId: 67
+      izone: 190
+        - KeyRange: 28250
+        - FineTune: 25
+        - OverrideRootKey: 89
+        - SampleId: 69
+      izone: 191
+        - KeyRange: 32623
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Fretless Bs.,35,0:
+  Global Generators: 49
+      - Instrument: 47
+      - inst ref: 47, 49
+  Instruments:
+    - inst 47: fretlessbs
+      default izone: 192
+        - FilterFc: 7434
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterQ: 18
+        - ModEnv2FilterFc: 7087
+        - ModEnvDecay: -1586
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: 6000
+        - VolEnvSustain: 979
+        - VolEnvRelease: -667
+        - Attenuation: 37
+      izone: 193
+        - KeyRange: 20736
+        - FineTune: 33
+        - OverrideRootKey: 60
+        - SampleId: 63
+      izone: 194
+        - KeyRange: 28242
+        - FineTune: 25
+        - OverrideRootKey: 89
+        - SampleId: 69
+      izone: 195
+        - KeyRange: 32623
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Slap Bass 1 ,36,0:
+  Global Generators: 50
+      - Instrument: 48
+      - inst ref: 48, 50
+  Instruments:
+    - inst 48: slapbass1
+      default izone: 196
+        - FilterFc: 8201
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - ModEnv2FilterFc: 7087
+        - ModEnvDecay: -1586
+        - SampleModes: 1
+        - VolEnvHold: -3172
+        - VolEnvDecay: 6000
+        - VolEnvSustain: 979
+        - VolEnvRelease: -3067
+        - Attenuation: 142
+      izone: 197
+        - KeyRange: 18432
+        - FineTune: -10
+        - OverrideRootKey: 50
+        - StartLoopAddrOfs: -1
+        - EndLoopAddrOfs: -1
+        - SampleId: 64
+      izone: 198
+        - KeyRange: 28233
+        - FineTune: 29
+        - OverrideRootKey: 82
+        - SampleModes: 1
+        - FilterFc: 7139
+        - ModEnv2FilterFc: 4050
+        - SampleId: 9
+      izone: 199
+        - KeyRange: 32623
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Slap Bass 2 ,37,0:
+  Global Generators: 51
+      - Instrument: 49
+      - inst ref: 49, 51
+  Instruments:
+    - inst 49: slapbass2
+      default izone: 200
+        - FilterFc: 8791
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - ModEnv2FilterFc: 7087
+        - ModEnvDecay: -1586
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: 6000
+        - VolEnvSustain: 979
+        - VolEnvRelease: -3343
+        - Attenuation: 202
+      izone: 201
+        - KeyRange: 22528
+        - FineTune: 25
+        - OverrideRootKey: 67
+        - SampleId: 65
+      izone: 202
+        - KeyRange: 28249
+        - FineTune: 25
+        - OverrideRootKey: 89
+        - SampleModes: 1
+        - SampleId: 69
+      izone: 203
+        - KeyRange: 32623
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Synth Bass 1,38,0:
+  Global Generators: 52
+      - Instrument: 50
+      - inst ref: 50, 52
+  Instruments:
+    - inst 50: synthbass1
+      default izone: 204
+        - FilterFc: 4956
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - ModEnv2FilterFc: 6412
+        - ModEnvHold: -6772
+        - ModEnvDecay: -2786
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: 6000
+        - VolEnvSustain: 979
+        - VolEnvRelease: -2821
+        - Attenuation: 82
+      izone: 205
+        - KeyRange: 16640
+        - FineTune: 4
+        - OverrideRootKey: 44
+        - SampleId: 66
+      izone: 206
+        - KeyRange: 27970
+        - FineTune: -1
+        - OverrideRootKey: 87
+        - SampleId: 128
+      izone: 207
+        - KeyRange: 32622
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+      izone: 208
+        - KeyRange: 26178
+        - FineTune: 2
+        - OverrideRootKey: 81
+        - SampleId: 135
+      izone: 209
+        - KeyRange: 32615
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Synth Bass 2,39,0:
+  Global Generators: 53
+      - Instrument: 51
+      - inst ref: 51, 53
+    Preset Generators: 54
+      - Instrument: 52
+      - inst ref: 52, 54
+  Instruments:
+    - inst 51: synthbass2
+      default izone: 210
+        - FilterFc: 9145
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - ModEnv2FilterFc: 6412
+        - ModEnvHold: -6772
+        - ModEnvDecay: -884
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: 6000
+        - VolEnvSustain: 979
+        - VolEnvRelease: -802
+        - Attenuation: 157
+      izone: 211
+        - KeyRange: 20736
+        - FineTune: 35
+        - OverrideRootKey: 60
+        - SampleId: 63
+      izone: 212
+        - KeyRange: 28242
+        - FineTune: 25
+        - OverrideRootKey: 89
+        - SampleId: 69
+      izone: 213
+        - KeyRange: 32623
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 52: ssynthbass2
+      default izone: 214
+        - FilterFc: 8024
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterQ: 63
+        - ModEnv2FilterFc: 5287
+        - ModEnvHold: -6772
+        - ModEnvDecay: -1586
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: 6000
+        - VolEnvSustain: 979
+        - VolEnvRelease: -802
+        - Attenuation: 120
+      izone: 215
+        - KeyRange: 22784
+        - FineTune: -15
+        - OverrideRootKey: 67
+        - SampleId: 67
+      izone: 216
+        - KeyRange: 28250
+        - FineTune: 25
+        - OverrideRootKey: 89
+        - SampleId: 69
+      izone: 217
+        - KeyRange: 32623
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Violin      ,40,0:
+  Global Generators: 55
+      - Instrument: 53
+      - inst ref: 53, 55
+  Instruments:
+    - inst 53: violin
+      default izone: 218
+        - FilterFc: 10561
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - ModLFO2Pitch: 19
+        - ModLFODelay: -2332
+        - ModLFOFreq: -837
+        - SampleModes: 1
+        - VolEnvAttack: -7972
+        - VolEnvHold: -6772
+        - VolEnvDecay: 3975
+        - VolEnvSustain: 0
+        - VolEnvRelease: -667
+        - Attenuation: 82
+      izone: 219
+        - KeyRange: 17920
+        - FineTune: 30
+        - OverrideRootKey: 87
+        - SampleId: 55
+      izone: 220
+        - KeyRange: 19015
+        - FineTune: 15
+        - OverrideRootKey: 90
+        - SampleId: 56
+      izone: 221
+        - KeyRange: 20043
+        - FineTune: -45
+        - OverrideRootKey: 94
+        - SampleId: 57
+      izone: 222
+        - KeyRange: 21071
+        - FineTune: 24
+        - OverrideRootKey: 98
+        - SampleId: 58
+      izone: 223
+        - KeyRange: 31571
+        - FineTune: 15
+        - OverrideRootKey: 102
+        - SampleId: 59
+      izone: 224
+        - KeyRange: 32636
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Viola        ,41,0:
+  Global Generators: 56
+      - Instrument: 54
+      - inst ref: 54, 56
+  Instruments:
+    - inst 54: viola
+      default izone: 225
+        - ModLFO2Pitch: 19
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - ModLFODelay: -2332
+        - ModLFOFreq: -837
+        - SampleModes: 1
+        - VolEnvAttack: -6688
+        - VolEnvHold: -6772
+        - VolEnvDecay: 3975
+        - VolEnvSustain: 0
+        - VolEnvRelease: -667
+        - Attenuation: 45
+      izone: 226
+        - KeyRange: 16640
+        - FineTune: 30
+        - OverrideRootKey: 87
+        - StartLoopAddrOfs: -1
+        - EndLoopAddrOfs: -1
+        - VolEnvAttack: -2803
+        - SampleId: 55
+      izone: 227
+        - KeyRange: 17730
+        - FineTune: 15
+        - OverrideRootKey: 90
+        - StartLoopAddrOfs: -1
+        - EndLoopAddrOfs: -1
+        - SampleId: 56
+      izone: 228
+        - KeyRange: 18758
+        - FineTune: -45
+        - OverrideRootKey: 94
+        - StartLoopAddrOfs: -1
+        - EndLoopAddrOfs: -1
+        - SampleId: 57
+      izone: 229
+        - KeyRange: 19786
+        - FineTune: 24
+        - OverrideRootKey: 98
+        - StartLoopAddrOfs: -1
+        - EndLoopAddrOfs: -1
+        - SampleId: 58
+      izone: 230
+        - KeyRange: 31566
+        - FineTune: 15
+        - OverrideRootKey: 102
+        - StartLoopAddrOfs: -1
+        - EndLoopAddrOfs: -1
+        - SampleId: 59
+      izone: 231
+        - KeyRange: 32636
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Cello       ,42,0:
+  Global Generators: 57
+      - Instrument: 55
+      - inst ref: 55, 57
+  Instruments:
+    - inst 55: cello
+      default izone: 232
+        - ModLFO2Pitch: 19
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - ModLFODelay: -2332
+        - ModLFOFreq: -837
+        - SampleModes: 1
+        - VolEnvAttack: -2653
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: -542
+        - Attenuation: 82
+      izone: 233
+        - KeyRange: 13568
+        - FineTune: 32
+        - OverrideRootKey: 76
+        - SampleId: 52
+      izone: 234
+        - KeyRange: 26934
+        - FineTune: 38
+        - OverrideRootKey: 84
+        - SampleId: 53
+      izone: 235
+        - KeyRange: 32618
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Contrabass  ,43,0:
+  Global Generators: 58
+      - Instrument: 56
+      - inst ref: 56, 58
+  Instruments:
+    - inst 56: contrabass
+      default izone: 236
+        - ModLFO2Pitch: 19
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - ModLFODelay: -2332
+        - ModLFOFreq: -837
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: -667
+        - Attenuation: 82
+      izone: 237
+        - KeyRange: 21760
+        - FineTune: 32
+        - OverrideRootKey: 64
+        - SampleId: 54
+      izone: 238
+        - KeyRange: 26966
+        - FineTune: 38
+        - OverrideRootKey: 84
+        - VolEnvAttack: -5447
+        - SampleId: 53
+      izone: 239
+        - KeyRange: 32618
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Tremelo Stri,44,0:
+  Global Generators: 59
+      - Instrument: 57
+      - inst ref: 57, 59
+  Instruments:
+    - inst 57: tremelostr
+      default izone: 240
+        - ModLFO2Pitch: 19
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - ModLFO2Vol: 30
+        - ModLFODelay: -2332
+        - ModLFOFreq: 460
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: -405
+        - Attenuation: 67
+      izone: 241
+        - KeyRange: 15104
+        - FineTune: 33
+        - OverrideRootKey: 74
+        - SampleId: 48
+      izone: 242
+        - KeyRange: 18492
+        - FineTune: 50
+        - OverrideRootKey: 88
+        - SampleId: 49
+      izone: 243
+        - KeyRange: 29513
+        - FineTune: 36
+        - OverrideRootKey: 94
+        - SampleId: 50
+      izone: 244
+        - KeyRange: 32628
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Pizz Strings,45,0:
+  Global Generators: 60
+      - Instrument: 58
+      - inst ref: 58, 60
+  Instruments:
+    - inst 58: pizzicatostr
+      default izone: 245
+        - ModLFO2Pitch: -8
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - ModLFO2Vol: -1
+        - ModLFODelay: -2332
+        - ModLFOFreq: -837
+        - FineTune: 7
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: 1092
+        - VolEnvRelease: 213
+        - Attenuation: 0
+      izone: 246
+        - KeyRange: 29440
+        - FineTune: -4
+        - OverrideRootKey: 91
+        - SampleId: 60
+      izone: 247
+        - KeyRange: 32628
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Harp        ,46,0:
+  Global Generators: 61
+      - Instrument: 59
+      - inst ref: 59, 61
+  Instruments:
+    - inst 59: harp
+      default izone: 248
+        - SampleModes: 1
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvHold: -6772
+        - VolEnvDecay: 2521
+        - VolEnvRelease: 1591
+        - Attenuation: 60
+      izone: 249
+        - KeyRange: 28160
+        - FineTune: 25
+        - OverrideRootKey: 89
+        - SampleId: 69
+      izone: 250
+        - KeyRange: 32623
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Timpani     ,47,0:
+  Global Generators: 62
+      - Instrument: 60
+      - inst ref: 60, 62
+  Instruments:
+    - inst 60: timpani
+      default izone: 251
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FineTune: 50
+        - OverrideRootKey: 80
+        - SampleModes: 1
+        - VolEnvHold: -1066
+        - VolEnvDecay: 2118
+        - VolEnvRelease: -148
+        - Attenuation: 127
+        - CoarseTune: 0
+      izone: 252
+        - KeyRange: 12032
+        - VolEnvRelease: 1482
+        - VolEnvDecay: 2118
+        - SampleId: 112
+      izone: 253
+        - KeyRange: 12336
+        - VolEnvRelease: 575
+        - VolEnvDecay: 2118
+        - SampleId: 112
+      izone: 254
+        - KeyRange: 13105
+        - VolEnvDecay: 2118
+        - SampleId: 112
+      izone: 255
+        - KeyRange: 14132
+        - VolEnvDecay: 2013
+        - SampleId: 112
+      izone: 256
+        - KeyRange: 15160
+        - VolEnvDecay: 1901
+        - SampleId: 112
+      izone: 257
+        - KeyRange: 18236
+        - VolEnvDecay: 1782
+        - SampleId: 112
+      izone: 258
+        - KeyRange: 25928
+        - VolEnvDecay: 1654
+        - SampleId: 112
+      izone: 259
+        - KeyRange: 32614
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Strings     ,48,0:
+  Global Generators: 63
+      - Instrument: 61
+      - inst ref: 61, 63
+  Instruments:
+    - inst 61: strings
+      default izone: 260
+        - FilterFc: 11033
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: -24
+        - Attenuation: 90
+      izone: 261
+        - KeyRange: 15104
+        - FineTune: 29
+        - OverrideRootKey: 74
+        - FilterFc: 9853
+        - SampleId: 48
+      izone: 262
+        - KeyRange: 18492
+        - FineTune: 50
+        - OverrideRootKey: 88
+        - SampleId: 49
+      izone: 263
+        - KeyRange: 29513
+        - FineTune: 36
+        - OverrideRootKey: 94
+        - SampleId: 50
+      izone: 264
+        - KeyRange: 32628
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Slow Strings,49,0:
+  Global Generators: 64
+      - Instrument: 62
+      - inst ref: 62, 64
+  Instruments:
+    - inst 62: slowstrings
+      default izone: 265
+        - FilterFc: 11682
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - SampleModes: 1
+        - VolEnvAttack: -901
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: 1035
+        - Attenuation: 142
+      izone: 266
+        - KeyRange: 15104
+        - FineTune: 29
+        - OverrideRootKey: 74
+        - SampleId: 48
+      izone: 267
+        - KeyRange: 18492
+        - FineTune: 50
+        - OverrideRootKey: 88
+        - SampleId: 49
+      izone: 268
+        - KeyRange: 29513
+        - FineTune: 36
+        - OverrideRootKey: 94
+        - SampleId: 50
+      izone: 269
+        - KeyRange: 32628
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Synth String,50,0:
+  Global Generators: 65
+      - Instrument: 63
+      - inst ref: 63, 65
+  Instruments:
+    - inst 63: synstrings1
+      default izone: 270
+        - SampleModes: 1
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvAttack: -5152
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: 338
+        - Attenuation: 75
+      izone: 271
+        - KeyRange: 29440
+        - FineTune: 4
+        - OverrideRootKey: 94
+        - SampleId: 51
+      izone: 272
+        - KeyRange: 32628
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Synth Str 2 ,51,0:
+  Global Generators: 66
+      - Instrument: 64
+      - inst ref: 64, 66
+    Preset Generators: 67
+      - Instrument: 65
+      - inst ref: 65, 67
+  Instruments:
+    - inst 64: synstrings2
+      default izone: 273
+        - ModEnv2Pitch: -130
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - ModEnv2FilterFc: 112
+        - ModEnvRelease: 2013
+        - SampleModes: 1
+        - VolEnvAttack: -2266
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: 1591
+        - Attenuation: 45
+      izone: 274
+        - KeyRange: 29440
+        - FineTune: 8
+        - OverrideRootKey: 94
+        - SampleId: 51
+      izone: 275
+        - KeyRange: 32628
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 65: ssynstrings2
+      default izone: 276
+        - FilterFc: 7670
+        - ModEnvAttack: -8800
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterQ: 100
+        - ModEnv2FilterFc: 7087
+        - ModEnvDecay: 0
+        - ModEnvSustain: 811
+        - ModEnvRelease: 1782
+        - SampleModes: 1
+        - VolEnvAttack: -2266
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: 1591
+        - Attenuation: 52
+      izone: 277
+        - KeyRange: 29696
+        - FineTune: 0
+        - OverrideRootKey: 94
+        - SampleId: 51
+      izone: 278
+        - KeyRange: 32629
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Choir Aahs  ,52,0:
+  Global Generators: 68
+      - Instrument: 66
+      - inst ref: 66, 68
+    Preset Generators: 69
+      - Instrument: 67
+      - inst ref: 67, 69
+  Instruments:
+    - inst 66: choiraahs
+      default izone: 279
+        - SampleModes: 1
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvAttack: -1684
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: 213
+        - Attenuation: 0
+      izone: 280
+        - KeyRange: 30464
+        - FineTune: 10
+        - OverrideRootKey: 98
+        - SampleId: 142
+      izone: 281
+        - KeyRange: 32632
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 67: schoiraahs
+      default izone: 282
+        - FilterQ: 69
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - SampleModes: 1
+        - VolEnvAttack: -1684
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: 213
+        - Attenuation: 0
+      izone: 283
+        - KeyRange: 27392
+        - FineTune: -28
+        - OverrideRootKey: 85
+        - SampleId: 143
+      izone: 284
+        - KeyRange: 32620
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Voice Oohs  ,53,0:
+  Global Generators: 70
+      - Instrument: 68
+      - inst ref: 68, 70
+    Preset Generators: 71
+      - Instrument: 69
+      - inst ref: 69, 71
+  Instruments:
+    - inst 68: voiceoohs
+      default izone: 285
+        - FilterFc: 11505
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterQ: 42
+        - CoarseTune: 1
+        - SampleModes: 1
+        - VolEnvAttack: -2968
+        - VolEnvHold: -6772
+        - VolEnvDecay: 3462
+        - VolEnvSustain: 97
+        - VolEnvRelease: -1079
+        - Attenuation: 75
+      izone: 286
+        - KeyRange: 23552
+        - FineTune: -15
+        - OverrideRootKey: 70
+        - SampleId: 43
+      izone: 287
+        - KeyRange: 32605
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 69: svoiceoohs
+      default izone: 288
+        - SampleModes: 1
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvHold: -6772
+        - VolEnvDecay: 3462
+        - VolEnvSustain: 191
+        - VolEnvRelease: -1079
+        - Attenuation: 75
+      izone: 289
+        - KeyRange: 25856
+        - FineTune: -28
+        - OverrideRootKey: 79
+        - SampleId: 147
+      izone: 290
+        - KeyRange: 32614
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Synth Voice ,54,0:
+  Global Generators: 72
+      - Instrument: 70
+      - inst ref: 70, 72
+  Instruments:
+    - inst 70: synvox
+      default izone: 291
+        - SampleModes: 1
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvAttack: -11958
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 34
+        - VolEnvRelease: 338
+        - Attenuation: 0
+      izone: 292
+        - KeyRange: 27392
+        - FineTune: -25
+        - OverrideRootKey: 85
+        - SampleId: 143
+      izone: 293
+        - KeyRange: 32620
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Orchestra Ht,55,0:
+  Global Generators: 73
+      - Instrument: 71
+      - inst ref: 71, 73
+  Instruments:
+    - inst 71: orchestrahit
+      default izone: 294
+        - VolEnvHold: -6772
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: 1482
+        - Attenuation: 0
+      izone: 295
+        - KeyRange: 30464
+        - FineTune: 35
+        - OverrideRootKey: 98
+        - SampleId: 124
+      izone: 296
+        - KeyRange: 32632
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Trumpet     ,56,0:
+  Global Generators: 74
+      - Instrument: 72
+      - inst ref: 72, 74
+  Instruments:
+    - inst 72: trumpet
+      default izone: 297
+        - SampleModes: 1
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - ModEnv2FilterFc: 6862
+        - ModEnvDecay: 4054
+        - VolEnvAttack: -8856
+        - VolEnvHold: -6772
+        - VolEnvDecay: 4301
+        - VolEnvSustain: 23
+        - VolEnvRelease: -1079
+        - Attenuation: 52
+        - ModLFO2Pitch: 9
+        - ModLFODelay: -2332
+        - ModLFOFreq: -837
+        - FilterQ: 42
+      izone: 298
+        - KeyRange: 16384
+        - FineTune: -43
+        - OverrideRootKey: 84
+        - SampleId: 33
+      izone: 299
+        - KeyRange: 17729
+        - FineTune: -20
+        - OverrideRootKey: 88
+        - SampleId: 29
+      izone: 300
+        - KeyRange: 19014
+        - FineTune: -1
+        - OverrideRootKey: 93
+        - SampleId: 30
+      izone: 301
+        - KeyRange: 20299
+        - FineTune: 24
+        - OverrideRootKey: 98
+        - SampleId: 31
+      izone: 302
+        - KeyRange: 32080
+        - FineTune: -4
+        - OverrideRootKey: 103
+        - SampleId: 32
+      izone: 303
+        - KeyRange: 32638
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Trombone    ,57,0:
+  Global Generators: 75
+      - Instrument: 73
+      - inst ref: 73, 75
+  Instruments:
+    - inst 73: trombone
+      default izone: 304
+        - FilterFc: 5251
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - FineTune: -7
+        - OverrideRootKey: 70
+        - ModEnv2FilterFc: 7087
+        - ModEnvAttack: -8856
+        - ModEnvDecay: 3841
+        - ModEnvSustain: 496
+        - ModEnvRelease: 3488
+        - SampleModes: 1
+        - VolEnvAttack: -8856
+        - VolEnvHold: -6772
+        - VolEnvDecay: 4301
+        - VolEnvSustain: 23
+        - VolEnvRelease: -1079
+        - Attenuation: 0
+        - ModLFO2Pitch: 9
+        - ModLFODelay: -2332
+        - ModLFOFreq: -837
+      izone: 305
+        - KeyRange: 13312
+        - FineTune: -7
+        - OverrideRootKey: 70
+        - SampleId: 34
+      izone: 306
+        - KeyRange: 15157
+        - FineTune: 33
+        - OverrideRootKey: 80
+        - SampleId: 35
+      izone: 307
+        - KeyRange: 16444
+        - FineTune: -3
+        - OverrideRootKey: 84
+        - SampleId: 36
+      izone: 308
+        - KeyRange: 28481
+        - FineTune: 16
+        - OverrideRootKey: 90
+        - SampleId: 37
+      izone: 309
+        - KeyRange: 32624
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Tuba        ,58,0:
+  Global Generators: 76
+      - Instrument: 74
+      - inst ref: 74, 76
+  Instruments:
+    - inst 74: tuba
+      default izone: 310
+        - ModEnv2FilterFc: 6862
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - ModEnvDecay: 4054
+        - ModLFO2Pitch: 9
+        - ModLFODelay: -2332
+        - ModLFOFreq: -837
+        - SampleModes: 1
+        - VolEnvAttack: -8856
+        - VolEnvHold: -6772
+        - VolEnvDecay: 4301
+        - VolEnvSustain: 55
+        - VolEnvRelease: -1224
+        - Attenuation: 0
+      izone: 311
+        - KeyRange: 22016
+        - FineTune: 38
+        - OverrideRootKey: 65
+        - SampleId: 38
+      izone: 312
+        - KeyRange: 28503
+        - FineTune: 16
+        - OverrideRootKey: 90
+        - SampleId: 37
+      izone: 313
+        - KeyRange: 32624
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Muted Trump ,59,0:
+  Global Generators: 77
+      - Instrument: 75
+      - inst ref: 75, 77
+  Instruments:
+    - inst 75: mutedtrumpet
+      default izone: 314
+        - SampleModes: 1
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - FilterFc: 5251
+        - ModEnv2FilterFc: 6862
+        - ModEnvAttack: -8856
+        - ModEnvDecay: 4054
+        - ModEnvSustain: 496
+        - ModEnvRelease: 3488
+        - VolEnvAttack: -8856
+        - VolEnvHold: -6772
+        - VolEnvDecay: 4301
+        - VolEnvSustain: 55
+        - VolEnvRelease: -1224
+        - Attenuation: 82
+        - ModLFO2Pitch: 9
+        - ModLFODelay: -2332
+        - ModLFOFreq: -837
+      izone: 315
+        - KeyRange: 16640
+        - FineTune: 44
+        - OverrideRootKey: 78
+        - SampleId: 39
+      izone: 316
+        - KeyRange: 28738
+        - FineTune: -40
+        - OverrideRootKey: 90
+        - SampleId: 40
+      izone: 317
+        - KeyRange: 32625
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset French Horn ,60,0:
+  Global Generators: 78
+      - Instrument: 76
+      - inst ref: 76, 78
+  Instruments:
+    - inst 76: frenchhorn
+      default izone: 318
+        - SampleModes: 1
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - StartLoopAddrOfs: 1
+        - EndLoopAddrOfs: 1
+        - ModEnv2FilterFc: 6862
+        - ModEnvDecay: 4054
+        - VolEnvAttack: -8590
+        - VolEnvHold: -6772
+        - VolEnvDecay: 4301
+        - VolEnvSustain: 149
+        - VolEnvRelease: -24
+        - Attenuation: 0
+      izone: 319
+        - KeyRange: 28416
+        - FineTune: 15
+        - OverrideRootKey: 90
+        - SampleId: 22
+      izone: 320
+        - KeyRange: 32624
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Brass 1,61,0:
+  Global Generators: 79
+      - Instrument: 77
+      - inst ref: 77, 79
+    Preset Generators: 80
+      - Instrument: 78
+      - inst ref: 78, 80
+  Instruments:
+    - inst 77: brass1
+      default izone: 321
+        - ModLFO2Pitch: 9
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - ModLFODelay: -2332
+        - ModLFOFreq: -837
+        - SampleModes: 1
+        - ModEnv2FilterFc: 6862
+        - ModEnvDecay: 4054
+        - VolEnvAttack: -8856
+        - VolEnvHold: -6772
+        - VolEnvDecay: 4301
+        - VolEnvSustain: 55
+        - VolEnvRelease: -949
+        - Attenuation: 120
+      izone: 322
+        - KeyRange: 18176
+        - FineTune: -35
+        - OverrideRootKey: 77
+        - SampleId: 27
+      izone: 323
+        - KeyRange: 29768
+        - FineTune: 47
+        - OverrideRootKey: 95
+        - SampleId: 28
+      izone: 324
+        - KeyRange: 32629
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 78: sbrass1
+      default izone: 325
+        - VolEnvDelay: -6772
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - ModLFO2Pitch: 9
+        - ModLFODelay: -2400
+        - ModLFOFreq: -926
+        - SampleModes: 1
+        - ModEnv2FilterFc: 6862
+        - ModEnvDecay: 4054
+        - VolEnvAttack: -8856
+        - VolEnvHold: -6772
+        - VolEnvDecay: 4301
+        - VolEnvSustain: 55
+        - VolEnvRelease: -949
+        - Attenuation: 120
+      izone: 326
+        - KeyRange: 18176
+        - FineTune: -26
+        - OverrideRootKey: 77
+        - SampleId: 27
+      izone: 327
+        - KeyRange: 29768
+        - FineTune: -43
+        - OverrideRootKey: 94
+        - SampleId: 28
+      izone: 328
+        - KeyRange: 32629
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Synth Brass1,62,0:
+  Global Generators: 81
+      - Instrument: 79
+      - inst ref: 79, 81
+  Instruments:
+    - inst 79: synthbrass1
+      default izone: 329
+        - FilterFc: 9971
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterQ: 66
+        - ModEnv2FilterFc: 7087
+        - ModEnvHold: -4372
+        - ModEnvDecay: 4054
+        - ModEnvRelease: 2919
+        - SampleModes: 1
+        - VolEnvAttack: -8856
+        - VolEnvHold: -6772
+        - VolEnvSustain: 55
+        - VolEnvDecay: 4301
+        - VolEnvRelease: -1224
+        - Attenuation: 0
+      izone: 330
+        - KeyRange: 27904
+        - FineTune: 0
+        - OverrideRootKey: 87
+        - SampleId: 128
+      izone: 331
+        - KeyRange: 32622
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Synth Brass2,63,0:
+  Global Generators: 82
+      - Instrument: 80
+      - inst ref: 80, 82
+  Instruments:
+    - inst 80: synthbrass2
+      default izone: 332
+        - FilterFc: 6195
+        - ModEnvAttack: -8800
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterQ: 21
+        - ModEnv2FilterFc: 7087
+        - SampleModes: 1
+        - ModEnvHold: -7972
+        - ModEnvDecay: 4054
+        - ModEnvSustain: 989
+        - ModEnvRelease: 2641
+        - VolEnvAttack: -8856
+        - VolEnvHold: -6772
+        - VolEnvDecay: 4301
+        - VolEnvSustain: 0
+        - VolEnvRelease: -1079
+        - Attenuation: 0
+      izone: 333
+        - KeyRange: 27648
+        - FineTune: 2
+        - OverrideRootKey: 87
+        - SampleId: 128
+      izone: 334
+        - KeyRange: 32621
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Soprano Sax ,64,0:
+  Global Generators: 83
+      - Instrument: 81
+      - inst ref: 81, 83
+  Instruments:
+    - inst 81: sopranosax
+      default izone: 335
+        - SampleModes: 1
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - VolEnvAttack: -8856
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 86
+        - VolEnvRelease: -3986
+        - Attenuation: 0
+        - ModLFO2Pitch: 9
+        - ModLFODelay: -2332
+        - ModLFOFreq: -837
+      izone: 336
+        - KeyRange: 14336
+        - FineTune: 36
+        - OverrideRootKey: 71
+        - SampleId: 11
+      izone: 337
+        - KeyRange: 14905
+        - FineTune: -45
+        - OverrideRootKey: 74
+        - SampleId: 12
+      izone: 338
+        - KeyRange: 16699
+        - FineTune: 5
+        - OverrideRootKey: 76
+        - SampleId: 13
+      izone: 339
+        - KeyRange: 18498
+        - FineTune: 29
+        - OverrideRootKey: 82
+        - SampleId: 14
+      izone: 340
+        - KeyRange: 19529
+        - FineTune: -3
+        - OverrideRootKey: 84
+        - SampleId: 15
+      izone: 341
+        - KeyRange: 22093
+        - FineTune: -4
+        - OverrideRootKey: 91
+        - SampleId: 16
+      izone: 342
+        - KeyRange: 29527
+        - FineTune: 29
+        - OverrideRootKey: 94
+        - SampleId: 17
+      izone: 343
+        - KeyRange: 32628
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Alto Sax    ,65,0:
+  Global Generators: 84
+      - Instrument: 82
+      - inst ref: 82, 84
+  Instruments:
+    - inst 82: altosax
+      default izone: 344
+        - SampleModes: 1
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - FineTune: 36
+        - OverrideRootKey: 71
+        - VolEnvAttack: -8856
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 44
+        - VolEnvRelease: -3986
+        - Attenuation: 45
+        - ModLFO2Pitch: 9
+        - ModLFODelay: -2332
+        - ModLFOFreq: -837
+      izone: 345
+        - KeyRange: 13568
+        - FineTune: 36
+        - OverrideRootKey: 71
+        - SampleId: 11
+      izone: 346
+        - KeyRange: 14646
+        - FineTune: -45
+        - OverrideRootKey: 74
+        - SampleId: 12
+      izone: 347
+        - KeyRange: 15930
+        - FineTune: 5
+        - OverrideRootKey: 76
+        - SampleId: 13
+      izone: 348
+        - KeyRange: 17727
+        - FineTune: 29
+        - OverrideRootKey: 82
+        - SampleId: 14
+      izone: 349
+        - KeyRange: 18758
+        - FineTune: -3
+        - OverrideRootKey: 84
+        - SampleId: 15
+      izone: 350
+        - KeyRange: 20810
+        - FineTune: -4
+        - OverrideRootKey: 91
+        - SampleId: 16
+      izone: 351
+        - KeyRange: 29522
+        - FineTune: 29
+        - OverrideRootKey: 94
+        - SampleId: 17
+      izone: 352
+        - KeyRange: 32628
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Tenor Sax   ,66,0:
+  Global Generators: 85
+      - Instrument: 83
+      - inst ref: 83, 85
+  Instruments:
+    - inst 83: tenorsax
+      default izone: 353
+        - SampleModes: 1
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - VolEnvAttack: -8856
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 44
+        - VolEnvRelease: -3986
+        - Attenuation: 67
+        - ModLFO2Pitch: 9
+        - ModLFODelay: -2332
+        - ModLFOFreq: -837
+      izone: 354
+        - KeyRange: 13056
+        - FineTune: 36
+        - OverrideRootKey: 71
+        - SampleId: 11
+      izone: 355
+        - KeyRange: 13876
+        - FineTune: -45
+        - OverrideRootKey: 74
+        - SampleId: 12
+      izone: 356
+        - KeyRange: 14903
+        - FineTune: 5
+        - OverrideRootKey: 76
+        - SampleId: 13
+      izone: 357
+        - KeyRange: 16443
+        - FineTune: 29
+        - OverrideRootKey: 82
+        - SampleId: 14
+      izone: 358
+        - KeyRange: 17473
+        - FineTune: -3
+        - OverrideRootKey: 84
+        - SampleId: 15
+      izone: 359
+        - KeyRange: 19013
+        - FineTune: -4
+        - OverrideRootKey: 91
+        - SampleId: 16
+      izone: 360
+        - KeyRange: 29515
+        - FineTune: 29
+        - OverrideRootKey: 94
+        - SampleId: 17
+      izone: 361
+        - KeyRange: 32628
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Baritone Sax,67,0:
+  Global Generators: 86
+      - Instrument: 84
+      - inst ref: 84, 86
+  Instruments:
+    - inst 84: baritonesax
+      default izone: 362
+        - SampleModes: 1
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - VolEnvAttack: -8856
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 55
+        - VolEnvRelease: -3986
+        - Attenuation: 30
+        - ModLFO2Pitch: 9
+        - ModLFODelay: -2332
+        - ModLFOFreq: -837
+      izone: 363
+        - KeyRange: 13056
+        - FineTune: -45
+        - OverrideRootKey: 74
+        - SampleId: 12
+      izone: 364
+        - KeyRange: 14388
+        - FineTune: 5
+        - OverrideRootKey: 76
+        - SampleId: 13
+      izone: 365
+        - KeyRange: 15161
+        - FineTune: 29
+        - OverrideRootKey: 82
+        - SampleId: 14
+      izone: 366
+        - KeyRange: 16444
+        - FineTune: -3
+        - OverrideRootKey: 84
+        - SampleId: 15
+      izone: 367
+        - KeyRange: 17473
+        - FineTune: -4
+        - OverrideRootKey: 91
+        - SampleId: 16
+      izone: 368
+        - KeyRange: 29509
+        - FineTune: 29
+        - OverrideRootKey: 94
+        - SampleId: 17
+      izone: 369
+        - KeyRange: 32628
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Oboe        ,68,0:
+  Global Generators: 87
+      - Instrument: 85
+      - inst ref: 85, 87
+  Instruments:
+    - inst 85: oboe
+      default izone: 370
+        - SampleModes: 1
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 55
+        - VolEnvRelease: -3986
+        - Attenuation: 45
+        - ModLFO2Pitch: 9
+        - ModLFODelay: -2332
+        - ModLFOFreq: -837
+      izone: 371
+        - KeyRange: 16128
+        - FineTune: 33
+        - OverrideRootKey: 80
+        - StartLoopAddrOfs: -1
+        - EndLoopAddrOfs: -1
+        - SampleId: 18
+      izone: 372
+        - KeyRange: 17472
+        - FineTune: 38
+        - OverrideRootKey: 84
+        - StartLoopAddrOfs: -1
+        - EndLoopAddrOfs: -1
+        - SampleId: 19
+      izone: 373
+        - KeyRange: 27973
+        - FineTune: 32
+        - OverrideRootKey: 88
+        - StartLoopAddrOfs: -1
+        - EndLoopAddrOfs: -1
+        - SampleId: 20
+      izone: 374
+        - KeyRange: 32622
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset English Horn,69,0:
+  Global Generators: 88
+      - Instrument: 86
+      - inst ref: 86, 88
+  Instruments:
+    - inst 86: englishhorn
+      default izone: 375
+        - VolEnvHold: -6772
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 55
+        - VolEnvRelease: -3986
+        - Attenuation: 22
+        - ModLFO2Pitch: 9
+        - ModLFODelay: -2332
+        - ModLFOFreq: -837
+      izone: 376
+        - KeyRange: 25856
+        - FineTune: -35
+        - OverrideRootKey: 79
+        - StartLoopAddrOfs: -1
+        - EndLoopAddrOfs: -1
+        - SampleModes: 1
+        - SampleId: 21
+      izone: 377
+        - KeyRange: 32614
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Bassoon     ,70,0:
+  Global Generators: 89
+      - Instrument: 87
+      - inst ref: 87, 89
+  Instruments:
+    - inst 87: bassoon
+      default izone: 378
+        - SampleModes: 1
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 55
+        - VolEnvRelease: -3986
+        - Attenuation: 22
+        - ModLFO2Pitch: 9
+        - ModLFODelay: -2332
+        - ModLFOFreq: -837
+      izone: 379
+        - KeyRange: 22528
+        - FineTune: 41
+        - OverrideRootKey: 67
+        - StartLoopAddrOfs: -1
+        - EndLoopAddrOfs: -1
+        - SampleId: 23
+      izone: 380
+        - KeyRange: 25945
+        - FineTune: -35
+        - OverrideRootKey: 79
+        - StartLoopAddrOfs: -1
+        - EndLoopAddrOfs: -1
+        - SampleModes: 1
+        - SampleId: 21
+      izone: 381
+        - KeyRange: 32614
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Clarinet    ,71,0:
+  Global Generators: 90
+      - Instrument: 88
+      - inst ref: 88, 90
+  Instruments:
+    - inst 88: clarinet
+      default izone: 382
+        - SampleModes: 1
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 55
+        - VolEnvRelease: -3986
+        - Attenuation: 22
+        - ModLFO2Pitch: 9
+        - ModLFODelay: -2332
+        - ModLFOFreq: -837
+      izone: 383
+        - KeyRange: 17664
+        - FineTune: 0
+        - OverrideRootKey: 74
+        - StartLoopAddrOfs: -1
+        - EndLoopAddrOfs: -1
+        - SampleId: 25
+      izone: 384
+        - KeyRange: 25926
+        - FineTune: 49
+        - OverrideRootKey: 80
+        - StartLoopAddrOfs: -1
+        - EndLoopAddrOfs: -1
+        - SampleId: 26
+      izone: 385
+        - KeyRange: 32614
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Piccolo     ,72,0:
+  Global Generators: 91
+      - Instrument: 89
+      - inst ref: 89, 91
+    Preset Generators: 92
+      - Instrument: 90
+      - inst ref: 90, 92
+  Instruments:
+    - inst 89: piccolo
+      default izone: 386
+        - SampleModes: 1
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - VolEnvHold: -6772
+        - VolEnvDecay: 2941
+        - VolEnvSustain: 86
+        - VolEnvRelease: -3986
+        - Attenuation: 90
+        - ModLFO2Pitch: 9
+        - ModLFODelay: -2332
+        - ModLFOFreq: -837
+      izone: 387
+        - KeyRange: 28416
+        - FineTune: -28
+        - OverrideRootKey: 89
+        - SampleId: 24
+      izone: 388
+        - KeyRange: 32624
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 90: spiccolo
+      default izone: 389
+        - SampleModes: 1
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvAttack: -3151
+        - VolEnvHold: -6772
+        - VolEnvDecay: 4280
+        - VolEnvSustain: 86
+        - VolEnvRelease: -3986
+        - Attenuation: 90
+        - FilterFc: 9853
+      izone: 390
+        - KeyRange: 28928
+        - FineTune: 33
+        - OverrideRootKey: 92
+        - StartLoopAddrOfs: -3
+        - EndLoopAddrOfs: -3
+        - SampleId: 41
+      izone: 391
+        - KeyRange: 32626
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Flute       ,73,0:
+  Global Generators: 93
+      - Instrument: 91
+      - inst ref: 91, 93
+    Preset Generators: 94
+      - Instrument: 92
+      - inst ref: 92, 94
+  Instruments:
+    - inst 91: flute
+      default izone: 392
+        - SampleModes: 1
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - VolEnvAttack: -4899
+        - VolEnvHold: -3172
+        - VolEnvDecay: 3049
+        - VolEnvSustain: 34
+        - VolEnvRelease: -3986
+        - Attenuation: 0
+        - FilterQ: 106
+        - ModLFO2Pitch: 9
+        - ModLFODelay: -2332
+        - ModLFOFreq: -837
+      izone: 393
+        - KeyRange: 28416
+        - FineTune: -28
+        - OverrideRootKey: 89
+        - SampleId: 24
+      izone: 394
+        - KeyRange: 32624
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 92: sflute
+      default izone: 395
+        - SampleModes: 1
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 34
+        - VolEnvRelease: -3986
+        - Attenuation: 240
+        - FilterQ: 97
+      izone: 396
+        - KeyRange: 26368
+        - FineTune: -1
+        - OverrideRootKey: 81
+        - SampleId: 43
+      izone: 397
+        - KeyRange: 32616
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Recorder    ,74,0:
+  Global Generators: 95
+      - Instrument: 93
+      - inst ref: 93, 95
+  Instruments:
+    - inst 93: recorder
+      default izone: 398
+        - ModLFO2Pitch: 9
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - FineTune: 33
+        - OverrideRootKey: 92
+        - ModLFODelay: -2332
+        - ModLFOFreq: -837
+        - SampleModes: 1
+        - VolEnvAttack: -8856
+        - VolEnvHold: -6772
+        - VolEnvDecay: 4280
+        - VolEnvSustain: 34
+        - VolEnvRelease: -3986
+        - Attenuation: 52
+      izone: 399
+        - KeyRange: 28928
+        - FineTune: 33
+        - OverrideRootKey: 92
+        - StartLoopAddrOfs: -3
+        - EndLoopAddrOfs: -3
+        - SampleId: 41
+      izone: 400
+        - KeyRange: 32626
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Pan Flute   ,75,0:
+  Global Generators: 96
+      - Instrument: 94
+      - inst ref: 94, 96
+    Preset Generators: 97
+      - Instrument: 95
+      - inst ref: 95, 97
+  Instruments:
+    - inst 94: panflute
+      default izone: 401
+        - SampleModes: 1
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvAttack: -8856
+        - VolEnvHold: -6772
+        - VolEnvDecay: 4077
+        - VolEnvSustain: 34
+        - VolEnvRelease: -3986
+        - Attenuation: 142
+      izone: 402
+        - KeyRange: 26368
+        - FineTune: -1
+        - OverrideRootKey: 81
+        - SampleId: 43
+      izone: 403
+        - KeyRange: 32616
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 95: spanflute
+      default izone: 404
+        - SampleModes: 1
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvAttack: -8856
+        - VolEnvHold: -6772
+        - VolEnvDecay: 3462
+        - VolEnvSustain: 34
+        - VolEnvRelease: -3986
+        - Attenuation: 142
+      izone: 405
+        - KeyRange: 28928
+        - FineTune: 40
+        - OverrideRootKey: 92
+        - StartLoopAddrOfs: -3
+        - EndLoopAddrOfs: -3
+        - SampleId: 41
+      izone: 406
+        - KeyRange: 32626
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Blown Bottle,76,0:
+  Global Generators: 98
+      - Instrument: 96
+      - inst ref: 96, 98
+    Preset Generators: 99
+      - Instrument: 97
+      - inst ref: 97, 99
+  Instruments:
+    - inst 96: bottleblow
+      default izone: 407
+        - VolEnvHold: -6772
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvDecay: 1317
+        - VolEnvSustain: 0
+        - VolEnvRelease: -3986
+        - Attenuation: 180
+      izone: 408
+        - KeyRange: 23296
+        - FineTune: 38
+        - OverrideRootKey: 70
+        - SampleId: 42
+      izone: 409
+        - KeyRange: 32604
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 97: sbottleblow
+      default izone: 410
+        - SampleModes: 1
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvAttack: -8856
+        - VolEnvHold: -6772
+        - VolEnvDecay: 4077
+        - VolEnvSustain: 0
+        - VolEnvRelease: -3986
+        - Attenuation: 180
+      izone: 411
+        - KeyRange: 26368
+        - FineTune: -7
+        - OverrideRootKey: 81
+        - SampleId: 43
+      izone: 412
+        - KeyRange: 32616
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Shakuhachi  ,77,0:
+  Global Generators: 100
+      - Instrument: 98
+      - inst ref: 98, 100
+  Instruments:
+    - inst 98: shakuhachi
+      default izone: 413
+        - SampleModes: 1
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvHold: -6772
+        - VolEnvDecay: 2521
+        - VolEnvSustain: 13
+        - VolEnvRelease: -3986
+        - Attenuation: 180
+      izone: 414
+        - KeyRange: 26368
+        - FineTune: -7
+        - OverrideRootKey: 81
+        - SampleId: 43
+      izone: 415
+        - KeyRange: 32616
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Whistle     ,78,0:
+  Global Generators: 101
+      - Instrument: 99
+      - inst ref: 99, 101
+  Instruments:
+    - inst 99: whistle
+      default izone: 416
+        - SampleModes: 1
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - VolEnvAttack: -4870
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 13
+        - VolEnvRelease: -3986
+        - Attenuation: 67
+        - ModLFO2Pitch: 9
+        - ModLFODelay: -2203
+        - ModLFOFreq: -1019
+      izone: 417
+        - KeyRange: 27392
+        - FineTune: 24
+        - OverrideRootKey: 86
+        - SampleId: 44
+      izone: 418
+        - KeyRange: 32620
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Ocarina     ,79,0:
+  Global Generators: 102
+      - Instrument: 100
+      - inst ref: 100, 102
+  Instruments:
+    - inst 100: ocarina
+      default izone: 419
+        - SampleModes: 1
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 23
+        - VolEnvRelease: -3986
+        - Attenuation: 52
+        - ModLFO2Pitch: 9
+        - ModLFODelay: -2203
+        - ModLFOFreq: -1019
+      izone: 420
+        - KeyRange: 27392
+        - FineTune: 24
+        - OverrideRootKey: 86
+        - SampleId: 44
+      izone: 421
+        - KeyRange: 32620
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Square Wave ,80,0:
+  Global Generators: 103
+      - Instrument: 102
+      - inst ref: 102, 103
+    Preset Generators: 104
+      - Instrument: 103
+      - inst ref: 103, 104
+  Instruments:
+    - inst 102: squarewave
+      default izone: 425
+        - SampleModes: 1
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvAttack: -11958
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 23
+        - VolEnvRelease: -3986
+        - Attenuation: 180
+      izone: 426
+        - KeyRange: 25856
+        - FineTune: -32
+        - OverrideRootKey: 79
+        - StartLoopAddrOfs: -3
+        - EndLoopAddrOfs: -3
+        - SampleId: 129
+      izone: 427
+        - KeyRange: 32614
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 103: ssquarewave
+      default izone: 428
+        - SampleModes: 1
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvAttack: -11958
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 23
+        - VolEnvRelease: -3986
+        - Attenuation: 180
+      izone: 429
+        - KeyRange: 25856
+        - FineTune: -39
+        - OverrideRootKey: 79
+        - StartLoopAddrOfs: -3
+        - EndLoopAddrOfs: -3
+        - SampleId: 129
+      izone: 430
+        - KeyRange: 32614
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Saw Wave    ,81,0:
+  Global Generators: 105
+      - Instrument: 104
+      - inst ref: 104, 105
+    Preset Generators: 106
+      - Instrument: 105
+      - inst ref: 105, 106
+  Instruments:
+    - inst 104: sawwave
+      default izone: 431
+        - FilterFc: 10325
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterQ: 81
+        - ModEnv2FilterFc: 7087
+        - ModEnvDecay: -1586
+        - VolEnvAttack: -11958
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 23
+        - VolEnvRelease: -3986
+        - SampleModes: 1
+        - Attenuation: 60
+      izone: 432
+        - KeyRange: 27904
+        - FineTune: -1
+        - OverrideRootKey: 87
+        - SampleId: 128
+      izone: 433
+        - KeyRange: 32622
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 105: ssawwave
+      default izone: 434
+        - FilterFc: 10915
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterQ: 81
+        - ModEnv2FilterFc: 7087
+        - ModEnvDecay: -1586
+        - VolEnvAttack: -11958
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 23
+        - VolEnvRelease: -3986
+        - SampleModes: 1
+        - Attenuation: 120
+      izone: 435
+        - KeyRange: 26112
+        - FineTune: 2
+        - OverrideRootKey: 81
+        - SampleId: 135
+      izone: 436
+        - KeyRange: 32615
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Syn Calliope,82,0:
+  Global Generators: 107
+      - Instrument: 181
+      - inst ref: 181, 107
+    Preset Generators: 108
+      - Instrument: 107
+      - inst ref: 107, 108
+  Instruments:
+    - inst 181: syncalliope #02
+      default izone: 750
+        - ModEnvRelease: 813
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - ChorusSend: 466
+        - VolEnvSustain: 23
+        - VolEnvAttack: -11958
+        - VolEnvHold: -6772
+        - VolEnvDecay: 1317
+        - VolEnvSustain: 23
+        - VolEnvRelease: -3986
+        - Attenuation: 0
+      izone: 751
+        - KeyRange: 23296
+        - FineTune: 38
+        - OverrideRootKey: 70
+        - SampleId: 42
+      izone: 752
+        - KeyRange: 32604
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 107: ssyncalliope
+      default izone: 440
+        - SampleModes: 1
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvAttack: -8856
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 23
+        - VolEnvRelease: -3986
+        - Attenuation: 135
+      izone: 441
+        - KeyRange: 25856
+        - FineTune: -32
+        - OverrideRootKey: 79
+        - StartLoopAddrOfs: -3
+        - EndLoopAddrOfs: -3
+        - SampleId: 129
+      izone: 442
+        - KeyRange: 32614
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Chiffer Lead,83,0:
+  Global Generators: 109
+      - Instrument: 106
+      - inst ref: 106, 109
+    Preset Generators: 110
+      - Instrument: 108
+      - inst ref: 108, 110
+  Instruments:
+    - inst 106: syncalliope
+      default izone: 437
+        - ModEnvRelease: 813
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - ChorusSend: 466
+        - VolEnvSustain: 23
+        - VolEnvAttack: -11958
+        - VolEnvHold: -6772
+        - VolEnvDecay: 1317
+        - VolEnvSustain: 23
+        - VolEnvRelease: -3986
+        - Attenuation: 180
+      izone: 438
+        - KeyRange: 23296
+        - FineTune: 38
+        - OverrideRootKey: 70
+        - SampleId: 42
+      izone: 439
+        - KeyRange: 32604
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 108: schifferlead
+      default izone: 443
+        - ModEnv2Pitch: 919
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterFc: 4602
+        - FilterQ: 33
+        - ModEnv2FilterFc: 4612
+        - ModEnvAttack: -5407
+        - ModEnvHold: 413
+        - ModEnvDecay: 6000
+        - ModEnvSustain: 0
+        - ModEnvRelease: 2013
+        - SampleModes: 1
+        - VolEnvAttack: -8856
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 23
+        - VolEnvRelease: -3986
+        - CoarseTune: -9
+        - Attenuation: 82
+        - ChorusSend: 497
+      izone: 444
+        - KeyRange: 26112
+        - FineTune: 2
+        - OverrideRootKey: 81
+        - SampleId: 135
+      izone: 445
+        - KeyRange: 32615
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Charang     ,84,0:
+  Global Generators: 111
+      - Instrument: 109
+      - inst ref: 109, 111
+    Preset Generators: 112
+      - Instrument: 110
+      - inst ref: 110, 112
+  Instruments:
+    - inst 109: charang
+      default izone: 446
+        - SampleModes: 1
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 23
+        - VolEnvRelease: -3986
+        - Attenuation: 135
+      izone: 447
+        - KeyRange: 27648
+        - FineTune: 10
+        - OverrideRootKey: 87
+        - SampleId: 128
+      izone: 448
+        - KeyRange: 32621
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 110: scharange
+      default izone: 449
+        - ModEnv2Pitch: -149
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - ModEnvSustain: 580
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 23
+        - VolEnvRelease: -3986
+        - Attenuation: 277
+        - CoarseTune: -1
+        - FineTune: 24
+      izone: 450
+        - KeyRange: 26112
+        - FineTune: -39
+        - OverrideRootKey: 80
+        - SampleId: 9
+      izone: 451
+        - KeyRange: 32615
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Solo Vox    ,85,0:
+  Global Generators: 113
+      - Instrument: 111
+      - inst ref: 111, 113
+    Preset Generators: 114
+      - Instrument: 112
+      - inst ref: 112, 114
+  Instruments:
+    - inst 111: solovox
+      default izone: 452
+        - ChorusSend: 497
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - ModLFO2Pitch: 47
+        - ModLFOFreq: -78
+        - SampleModes: 1
+        - VolEnvAttack: -6772
+        - VolEnvHold: -6772
+        - VolEnvDecay: 4077
+        - VolEnvSustain: 23
+        - VolEnvRelease: -3986
+        - Attenuation: 82
+      izone: 453
+        - KeyRange: 26368
+        - FineTune: -1
+        - OverrideRootKey: 81
+        - SampleId: 43
+      izone: 454
+        - KeyRange: 32616
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 112: ssolovox
+      default izone: 455
+        - ChorusSend: 497
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - ReverbSend: 109
+        - FilterQ: 33
+        - ModLFO2Pitch: -8
+        - ModLFOFreq: -42
+        - VibLFO2Pitch: 9
+        - VibLFOFreq: 29
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 23
+        - VolEnvRelease: -3986
+        - Attenuation: 82
+      izone: 456
+        - KeyRange: 30464
+        - FineTune: 5
+        - OverrideRootKey: 98
+        - SampleId: 142
+      izone: 457
+        - KeyRange: 32632
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset 5th Saw Wave,86,0:
+  Global Generators: 115
+      - Instrument: 113
+      - inst ref: 113, 115
+    Preset Generators: 116
+      - Instrument: 114
+      - inst ref: 114, 116
+  Instruments:
+    - inst 113: fthsawwave
+      default izone: 458
+        - SampleModes: 1
+        - ModEnvAttack: -8800
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterFc: 4484
+        - FilterQ: 150
+        - ModEnv2FilterFc: 7087
+        - ModEnvDecay: 1365
+        - ModEnvSustain: 727
+        - ModEnvRelease: 4400
+        - VolEnvAttack: -6772
+        - VolEnvHold: -6772
+        - VolEnvDecay: 3770
+        - VolEnvSustain: 23
+        - VolEnvRelease: -3986
+        - ChorusSend: 435
+        - Attenuation: 30
+      izone: 459
+        - KeyRange: 27904
+        - FineTune: -1
+        - OverrideRootKey: 87
+        - SampleId: 128
+      izone: 460
+        - KeyRange: 32622
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 114: sfthsawwave
+      default izone: 461
+        - FilterFc: 4602
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterQ: 190
+        - ModEnv2FilterFc: 7087
+        - ModEnvDecay: 1515
+        - ModEnvSustain: 706
+        - ModEnvRelease: 4400
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 23
+        - VolEnvRelease: -3986
+        - ChorusSend: 497
+        - Attenuation: 30
+      izone: 462
+        - KeyRange: 27392
+        - FineTune: 2
+        - OverrideRootKey: 86
+        - SampleId: 135
+      izone: 463
+        - KeyRange: 32620
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Bass & Lead ,87,0:
+  Global Generators: 117
+      - Instrument: 115
+      - inst ref: 115, 117
+  Instruments:
+    - inst 115: basslead
+      default izone: 464
+        - ChorusSend: 348
+        - ModEnvAttack: -8800
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - FilterFc: 4956
+        - FilterQ: 36
+        - ModLFODelay: -2084
+        - ModLFOFreq: -780
+        - ModEnv2FilterFc: 5175
+        - ModEnvDecay: 0
+        - ModEnvSustain: 601
+        - ModEnvRelease: 1365
+        - SampleModes: 1
+        - VolEnvAttack: -8856
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 23
+        - VolEnvRelease: -3986
+        - ChorusSend: 497
+        - Attenuation: 0
+      izone: 465
+        - KeyRange: 16640
+        - FineTune: 8
+        - OverrideRootKey: 44
+        - SampleId: 66
+      izone: 466
+        - KeyRange: 27970
+        - FineTune: -1
+        - OverrideRootKey: 87
+        - SampleId: 128
+      izone: 467
+        - KeyRange: 32622
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+      izone: 468
+        - KeyRange: 26178
+        - FineTune: 2
+        - OverrideRootKey: 81
+        - SampleId: 135
+      izone: 469
+        - KeyRange: 32615
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Fantasia    ,88,0:
+  Global Generators: 118
+      - Instrument: 116
+      - inst ref: 116, 118
+    Preset Generators: 119
+      - Instrument: 117
+      - inst ref: 117, 119
+  Instruments:
+    - inst 116: fantasia
+      default izone: 470
+        - ChorusSend: 466
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - SampleModes: 1
+        - VolEnvAttack: -2653
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 23
+        - VolEnvRelease: 688
+        - Attenuation: 60
+        - FilterFc: 11328
+      izone: 471
+        - KeyRange: 29440
+        - FineTune: 13
+        - OverrideRootKey: 94
+        - SampleId: 51
+      izone: 472
+        - KeyRange: 32628
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 117: sfantasia
+      default izone: 473
+        - FilterFc: 9263
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterQ: 15
+        - ModEnv2FilterFc: 2362
+        - ModEnvDecay: 1654
+        - ModEnvRelease: 2484
+        - ChorusSend: 482
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: 3153
+        - VolEnvRelease: 688
+        - Attenuation: 82
+      izone: 474
+        - KeyRange: 26368
+        - FineTune: 29
+        - OverrideRootKey: 82
+        - SampleId: 8
+      izone: 475
+        - KeyRange: 32616
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Warm Pad    ,89,0:
+  Global Generators: 120
+      - Instrument: 118
+      - inst ref: 118, 120
+  Instruments:
+    - inst 118: warmpad
+      default izone: 476
+        - ChorusSend: 466
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - SampleModes: 1
+        - VolEnvAttack: 13
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 23
+        - VolEnvRelease: 1482
+        - Attenuation: 60
+        - FilterFc: 8555
+      izone: 477
+        - KeyRange: 29440
+        - FineTune: 10
+        - OverrideRootKey: 94
+        - SampleId: 51
+      izone: 478
+        - KeyRange: 32628
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Polysynth   ,90,0:
+  Global Generators: 121
+      - Instrument: 119
+      - inst ref: 119, 121
+    Preset Generators: 122
+      - Instrument: 120
+      - inst ref: 120, 122
+  Instruments:
+    - inst 119: polysynth
+      default izone: 479
+        - FilterFc: 11505
+        - VolEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterQ: 9
+        - ModEnv2Pitch: -243
+        - ModEnvAttack: -6772
+        - ChorusSend: 466
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 23
+        - VolEnvRelease: 338
+        - Attenuation: 187
+      izone: 480
+        - KeyRange: 27648
+        - FineTune: 2
+        - OverrideRootKey: 87
+        - SampleId: 128
+      izone: 481
+        - KeyRange: 32621
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 120: spolysynth
+      default izone: 482
+        - FilterFc: 11387
+        - VolEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterQ: 97
+        - ModEnv2Pitch: -8
+        - ModEnv2FilterFc: -4275
+        - ModEnvDelay: -1421
+        - ModEnvAttack: 413
+        - ModEnvDecay: 315
+        - ModEnvRelease: 3621
+        - ChorusSend: 482
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 23
+        - VolEnvRelease: 338
+        - Attenuation: 187
+      izone: 483
+        - KeyRange: 26112
+        - FineTune: 11
+        - OverrideRootKey: 81
+        - SampleId: 135
+      izone: 484
+        - KeyRange: 32615
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Space Voice ,91,0:
+  Global Generators: 123
+      - Instrument: 121
+      - inst ref: 121, 123
+    Preset Generators: 124
+      - Instrument: 122
+      - inst ref: 122, 124
+  Instruments:
+    - inst 121: spacevoice
+      default izone: 485
+        - FilterQ: 24
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - ModLFO2Pitch: 28
+        - ModLFOFreq: -42
+        - ChorusSend: 466
+        - SampleModes: 1
+        - VolEnvAttack: -8856
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 23
+        - VolEnvRelease: 1262
+        - Attenuation: 180
+      izone: 486
+        - KeyRange: 25088
+        - FineTune: -20
+        - OverrideRootKey: 76
+        - SampleId: 136
+      izone: 487
+        - KeyRange: 32611
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 122: sspacevoice
+      default izone: 488
+        - FilterQ: 24
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - ModLFO2Pitch: 19
+        - ModLFOFreq: 180
+        - ChorusSend: 482
+        - SampleModes: 1
+        - VolEnvAttack: -8590
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 23
+        - VolEnvRelease: 1262
+        - Attenuation: 180
+      izone: 489
+        - KeyRange: 30464
+        - FineTune: 5
+        - OverrideRootKey: 98
+        - SampleId: 142
+      izone: 490
+        - KeyRange: 32632
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Bowed Glass ,92,0:
+  Global Generators: 125
+      - Instrument: 123
+      - inst ref: 123, 125
+    Preset Generators: 126
+      - Instrument: 124
+      - inst ref: 124, 126
+  Instruments:
+    - inst 123: bowedglass
+      default izone: 491
+        - ChorusSend: 466
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterFc: 7552
+        - SampleModes: 1
+        - ModEnvDelay: -592
+        - ModEnvSustain: 0
+        - VolEnvAttack: -6530
+        - VolEnvHold: 133
+        - VolEnvDecay: 4400
+        - VolEnvRelease: 1591
+        - Attenuation: 240
+      izone: 492
+        - KeyRange: 24832
+        - FineTune: 36
+        - OverrideRootKey: 76
+        - SampleId: 149
+      izone: 493
+        - KeyRange: 32610
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 124: sbowedglass
+      default izone: 494
+        - ChorusSend: 482
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterFc: 10561
+        - SampleModes: 1
+        - ModEnvDelay: -7972
+        - ModEnvHold: -3172
+        - ModEnvDecay: 2715
+        - VolEnvAttack: -5958
+        - VolEnvHold: -6772
+        - VolEnvDecay: 2837
+        - VolEnvSustain: 139
+        - VolEnvRelease: 1916
+        - Attenuation: 240
+      izone: 495
+        - KeyRange: 25088
+        - FineTune: -20
+        - OverrideRootKey: 76
+        - SampleId: 137
+      izone: 496
+        - KeyRange: 32611
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Metal Pad   ,93,0:
+  Global Generators: 127
+      - Instrument: 125
+      - inst ref: 125, 127
+    Preset Generators: 128
+      - Instrument: 126
+      - inst ref: 126, 128
+  Instruments:
+    - inst 125: metalpad
+      default izone: 497
+        - ChorusSend: 466
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterFc: 6018
+        - FilterQ: 81
+        - ModEnv2FilterFc: 5062
+        - ModEnvDecay: 3158
+        - ModEnvRelease: 4400
+        - SampleModes: 1
+        - VolEnvAttack: -6013
+        - VolEnvHold: -6772
+        - VolEnvDecay: 4400
+        - VolEnvRelease: 1699
+        - Attenuation: 240
+      izone: 498
+        - KeyRange: 21760
+        - FineTune: 32
+        - OverrideRootKey: 64
+        - SampleId: 54
+      izone: 499
+        - KeyRange: 24918
+        - FineTune: 36
+        - OverrideRootKey: 76
+        - SampleId: 149
+      izone: 500
+        - KeyRange: 32610
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 126: smetalpad
+      default izone: 501
+        - ChorusSend: 482
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterFc: 5782
+        - FilterQ: 78
+        - ModEnv2FilterFc: 5287
+        - ModEnvDecay: 3043
+        - ModEnvRelease: 4400
+        - SampleModes: 1
+        - VolEnvAttack: 652
+        - VolEnvHold: -4372
+        - VolEnvDecay: 5817
+        - VolEnvSustain: 811
+        - VolEnvRelease: 1699
+        - Attenuation: 240
+      izone: 502
+        - KeyRange: 16384
+        - FineTune: 32
+        - OverrideRootKey: 64
+        - VolEnvDecay: 2837
+        - SampleId: 75
+      izone: 503
+        - KeyRange: 19521
+        - FineTune: 32
+        - OverrideRootKey: 64
+        - VolEnvDecay: 3049
+        - SampleId: 75
+      izone: 504
+        - KeyRange: 21837
+        - FineTune: 32
+        - OverrideRootKey: 64
+        - VolEnvDecay: 2837
+        - SampleId: 75
+      izone: 505
+        - KeyRange: 25174
+        - FineTune: -20
+        - OverrideRootKey: 76
+        - SampleId: 137
+      izone: 506
+        - KeyRange: 32611
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Halo Pad    ,94,0:
+  Global Generators: 129
+      - Instrument: 127
+      - inst ref: 127, 129
+    Preset Generators: 130
+      - Instrument: 128
+      - inst ref: 128, 130
+  Instruments:
+    - inst 127: halopad
+      default izone: 507
+        - FilterFc: 7788
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - FilterQ: 129
+        - ModLFO2FilterFc: 168
+        - ModEnv2FilterFc: 7087
+        - ModLFOFreq: -3357
+        - ModLFO2Pitch: 9
+        - ModEnvHold: -7972
+        - ModEnvDecay: 1365
+        - ModEnvRelease: 2679
+        - SampleModes: 1
+        - VolEnvAttack: -1857
+        - VolEnvHold: -6772
+        - VolEnvDecay: 6000
+        - VolEnvSustain: 76
+        - VolEnvRelease: 1035
+        - Attenuation: 240
+      izone: 508
+        - KeyRange: 27904
+        - FineTune: -4
+        - OverrideRootKey: 87
+        - SampleId: 128
+      izone: 509
+        - KeyRange: 32622
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 128: shalopad
+      default izone: 510
+        - FilterFc: 7552
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - FilterQ: 24
+        - ModLFO2FilterFc: 168
+        - ModEnv2FilterFc: 4387
+        - ModLFOFreq: -3357
+        - ModLFO2Pitch: 9
+        - ModEnvDecay: 1365
+        - ModEnvRelease: 2715
+        - SampleModes: 1
+        - VolEnvAttack: -5958
+        - VolEnvHold: -6772
+        - VolEnvDecay: 6000
+        - VolEnvSustain: 76
+        - VolEnvRelease: 1035
+        - Attenuation: 240
+      izone: 511
+        - KeyRange: 27904
+        - FineTune: -4
+        - OverrideRootKey: 87
+        - SampleId: 128
+      izone: 512
+        - KeyRange: 32622
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Sweep Pad   ,95,0:
+  Global Generators: 131
+      - Instrument: 129
+      - inst ref: 129, 131
+  Instruments:
+    - inst 129: sweeppad
+      default izone: 513
+        - ChorusSend: 466
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterFc: 4484
+        - FilterQ: 100
+        - ModEnv2FilterFc: 7087
+        - ModEnvDelay: -3403
+        - ModEnvAttack: 4272
+        - ModEnvDecay: 2311
+        - ModEnvSustain: 506
+        - ModEnvRelease: 4400
+        - SampleModes: 1
+        - VolEnvAttack: -2010
+        - VolEnvHold: -6772
+        - VolEnvDecay: 4258
+        - VolEnvSustain: 0
+        - VolEnvRelease: 1916
+        - Attenuation: 277
+      izone: 514
+        - KeyRange: 27648
+        - FineTune: 7
+        - OverrideRootKey: 87
+        - SampleId: 128
+      izone: 515
+        - KeyRange: 32621
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Ice Rain    ,96,0:
+  Global Generators: 132
+      - Instrument: 130
+      - inst ref: 130, 132
+    Preset Generators: 133
+      - Instrument: 131
+      - inst ref: 131, 133
+  Instruments:
+    - inst 130: icerain
+      default izone: 516
+        - FilterFc: 6726
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterQ: 9
+        - ModEnv2FilterFc: 3937
+        - ModEnvDecay: 2217
+        - ModEnvRelease: 3043
+        - SampleModes: 1
+        - VolEnvAttack: -6772
+        - VolEnvHold: -6772
+        - VolEnvDecay: 4800
+        - VolEnvSustain: 1000
+        - VolEnvRelease: 2025
+        - Attenuation: 157
+      izone: 517
+        - KeyRange: 27904
+        - FineTune: -4
+        - OverrideRootKey: 87
+        - SampleId: 128
+      izone: 518
+        - KeyRange: 32622
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 131: sicerain
+      default izone: 519
+        - ScaleTune: 50
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - CoarseTune: -16
+        - FilterQ: 109
+        - ModEnv2Pitch: 1144
+        - ModEnvAttack: -8856
+        - ModEnvDecay: 813
+        - ModEnvRelease: 4400
+        - SampleModes: 1
+        - VolEnvAttack: -3151
+        - VolEnvHold: -6772
+        - VolEnvDecay: 4800
+        - VolEnvSustain: 1000
+        - VolEnvRelease: 2240
+        - Attenuation: 157
+      izone: 520
+        - KeyRange: 32512
+        - FineTune: -48
+        - OverrideRootKey: 82
+        - SampleId: 122
+preset Soundtrack  ,97,0:
+  Global Generators: 134
+      - Instrument: 132
+      - inst ref: 132, 134
+    Preset Generators: 135
+      - Instrument: 133
+      - inst ref: 133, 135
+  Instruments:
+    - inst 132: soundtrack
+      default izone: 521
+        - FilterFc: 7080
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterQ: 72
+        - ModEnv2FilterFc: 3712
+        - ModEnvAttack: -2621
+        - ModEnvDecay: 315
+        - ModEnvSustain: 811
+        - ModEnvRelease: 4197
+        - ChorusSend: 466
+        - SampleModes: 1
+        - VolEnvAttack: -217
+        - VolEnvHold: -6772
+        - VolEnvDecay: 4756
+        - VolEnvSustain: 86
+        - VolEnvRelease: 2025
+        - Attenuation: 142
+        - CoarseTune: 1
+      izone: 522
+        - KeyRange: 28672
+        - FineTune: -14
+        - OverrideRootKey: 90
+        - CoarseTune: 3
+        - SampleId: 128
+      izone: 523
+        - KeyRange: 32625
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 133: ssoundtrack
+      default izone: 524
+        - FilterFc: 7316
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterQ: 60
+        - ModEnv2FilterFc: 4162
+        - ModEnvAttack: -2084
+        - ModEnvDecay: 315
+        - ModEnvSustain: 769
+        - ModEnvRelease: 4103
+        - ChorusSend: 482
+        - SampleModes: 1
+        - VolEnvAttack: -217
+        - VolEnvHold: -6772
+        - VolEnvDecay: 4756
+        - VolEnvSustain: 86
+        - VolEnvRelease: 2025
+        - Attenuation: 142
+        - CoarseTune: 1
+      izone: 525
+        - KeyRange: 26880
+        - FineTune: -14
+        - OverrideRootKey: 83
+        - CoarseTune: 3
+        - SampleId: 128
+      izone: 526
+        - KeyRange: 32618
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Crystal     ,98,0:
+  Global Generators: 136
+      - Instrument: 134
+      - inst ref: 134, 136
+    Preset Generators: 137
+      - Instrument: 135
+      - inst ref: 135, 137
+  Instruments:
+    - inst 134: crystal
+      default izone: 527
+        - ChorusSend: 466
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - SampleModes: 1
+        - VolEnvHold: -4372
+        - VolEnvDecay: 3049
+        - VolEnvRelease: 1482
+        - Attenuation: 187
+        - FilterFc: 10443
+      izone: 528
+        - KeyRange: 24064
+        - FineTune: 29
+        - OverrideRootKey: 73
+        - SampleId: 123
+      izone: 529
+        - KeyRange: 32607
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 135: scrystal
+      default izone: 530
+        - ChorusSend: 482
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: 3049
+        - VolEnvRelease: 1811
+        - Attenuation: 187
+      izone: 531
+        - KeyRange: 30208
+        - FineTune: -45
+        - OverrideRootKey: 96
+        - SampleId: 130
+      izone: 532
+        - KeyRange: 32631
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Atmosphere  ,99,0:
+  Global Generators: 138
+      - Instrument: 136
+      - inst ref: 136, 138
+    Preset Generators: 139
+      - Instrument: 137
+      - inst ref: 137, 139
+  Instruments:
+    - inst 136: atmosphere
+      default izone: 533
+        - FilterFc: 7906
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterQ: 15
+        - ModEnv2FilterFc: 7087
+        - ModEnvDecay: 1200
+        - ModEnvRelease: 1200
+        - ChorusSend: 466
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: 1980
+        - VolEnvSustain: 86
+        - VolEnvRelease: -281
+        - Attenuation: 37
+      izone: 534
+        - KeyRange: 18432
+        - FineTune: 47
+        - OverrideRootKey: 74
+        - SampleId: 74
+      izone: 535
+        - KeyRange: 24905
+        - FineTune: 32
+        - OverrideRootKey: 76
+        - SampleId: 75
+      izone: 536
+        - KeyRange: 32610
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 137: satmosphere
+      default izone: 537
+        - VibLFO2Pitch: 28
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - ModLFODelay: -3670
+        - ModLFOFreq: -866
+        - ChorusSend: 482
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: 3667
+        - VolEnvSustain: 86
+        - VolEnvRelease: 1591
+        - Attenuation: 37
+      izone: 538
+        - KeyRange: 29440
+        - FineTune: 4
+        - OverrideRootKey: 94
+        - SampleId: 51
+      izone: 539
+        - KeyRange: 32628
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Brightness  ,100,0:
+  Global Generators: 140
+      - Instrument: 138
+      - inst ref: 138, 140
+    Preset Generators: 141
+      - Instrument: 139
+      - inst ref: 139, 141
+  Instruments:
+    - inst 138: brightness
+      default izone: 540
+        - ModLFOFreq: 460
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - ModLFO2Pitch: 66
+        - ChorusSend: 466
+        - SampleModes: 1
+        - VolEnvAttack: -11958
+        - VolEnvHold: -6772
+        - VolEnvDecay: 2733
+        - VolEnvRelease: 1699
+        - Attenuation: 0
+      izone: 541
+        - KeyRange: 27392
+        - FineTune: -32
+        - OverrideRootKey: 85
+        - SampleId: 143
+      izone: 542
+        - KeyRange: 32620
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 139: sbrightness
+      default izone: 543
+        - FilterFc: 14400
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - ChorusSend: 482
+        - SampleModes: 1
+        - VolEnvAttack: -11958
+        - VolEnvHold: -6772
+        - VolEnvDecay: 2733
+        - VolEnvRelease: 1699
+        - Attenuation: 0
+      izone: 544
+        - KeyRange: 29440
+        - FineTune: 4
+        - OverrideRootKey: 94
+        - SampleId: 51
+      izone: 545
+        - KeyRange: 32628
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Goblin      ,101,0:
+  Global Generators: 142
+      - Instrument: 140
+      - inst ref: 140, 142
+    Preset Generators: 143
+      - Instrument: 141
+      - inst ref: 141, 143
+  Instruments:
+    - inst 140: goblins
+      default izone: 546
+        - FilterFc: 4602
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterQ: 54
+        - ModEnv2FilterFc: 6075
+        - ModEnvAttack: 4284
+        - ModEnvHold: -4870
+        - ModEnvDecay: 813
+        - ModEnvRelease: 3488
+        - ChorusSend: 466
+        - SampleModes: 1
+        - VolEnvAttack: 2382
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: 2345
+        - Attenuation: 270
+      izone: 547
+        - KeyRange: 27392
+        - FineTune: -32
+        - OverrideRootKey: 85
+        - SampleId: 143
+      izone: 548
+        - KeyRange: 32620
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 141: sgoblins
+      default izone: 549
+        - FilterFc: 4602
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterQ: 94
+        - ModEnv2FilterFc: 5737
+        - ModEnvAttack: 4284
+        - ModEnvHold: -2203
+        - ModEnvDecay: 3343
+        - ModEnvRelease: 3578
+        - ChorusSend: 466
+        - SampleModes: 1
+        - VolEnvAttack: 2382
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: 2345
+        - Attenuation: 270
+        - CoarseTune: 32
+      izone: 550
+        - KeyRange: 27392
+        - FineTune: -32
+        - OverrideRootKey: 85
+        - SampleId: 143
+      izone: 551
+        - KeyRange: 32620
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Echo Drops  ,102,0:
+  Global Generators: 144
+      - Instrument: 142
+      - inst ref: 142, 144
+    Preset Generators: 145
+      - Instrument: 143
+      - inst ref: 143, 145
+  Instruments:
+    - inst 142: echodrops
+      default izone: 552
+        - FilterFc: 5310
+        - ModEnvAttack: -8800
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterQ: 103
+        - ModEnv2FilterFc: 7087
+        - ModEnvDecay: -884
+        - ModEnvSustain: 727
+        - ModEnvRelease: 2982
+        - ChorusSend: 466
+        - SampleModes: 1
+        - VolEnvAttack: -7972
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: 1372
+        - Attenuation: 60
+      izone: 553
+        - KeyRange: 30464
+        - FineTune: 5
+        - OverrideRootKey: 98
+        - SampleId: 142
+      izone: 554
+        - KeyRange: 32632
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 143: sechodrops
+      default izone: 555
+        - FilterFc: 4602
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - FilterQ: 75
+        - ModEnv2FilterFc: 6412
+        - ModLFO2Pitch: 28
+        - ModLFOFreq: 460
+        - ModEnvAttack: -116
+        - ModEnvDecay: 1782
+        - ModEnvRelease: -2786
+        - ChorusSend: 482
+        - SampleModes: 1
+        - VolEnvAttack: -81
+        - VolEnvHold: -6772
+        - VolEnvDecay: 3358
+        - VolEnvRelease: 1372
+        - Attenuation: 60
+      izone: 556
+        - KeyRange: 27392
+        - FineTune: -32
+        - OverrideRootKey: 85
+        - SampleId: 143
+      izone: 557
+        - KeyRange: 32620
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Star Theme  ,103,0:
+  Global Generators: 146
+      - Instrument: 144
+      - inst ref: 144, 146
+    Preset Generators: 147
+      - Instrument: 145
+      - inst ref: 145, 147
+  Instruments:
+    - inst 144: startheme
+      default izone: 558
+        - FilterFc: 6490
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - FilterQ: 24
+        - ModEnv2FilterFc: 6637
+        - ModLFO2Pitch: 19
+        - ModLFOFreq: -753
+        - ModEnvDecay: -1586
+        - ModEnvRelease: 2484
+        - ChorusSend: 466
+        - SampleModes: 1
+        - VolEnvAttack: -5186
+        - VolEnvHold: -3172
+        - VolEnvDecay: 3462
+        - VolEnvRelease: 1591
+        - Attenuation: 210
+      izone: 559
+        - KeyRange: 24320
+        - FineTune: 5
+        - OverrideRootKey: 74
+        - SampleId: 76
+    - inst 145: sstartheme
+      default izone: 560
+        - FilterFc: 7906
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterQ: 18
+        - ModEnv2FilterFc: 3487
+        - ModEnvDecay: 0
+        - ModEnvRelease: 3186
+        - ChorusSend: 482
+        - SampleModes: 1
+        - VolEnvAttack: -5186
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: 1591
+        - Attenuation: 210
+      izone: 561
+        - KeyRange: 27904
+        - FineTune: -4
+        - OverrideRootKey: 87
+        - SampleId: 128
+      izone: 562
+        - KeyRange: 32622
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Sitar       ,104,0:
+  Global Generators: 148
+      - Instrument: 146
+      - inst ref: 146, 148
+  Instruments:
+    - inst 146: sitar
+      default izone: 563
+        - SampleModes: 1
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvHold: -6772
+        - VolEnvDecay: 5003
+        - VolEnvRelease: 1035
+        - Attenuation: 60
+      izone: 564
+        - KeyRange: 27648
+        - FineTune: 30
+        - OverrideRootKey: 87
+        - SampleId: 73
+      izone: 565
+        - KeyRange: 32621
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Banjo       ,105,0:
+  Global Generators: 149
+      - Instrument: 147
+      - inst ref: 147, 149
+  Instruments:
+    - inst 147: banjo
+      default izone: 566
+        - SampleModes: 1
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvHold: -2544
+        - VolEnvDecay: 1544
+        - VolEnvRelease: -542
+        - Attenuation: 60
+      izone: 567
+        - KeyRange: 16896
+        - FineTune: 44
+        - OverrideRootKey: 78
+        - SampleId: 71
+      izone: 568
+        - KeyRange: 27459
+        - FineTune: -31
+        - OverrideRootKey: 85
+        - SampleId: 72
+      izone: 569
+        - KeyRange: 32620
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Shamisen    ,106,0:
+  Global Generators: 150
+      - Instrument: 148
+      - inst ref: 148, 150
+    Preset Generators: 151
+      - Instrument: 149
+      - inst ref: 149, 151
+  Instruments:
+    - inst 148: shamisen
+      default izone: 570
+        - FilterFc: 10561
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: -281
+        - Attenuation: 60
+      izone: 571
+        - KeyRange: 28416
+        - FineTune: -28
+        - OverrideRootKey: 89
+        - SampleId: 113
+      izone: 572
+        - KeyRange: 32624
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 149: sshamisen
+      default izone: 573
+        - FilterFc: 6726
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - SampleModes: 1
+        - VolEnvAttack: -5053
+        - VolEnvHold: -2544
+        - VolEnvDecay: 1544
+        - VolEnvRelease: -281
+        - Attenuation: 60
+      izone: 574
+        - KeyRange: 16640
+        - FineTune: 44
+        - OverrideRootKey: 78
+        - SampleId: 71
+      izone: 575
+        - KeyRange: 27458
+        - FineTune: -31
+        - OverrideRootKey: 85
+        - SampleId: 72
+      izone: 576
+        - KeyRange: 32620
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Koto        ,107,0:
+  Global Generators: 152
+      - Instrument: 150
+      - inst ref: 150, 152
+  Instruments:
+    - inst 150: koto
+      default izone: 577
+        - SampleModes: 1
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvHold: -3172
+        - VolEnvDecay: 2412
+        - VolEnvRelease: 213
+        - Attenuation: 60
+      izone: 578
+        - KeyRange: 27392
+        - FineTune: 24
+        - OverrideRootKey: 86
+        - SampleId: 70
+      izone: 579
+        - KeyRange: 32620
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Kalimba     ,108,0:
+  Global Generators: 153
+      - Instrument: 151
+      - inst ref: 151, 153
+    Preset Generators: 154
+      - Instrument: 152
+      - inst ref: 152, 154
+  Instruments:
+    - inst 151: kalimba
+      default izone: 580
+        - SampleModes: 1
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvHold: -6772
+        - VolEnvDecay: 256
+        - VolEnvRelease: 688
+        - Attenuation: 7
+        - FilterQ: 96
+      izone: 581
+        - KeyRange: 25088
+        - FineTune: -20
+        - OverrideRootKey: 76
+        - SampleId: 127
+      izone: 582
+        - KeyRange: 32611
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 152: skalimba
+      default izone: 583
+        - VolEnvHold: -6772
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: 811
+        - Attenuation: 7
+      izone: 584
+        - KeyRange: 30720
+        - FineTune: -39
+        - OverrideRootKey: 98
+        - SampleId: 113
+      izone: 585
+        - KeyRange: 32633
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Bag Pipe    ,109,0:
+  Global Generators: 155
+      - Instrument: 153
+      - inst ref: 153, 155
+    Preset Generators: 156
+      - Instrument: 154
+      - inst ref: 154, 156
+  Instruments:
+    - inst 153: bagpipe
+      default izone: 586
+        - SampleModes: 1
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvAttack: -11958
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 23
+        - VolEnvRelease: -667
+        - Attenuation: 0
+      izone: 587
+        - KeyRange: 14592
+        - FineTune: -14
+        - OverrideRootKey: 62
+        - StartLoopAddrOfs: -3
+        - EndLoopAddrOfs: -3
+        - SampleId: 45
+      izone: 588
+        - KeyRange: 29498
+        - FineTune: 32
+        - OverrideRootKey: 94
+        - StartLoopAddrOfs: -3
+        - EndLoopAddrOfs: -3
+        - SampleModes: 1
+        - SampleId: 47
+      izone: 589
+        - KeyRange: 32628
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 154: sbagpipe
+      default izone: 590
+        - SampleModes: 1
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvAttack: -11958
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 23
+        - VolEnvRelease: -667
+        - Attenuation: 0
+      izone: 591
+        - KeyRange: 14592
+        - FineTune: -6
+        - OverrideRootKey: 62
+        - StartLoopAddrOfs: -3
+        - EndLoopAddrOfs: -3
+        - SampleId: 45
+preset Fiddle      ,110,0:
+  Global Generators: 157
+      - Instrument: 155
+      - inst ref: 155, 157
+  Instruments:
+    - inst 155: fiddle
+      default izone: 592
+        - SampleModes: 1
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - VolEnvHold: -6772
+        - VolEnvDecay: 3975
+        - VolEnvSustain: 13
+        - VolEnvRelease: -667
+        - Attenuation: 165
+        - ModLFO2Pitch: 9
+        - ModLFODelay: -1675
+        - ModLFOFreq: -780
+      izone: 593
+        - KeyRange: 17920
+        - FineTune: 30
+        - OverrideRootKey: 87
+        - SampleId: 55
+      izone: 594
+        - KeyRange: 19015
+        - FineTune: 15
+        - OverrideRootKey: 90
+        - SampleId: 56
+      izone: 595
+        - KeyRange: 20043
+        - FineTune: -45
+        - OverrideRootKey: 94
+        - SampleId: 57
+      izone: 596
+        - KeyRange: 21071
+        - FineTune: 24
+        - OverrideRootKey: 98
+        - SampleId: 58
+      izone: 597
+        - KeyRange: 31571
+        - FineTune: 15
+        - OverrideRootKey: 102
+        - SampleId: 59
+      izone: 598
+        - KeyRange: 32636
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Shanai      ,111,0:
+  Global Generators: 158
+      - Instrument: 156
+      - inst ref: 156, 158
+  Instruments:
+    - inst 156: shanai
+      default izone: 599
+        - SampleModes: 1
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - VolEnvAttack: -8856
+        - VolEnvHold: -7972
+        - VolEnvDecay: 3684
+        - VolEnvSustain: 76
+        - VolEnvRelease: -802
+        - Attenuation: 15
+        - ModLFO2Pitch: 9
+        - ModLFODelay: -1675
+        - ModLFOFreq: -780
+      izone: 600
+        - KeyRange: 29440
+        - FineTune: 29
+        - OverrideRootKey: 94
+        - SampleId: 47
+      izone: 601
+        - KeyRange: 32628
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Tinker Bell ,112,0:
+  Global Generators: 159
+      - Instrument: 157
+      - inst ref: 157, 159
+    Preset Generators: 160
+      - Instrument: 158
+      - inst ref: 158, 160
+  Instruments:
+    - inst 157: tinkerbell
+      default izone: 602
+        - SampleModes: 1
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvHold: -6772
+        - VolEnvDecay: 968
+        - VolEnvSustain: 412
+        - VolEnvRelease: 1035
+        - Attenuation: 60
+      izone: 603
+        - KeyRange: 19456
+        - FineTune: 29
+        - OverrideRootKey: 84
+        - SampleModes: 1
+        - SampleId: 138
+      izone: 604
+        - KeyRange: 28237
+        - FineTune: 7
+        - OverrideRootKey: 89
+        - SampleModes: 1
+        - SampleId: 139
+      izone: 605
+        - KeyRange: 32623
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 158: stinkerbell
+      default izone: 606
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FineTune: 19
+        - OverrideRootKey: 107
+        - VolEnvHold: -6772
+        - VolEnvDecay: -125
+        - VolEnvRelease: -148
+        - Attenuation: 60
+      izone: 607
+        - SampleId: 114
+preset Agogo       ,113,0:
+  Global Generators: 161
+      - Instrument: 159
+      - inst ref: 159, 161
+    Preset Generators: 162
+      - Instrument: 160
+      - inst ref: 160, 162
+  Instruments:
+    - inst 159: agogo
+      default izone: 608
+        - VolEnvHold: -6772
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvDecay: 372
+        - VolEnvRelease: -148
+        - Attenuation: 120
+      izone: 609
+        - KeyRange: 29696
+        - FineTune: 50
+        - OverrideRootKey: 95
+        - SampleId: 114
+      izone: 610
+        - KeyRange: 32629
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 160: sagogo
+      default izone: 611
+        - SampleModes: 1
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvHold: -6772
+        - VolEnvDecay: 372
+        - VolEnvRelease: -148
+        - Attenuation: 120
+      izone: 612
+        - KeyRange: 22016
+        - FineTune: -23
+        - OverrideRootKey: 64
+        - SampleId: 127
+      izone: 613
+        - KeyRange: 32599
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Steel Drums ,114,0:
+  Global Generators: 163
+      - Instrument: 161
+      - inst ref: 161, 163
+  Instruments:
+    - inst 161: steeldrums
+      default izone: 614
+        - SampleModes: 1
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvHold: -2400
+        - VolEnvDecay: 133
+        - VolEnvRelease: 1035
+        - Attenuation: 60
+      izone: 615
+        - KeyRange: 27904
+        - FineTune: 32
+        - OverrideRootKey: 88
+        - SampleId: 109
+      izone: 616
+        - KeyRange: 32622
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Wood Block  ,115,0:
+  Global Generators: 164
+      - Instrument: 162
+      - inst ref: 162, 164
+  Instruments:
+    - inst 162: woodblock
+      default izone: 617
+        - VolEnvAttack: -11958
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvHold: -6772
+        - VolEnvDecay: -386
+        - VolEnvRelease: -1378
+        - Attenuation: 0
+        - ScaleTune: 50
+        - CoarseTune: -16
+        - FineTune: 12
+      izone: 618
+        - KeyRange: 31744
+        - FineTune: -45
+        - OverrideRootKey: 102
+        - SampleId: 113
+      izone: 619
+        - KeyRange: 32637
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Taiko Drum  ,116,0:
+  Global Generators: 165
+      - Instrument: 163
+      - inst ref: 163, 165
+    Preset Generators: 166
+      - Instrument: 164
+      - inst ref: 164, 166
+  Instruments:
+    - inst 163: taiko
+      default izone: 620
+        - SampleModes: 1
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvHold: -6772
+        - VolEnvDecay: 133
+        - VolEnvRelease: -148
+        - Attenuation: 37
+        - ScaleTune: 50
+        - CoarseTune: -5
+      izone: 621
+        - KeyRange: 29952
+        - FineTune: -25
+        - OverrideRootKey: 95
+        - SampleId: 95
+      izone: 622
+        - KeyRange: 32630
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 164: staiko
+      default izone: 623
+        - SampleModes: 1
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvHold: -6772
+        - VolEnvDecay: 619
+        - VolEnvRelease: 338
+        - Attenuation: 37
+        - ScaleTune: 50
+        - CoarseTune: -11
+      izone: 624
+        - FineTune: 50
+        - OverrideRootKey: 107
+        - SampleId: 112
+preset Melo Tom 1  ,117,0:
+  Global Generators: 167
+      - Instrument: 165
+      - inst ref: 165, 167
+  Instruments:
+    - inst 165: melotom1
+      default izone: 625
+        - SampleModes: 1
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvHold: -6772
+        - VolEnvDecay: 2837
+        - VolEnvRelease: 918
+        - Attenuation: 105
+        - ScaleTune: 50
+        - CoarseTune: -4
+      izone: 626
+        - KeyRange: 26624
+        - FineTune: -25
+        - OverrideRootKey: 82
+        - SampleId: 95
+      izone: 627
+        - KeyRange: 32617
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Synth Drum   ,118,0:
+  Global Generators: 168
+      - Instrument: 166
+      - inst ref: 166, 168
+    Preset Generators: 169
+      - Instrument: 167
+      - inst ref: 167, 169
+  Instruments:
+    - inst 166: synthdrum
+      default izone: 628
+        - ModEnv2Pitch: 516
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - ModEnvDecay: -386
+        - ModEnvSustain: 874
+        - ModEnvRelease: 4400
+        - SampleModes: 1
+        - VolEnvHold: -4372
+        - VolEnvDecay: 372
+        - VolEnvRelease: -949
+        - Attenuation: 60
+        - ScaleTune: 50
+        - CoarseTune: -12
+      izone: 629
+        - KeyRange: 26368
+        - FineTune: -25
+        - OverrideRootKey: 81
+        - SampleId: 95
+      izone: 630
+        - KeyRange: 32616
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 167: ssyndrum
+      default izone: 631
+        - ModEnv2Pitch: 591
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - ModEnvDecay: -2786
+        - ModEnvRelease: -1586
+        - SampleModes: 1
+        - VolEnvHold: -6772
+        - VolEnvDecay: 736
+        - VolEnvRelease: -949
+        - Attenuation: 60
+        - ScaleTune: 50
+        - CoarseTune: -12
+      izone: 632
+        - KeyRange: 28416
+        - FineTune: -28
+        - OverrideRootKey: 89
+        - SampleId: 127
+      izone: 633
+        - KeyRange: 32624
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Reverse Cymb,119,0:
+  Global Generators: 170
+      - Instrument: 168
+      - inst ref: 168, 170
+  Instruments:
+    - inst 168: reversecym
+      default izone: 634
+        - SampleModes: 1
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvAttack: 915
+        - VolEnvHold: -6772
+        - VolEnvDecay: -2143
+        - VolEnvRelease: -7053
+        - Attenuation: 7
+        - ScaleTune: 50
+        - CoarseTune: -6
+      izone: 635
+        - KeyRange: 28672
+        - FineTune: 47
+        - OverrideRootKey: 91
+        - SampleId: 115
+      izone: 636
+        - KeyRange: 32625
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Gt FretNoise,120,0:
+  Global Generators: 171
+      - Instrument: 169
+      - inst ref: 169, 171
+  Instruments:
+    - inst 169: gtfretnoise
+      default izone: 637
+        - FilterQ: 190
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: -2197
+        - Attenuation: 0
+        - ScaleTune: 50
+        - CoarseTune: -12
+      izone: 638
+        - KeyRange: 26368
+        - FineTune: -7
+        - OverrideRootKey: 81
+        - SampleId: 148
+      izone: 639
+        - KeyRange: 32616
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Breath No,121,0:
+  Global Generators: 172
+      - Instrument: 170
+      - inst ref: 170, 172
+  Instruments:
+    - inst 170: breathnoise
+      default izone: 640
+        - VolEnvHold: -6772
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvDecay: 2626
+        - VolEnvRelease: -949
+        - Attenuation: 382
+        - ScaleTune: 50
+        - CoarseTune: -5
+      izone: 641
+        - KeyRange: 23296
+        - FineTune: 38
+        - OverrideRootKey: 70
+        - SampleId: 42
+      izone: 642
+        - KeyRange: 32604
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset SeaShore    ,122,0:
+  Global Generators: 173
+      - Instrument: 171
+      - inst ref: 171, 173
+  Instruments:
+    - inst 171: seashore
+      default izone: 643
+        - FilterFc: 4602
+        - VolEnvSustain: 1000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - FilterQ: 57
+        - ModEnv2FilterFc: 3937
+        - ModEnvAttack: 2866
+        - ModEnvHold: -2332
+        - ModEnvDecay: 2484
+        - ModEnvRelease: 3533
+        - SampleModes: 1
+        - VolEnvAttack: 1776
+        - VolEnvHold: 998
+        - VolEnvDecay: 2412
+        - VolEnvRelease: 1699
+        - Attenuation: 0
+        - ScaleTune: 50
+      izone: 644
+        - KeyRange: 27904
+        - FineTune: 19
+        - OverrideRootKey: 88
+        - StartAddrOfs: 500
+        - SampleId: 140
+      izone: 645
+        - KeyRange: 32622
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+      izone: 646
+        - KeyRange: 30720
+        - FineTune: 19
+        - OverrideRootKey: 99
+        - FilterFc: 5310
+        - ModEnv2FilterFc: 2587
+        - ModEnvDecay: 3043
+        - ModEnvRelease: 3578
+        - SampleModes: 1
+        - VolEnvAttack: -3986
+        - VolEnvHold: -6772
+        - VolEnvDecay: 3358
+        - VolEnvRelease: 1699
+        - SampleId: 140
+      izone: 647
+        - KeyRange: 32633
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Bird Tweet  ,123,0:
+  Global Generators: 174
+      - Instrument: 172
+      - inst ref: 172, 174
+  Instruments:
+    - inst 172: birds
+      default izone: 648
+        - Attenuation: 7
+        - VolEnvAttack: -8800
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - VolEnvDecay: -12000
+        - VolEnvHold: -12000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - ScaleTune: 50
+      izone: 649
+        - KeyRange: 32639
+        - FineTune: 0
+        - OverrideRootKey: 51
+        - FilterQ: 160
+        - ModLFO2Pitch: -55
+        - ModEnv2Pitch: -599
+        - ModLFODelay: -544
+        - ModLFOFreq: 460
+        - ModEnvAttack: -2902
+        - ModEnvRelease: 3823
+        - ScaleTune: 50
+        - SampleModes: 1
+        - VolEnvAttack: -1382
+        - VolEnvHold: -6772
+        - VolEnvDecay: 1092
+        - VolEnvRelease: -386
+        - SampleId: 127
+        - KeyRange: 25344
+        - FilterQ: 160
+        - ModLFO2Pitch: 281
+        - ModEnv2Pitch: -599
+        - ModLFODelay: -3986
+        - ModLFOFreq: 460
+        - ModEnvAttack: -2902
+        - ModEnvRelease: 3823
+        - ScaleTune: 50
+        - SampleModes: 1
+        - VolEnvAttack: -8358
+        - VolEnvHold: -6772
+        - VolEnvDecay: 3511
+        - VolEnvRelease: 582
+        - SampleId: 127
+      izone: 650
+        - KeyRange: 32612
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+      izone: 651
+        - KeyRange: 32639
+        - FineTune: 0
+        - OverrideRootKey: 35
+        - FilterQ: 160
+        - ModLFO2Pitch: -599
+        - ModEnv2Pitch: -599
+        - ModLFODelay: -544
+        - ModLFOFreq: 460
+        - ModEnvAttack: -1702
+        - ModEnvDecay: -1586
+        - ScaleTune: 50
+        - SampleModes: 1
+        - VolEnvAttack: -1382
+        - VolEnvHold: -2701
+        - VolEnvDecay: -884
+        - VolEnvSustain: 916
+        - VolEnvRelease: 315
+        - SampleId: 127
+      izone: 652
+        - KeyRange: 21248
+        - FineTune: 0
+        - OverrideRootKey: 35
+        - FilterQ: 160
+        - ModLFO2Pitch: -599
+        - ModEnv2Pitch: -599
+        - ModLFODelay: -3172
+        - ModLFOFreq: 460
+        - ModEnvAttack: -1702
+        - ModEnvDecay: -1586
+        - ScaleTune: 50
+        - SampleModes: 1
+        - VolEnvAttack: -8856
+        - VolEnvHold: -2701
+        - VolEnvDecay: 5382
+        - VolEnvSustain: 916
+        - VolEnvRelease: 1958
+        - SampleId: 127
+preset Telephone   ,124,0:
+  Global Generators: 175
+      - Instrument: 173
+      - inst ref: 173, 175
+    Preset Generators: 176
+      - Instrument: 174
+      - inst ref: 174, 176
+  Instruments:
+    - inst 173: telephone1
+      default izone: 653
+        - FilterQ: 103
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - SampleModes: 1
+        - VolEnvAttack: -12000
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: -1079
+        - Attenuation: 105
+        - ScaleTune: 50
+        - CoarseTune: -3
+      izone: 654
+        - KeyRange: 27392
+        - FineTune: 35
+        - OverrideRootKey: 86
+        - StartLoopAddrOfs: -30
+        - EndLoopAddrOfs: 32
+        - SampleId: 141
+      izone: 655
+        - KeyRange: 32620
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+    - inst 174: stelephone1
+      default izone: 656
+        - FilterQ: 103
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - SampleModes: 1
+        - VolEnvAttack: -12000
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: -1079
+        - Attenuation: 105
+        - ScaleTune: 50
+        - CoarseTune: -3
+      izone: 657
+        - KeyRange: 27392
+        - FineTune: 33
+        - OverrideRootKey: 86
+        - StartLoopAddrOfs: -30
+        - EndLoopAddrOfs: 32
+        - CoarseTune: 1
+        - FilterQ: 112
+        - SampleModes: 1
+        - VolEnvAttack: -12000
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: -1079
+        - SampleId: 141
+      izone: 658
+        - KeyRange: 32620
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Helicopter  ,125,0:
+  Global Generators: 177
+      - Instrument: 175
+      - inst ref: 175, 177
+  Instruments:
+    - inst 175: helicopter
+      default izone: 659
+        - FilterFc: 4838
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ReverbSend: 109
+        - FilterQ: 9
+        - ModLFO2Pitch: 591
+        - ModLFO2FilterFc: 3543
+        - ModLFO2Vol: 118
+        - ModLFOFreq: 258
+        - SampleModes: 1
+        - VolEnvAttack: 542
+        - VolEnvHold: -6772
+        - VolEnvDecay: 3565
+        - VolEnvSustain: 0
+        - VolEnvRelease: -148
+        - Attenuation: 172
+        - ScaleTune: 50
+        - CoarseTune: -12
+      izone: 660
+        - KeyRange: 15104
+        - FineTune: 19
+        - OverrideRootKey: 85
+        - SampleId: 140
+      izone: 661
+        - KeyRange: 27196
+        - FineTune: 19
+        - OverrideRootKey: 85
+        - SampleId: 140
+      izone: 662
+        - KeyRange: 32619
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+      izone: 663
+        - CoarseTune: -48
+        - FineTune: 5
+        - OverrideRootKey: 127
+        - ModLFO2Pitch: 47
+        - SampleId: 142
+preset Applause    ,126,0:
+  Global Generators: 178
+      - Instrument: 176
+      - inst ref: 176, 178
+  Instruments:
+    - inst 176: applause
+      default izone: 664
+        - SampleModes: 1
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvAttack: 1587
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: -148
+        - Attenuation: 45
+        - ScaleTune: 50
+        - CoarseTune: -8
+      izone: 665
+        - KeyRange: 28416
+        - FineTune: 47
+        - OverrideRootKey: 98
+        - Pan: 217
+        - SampleId: 117
+      izone: 666
+        - KeyRange: 32624
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+      izone: 667
+        - KeyRange: 31744
+        - FineTune: 47
+        - OverrideRootKey: 103
+        - Pan: -287
+        - SampleId: 117
+      izone: 668
+        - KeyRange: 32637
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+preset Gun Shot    ,127,0:
+  Global Generators: 179
+      - Instrument: 177
+      - inst ref: 177, 179
+  Instruments:
+    - inst 177: gunshot
+      default izone: 669
+        - VolEnvAttack: -11958
+        - ModEnvAttack: -8800
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvHold: -6772
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: -148
+        - Pan: -216
+        - Attenuation: 0
+        - CoarseTune: -12
+        - ScaleTune: 50
+      izone: 670
+        - KeyRange: 29184
+        - FineTune: 35
+        - OverrideRootKey: 93
+        - Pan: -216
+        - SampleId: 93
+      izone: 671
+        - KeyRange: 32627
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - SampleId: 7
+      izone: 672
+        - KeyRange: 29952
+        - FineTune: 35
+        - OverrideRootKey: 96
+        - Pan: 288
+        - SampleId: 93
+      izone: 673
+        - KeyRange: 32630
+        - FineTune: -48
+        - OverrideRootKey: 111
+        - Pan: 288
+        - SampleId: 7
+preset Standard  ,0,128:
+  Global Generators: 180
+      - Instrument: 178
+      - inst ref: 178, 180
+  Instruments:
+    - inst 178: standard_DRUMS
+      default izone: 674
+        - VolEnvAttack: -12000
+        - ModEnvAttack: -8800
+        - VolEnvSustain: 1000
+        - VolEnvDecay: -12000
+        - ModEnvSustain: 1000
+        - VibLFOFreq: -15600
+        - ModLFOFreq: -725
+        - ReverbSend: 109
+        - VolEnvHold: -6772
+        - Attenuation: 0
+      izone: 675
+        - KeyRange: 6939
+        - FineTune: -31
+        - OverrideRootKey: 45
+        - Attenuation: 142
+        - VolEnvDecay: -3986
+        - VolEnvRelease: -148
+        - SampleId: 90
+      izone: 676
+        - KeyRange: 7196
+        - FineTune: 19
+        - OverrideRootKey: 51
+        - Attenuation: 142
+        - SampleModes: 1
+        - VolEnvDecay: -125
+        - VolEnvRelease: -542
+        - SampleId: 140
+      izone: 677
+        - KeyRange: 7196
+        - FineTune: -48
+        - OverrideRootKey: 54
+        - Attenuation: 142
+        - VolEnvDecay: -2332
+        - VolEnvRelease: -148
+        - SampleId: 94
+      izone: 678
+        - KeyRange: 7453
+        - FineTune: -48
+        - OverrideRootKey: 57
+        - Attenuation: 112
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: -148
+        - SampleId: 96
+      izone: 679
+        - KeyRange: 7710
+        - FineTune: -12
+        - OverrideRootKey: 42
+        - Attenuation: 112
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: -148
+        - SampleId: 148
+      izone: 680
+        - KeyRange: 7967
+        - FineTune: 4
+        - OverrideRootKey: 42
+        - Attenuation: 37
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: -2197
+        - SampleId: 111
+      izone: 681
+        - KeyRange: 8224
+        - FineTune: 0
+        - OverrideRootKey: 31
+        - Attenuation: 127
+        - VolEnvHold: -1461
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: -2197
+        - SampleId: 146
+      izone: 682
+        - KeyRange: 8481
+        - FineTune: -48
+        - OverrideRootKey: 51
+        - Attenuation: 0
+        - VolEnvDecay: -5572
+        - VolEnvRelease: -5853
+        - SampleId: 94
+      izone: 683
+        - KeyRange: 8738
+        - FineTune: -48
+        - OverrideRootKey: 51
+        - Attenuation: 127
+        - VolEnvDecay: -1919
+        - VolEnvRelease: -2197
+        - SampleId: 94
+      izone: 684
+        - KeyRange: 8738
+        - FineTune: -34
+        - OverrideRootKey: 44
+        - Attenuation: 127
+        - SampleModes: 1
+        - VolEnvDecay: 1872
+        - VolEnvRelease: -2197
+        - SampleId: 139
+      izone: 685
+        - KeyRange: 8995
+        - FineTune: 2
+        - OverrideRootKey: 50
+        - Attenuation: 30
+        - VolEnvDecay: 1763
+        - VolEnvRelease: -2050
+        - SampleId: 92
+      izone: 686
+        - KeyRange: 9252
+        - FineTune: 24
+        - OverrideRootKey: 48
+        - Attenuation: 7
+        - VolEnvDecay: -6772
+        - VolEnvSustain: 0
+        - VolEnvRelease: -1867
+        - SampleId: 92
+      izone: 687
+        - KeyRange: 9509
+        - FineTune: -48
+        - OverrideRootKey: 56
+        - Attenuation: 135
+        - VolEnvDecay: -1586
+        - VolEnvRelease: -1378
+        - SampleId: 94
+      izone: 688
+        - KeyRange: 9766
+        - FineTune: -43
+        - OverrideRootKey: 56
+        - Attenuation: 45
+        - VolEnvDecay: 736
+        - VolEnvRelease: 811
+        - SampleId: 144
+      izone: 689
+        - KeyRange: 10023
+        - FineTune: -21
+        - OverrideRootKey: 46
+        - Attenuation: 90
+        - SampleModes: 1
+        - Pan: -216
+        - VolEnvDecay: -521
+        - VolEnvRelease: -802
+        - SampleId: 117
+      izone: 690
+        - KeyRange: 10023
+        - FineTune: 47
+        - OverrideRootKey: 79
+        - Attenuation: 90
+        - SampleModes: 1
+        - Pan: -216
+        - VolEnvDecay: -261
+        - VolEnvRelease: -542
+        - SampleId: 117
+      izone: 691
+        - KeyRange: 10280
+        - FineTune: 8
+        - OverrideRootKey: 52
+        - Attenuation: 112
+        - VolEnvDecay: 372
+        - VolEnvRelease: 213
+        - SampleId: 144
+      izone: 692
+        - KeyRange: 10280
+        - FineTune: -48
+        - OverrideRootKey: 51
+        - Attenuation: 112
+        - SampleModes: 1
+        - VolEnvDecay: -386
+        - VolEnvRelease: -1079
+        - SampleId: 95
+      izone: 693
+        - KeyRange: 10537
+        - FineTune: 18
+        - OverrideRootKey: 69
+        - Attenuation: 112
+        - SampleModes: 1
+        - Pan: -216
+        - VolEnvDecay: 1872
+        - VolEnvRelease: 1591
+        - SampleId: 95
+      izone: 694
+        - KeyRange: 10794
+        - FineTune: -37
+        - OverrideRootKey: 50
+        - Attenuation: 67
+        - ExclusiveClass: 1
+        - SampleModes: 1
+        - Pan: 146
+        - VolEnvAttack: -8856
+        - VolEnvHold: -7972
+        - VolEnvDecay: -1586
+        - VolEnvSustain: 989
+        - VolEnvRelease: -1079
+        - SampleId: 150
+      izone: 695
+        - KeyRange: 11051
+        - FineTune: -25
+        - OverrideRootKey: 68
+        - Attenuation: 67
+        - SampleModes: 1
+        - Pan: -74
+        - VolEnvHold: -6772
+        - VolEnvDecay: 1654
+        - VolEnvRelease: 1372
+        - SampleId: 95
+      izone: 696
+        - KeyRange: 11308
+        - FineTune: -46
+        - OverrideRootKey: 52
+        - Attenuation: 67
+        - ExclusiveClass: 1
+        - SampleModes: 1
+        - Pan: 146
+        - VolEnvAttack: -7390
+        - VolEnvHold: -7972
+        - VolEnvDecay: -12000
+        - VolEnvSustain: 989
+        - VolEnvRelease: -3067
+        - SampleId: 150
+      izone: 697
+        - KeyRange: 11565
+        - FineTune: -25
+        - OverrideRootKey: 67
+        - Attenuation: 67
+        - SampleModes: 1
+        - Pan: -74
+        - VolEnvDecay: 1426
+        - VolEnvRelease: 1145
+        - SampleId: 95
+      izone: 698
+        - KeyRange: 11822
+        - FineTune: -17
+        - OverrideRootKey: 54
+        - Attenuation: 45
+        - ExclusiveClass: 1
+        - SampleModes: 1
+        - Pan: 75
+        - VolEnvDecay: 2198
+        - VolEnvRelease: 1145
+        - SampleId: 150
+      izone: 699
+        - KeyRange: 12079
+        - FineTune: -4
+        - OverrideRootKey: 66
+        - Attenuation: 52
+        - SampleModes: 1
+        - VolEnvDecay: 1317
+        - VolEnvRelease: 1035
+        - SampleId: 95
+      izone: 700
+        - KeyRange: 12336
+        - FineTune: 40
+        - OverrideRootKey: 63
+        - Attenuation: 67
+        - SampleModes: 1
+        - VolEnvDecay: 1200
+        - VolEnvRelease: 1145
+        - SampleId: 95
+      izone: 701
+        - KeyRange: 12593
+        - FineTune: 47
+        - OverrideRootKey: 68
+        - Attenuation: 0
+        - SampleModes: 1
+        - Pan: 146
+        - VolEnvDecay: 1980
+        - VolEnvRelease: 1699
+        - SampleId: 115
+      izone: 702
+        - KeyRange: 12850
+        - FineTune: -25
+        - OverrideRootKey: 61
+        - Attenuation: 90
+        - SampleModes: 1
+        - Pan: 288
+        - VolEnvDecay: 856
+        - VolEnvRelease: 575
+        - SampleId: 95
+      izone: 703
+        - KeyRange: 13107
+        - FineTune: -7
+        - OverrideRootKey: 59
+        - Attenuation: 142
+        - SampleModes: 1
+        - Pan: -216
+        - VolEnvDecay: 1763
+        - VolEnvRelease: 1482
+        - SampleId: 151
+      izone: 704
+        - KeyRange: 13364
+        - FineTune: 47
+        - OverrideRootKey: 74
+        - Attenuation: 75
+        - SampleModes: 1
+        - Pan: -145
+        - VolEnvDecay: 1980
+        - VolEnvRelease: 1262
+        - SampleId: 119
+      izone: 705
+        - KeyRange: 13621
+        - FineTune: 8
+        - OverrideRootKey: 71
+        - Attenuation: 90
+        - SampleModes: 1
+        - Pan: -216
+        - VolEnvDecay: 1426
+        - VolEnvRelease: 1035
+        - SampleId: 118
+      izone: 706
+        - KeyRange: 13878
+        - FineTune: 35
+        - OverrideRootKey: 70
+        - Attenuation: 52
+        - SampleModes: 3
+        - Pan: 146
+        - VolEnvHold: -4372
+        - VolEnvDecay: 1200
+        - VolEnvRelease: 2345
+        - SampleId: 97
+      izone: 707
+        - KeyRange: 14135
+        - FineTune: 47
+        - OverrideRootKey: 65
+        - Attenuation: 90
+        - SampleModes: 1
+        - Pan: -74
+        - VolEnvHold: -6772
+        - VolEnvDecay: 1654
+        - VolEnvRelease: 1372
+        - SampleId: 115
+      izone: 708
+        - KeyRange: 14392
+        - FineTune: -14
+        - OverrideRootKey: 72
+        - Attenuation: 202
+        - Pan: 146
+        - VolEnvHold: -4372
+        - VolEnvDecay: 619
+        - VolEnvRelease: 2345
+        - SampleId: 98
+      izone: 709
+        - KeyRange: 14649
+        - FineTune: 47
+        - OverrideRootKey: 74
+        - Attenuation: 0
+        - SampleModes: 1
+        - Pan: -216
+        - VolEnvDecay: 1654
+        - VolEnvRelease: 1372
+        - SampleId: 115
+      izone: 710
+        - KeyRange: 14906
+        - FineTune: 0
+        - OverrideRootKey: 82
+        - Attenuation: 0
+        - SampleModes: 1
+        - Pan: -429
+        - VolEnvDecay: 1654
+        - VolEnvRelease: 811
+        - SampleId: 99
+      izone: 711
+        - KeyRange: 15163
+        - FineTune: 18
+        - OverrideRootKey: 66
+        - Attenuation: 165
+        - SampleModes: 1
+        - Pan: -287
+        - VolEnvDecay: 1763
+        - VolEnvRelease: 1482
+        - SampleId: 151
+      izone: 712
+        - KeyRange: 15420
+        - FineTune: 21
+        - OverrideRootKey: 78
+        - Attenuation: 0
+        - Pan: 358
+        - VolEnvHold: -3670
+        - VolEnvDecay: 0
+        - VolEnvRelease: -1702
+        - SampleId: 100
+      izone: 713
+        - KeyRange: 15677
+        - FineTune: -18
+        - OverrideRootKey: 77
+        - Attenuation: 0
+        - Pan: 217
+        - VolEnvDecay: 0
+        - VolEnvRelease: -1079
+        - SampleId: 101
+      izone: 714
+        - KeyRange: 15934
+        - FineTune: 43
+        - OverrideRootKey: 82
+        - Attenuation: 0
+        - Pan: -287
+        - VolEnvDecay: 0
+        - VolEnvRelease: -667
+        - SampleId: 102
+      izone: 715
+        - KeyRange: 16191
+        - FineTune: -46
+        - OverrideRootKey: 85
+        - Attenuation: 0
+        - Pan: -429
+        - VolEnvDecay: -261
+        - VolEnvRelease: -1702
+        - SampleId: 103
+      izone: 716
+        - KeyRange: 16448
+        - FineTune: 21
+        - OverrideRootKey: 83
+        - Attenuation: 0
+        - Pan: -429
+        - VolEnvDecay: -125
+        - VolEnvRelease: -1224
+        - SampleId: 104
+      izone: 717
+        - KeyRange: 16705
+        - FineTune: 50
+        - OverrideRootKey: 89
+        - Attenuation: 0
+        - SampleModes: 1
+        - Pan: 217
+        - VolEnvDecay: 619
+        - VolEnvRelease: -24
+        - SampleId: 112
+      izone: 718
+        - KeyRange: 16962
+        - FineTune: 50
+        - OverrideRootKey: 95
+        - Attenuation: 0
+        - SampleModes: 1
+        - Pan: 288
+        - VolEnvDecay: 619
+        - VolEnvRelease: -24
+        - SampleId: 112
+      izone: 719
+        - KeyRange: 17219
+        - FineTune: 50
+        - OverrideRootKey: 85
+        - Attenuation: 0
+        - Pan: -287
+        - VolEnvDecay: -261
+        - VolEnvRelease: -2050
+        - SampleId: 114
+      izone: 720
+        - KeyRange: 17476
+        - FineTune: 50
+        - OverrideRootKey: 91
+        - Attenuation: 0
+        - Pan: -287
+        - VolEnvDecay: -261
+        - VolEnvRelease: -667
+        - SampleId: 114
+      izone: 721
+        - KeyRange: 17733
+        - FineTune: -14
+        - OverrideRootKey: 85
+        - Attenuation: 0
+        - Pan: -358
+        - VolEnvDecay: 0
+        - VolEnvRelease: -1224
+        - SampleId: 105
+      izone: 722
+        - KeyRange: 17990
+        - FineTune: 27
+        - OverrideRootKey: 83
+        - Attenuation: 90
+        - Pan: -358
+        - VolEnvDecay: 813
+        - VolEnvRelease: -7053
+        - SampleId: 106
+      izone: 723
+        - KeyRange: 18247
+        - FineTune: 36
+        - OverrideRootKey: 87
+        - Attenuation: 210
+        - ExclusiveClass: 2
+        - SampleModes: 1
+        - Pan: 217
+        - VolEnvHold: -2701
+        - VolEnvDecay: -6772
+        - VolEnvRelease: -7053
+        - SampleId: 107
+      izone: 724
+        - KeyRange: 18504
+        - FineTune: 36
+        - OverrideRootKey: 91
+        - Attenuation: 157
+        - ExclusiveClass: 2
+        - SampleModes: 1
+        - Pan: 217
+        - VolEnvHold: -1034
+        - VolEnvDecay: -6772
+        - VolEnvRelease: -7053
+        - SampleId: 107
+      izone: 725
+        - KeyRange: 18761
+        - FineTune: -25
+        - OverrideRootKey: 90
+        - Attenuation: 180
+        - ExclusiveClass: 3
+        - Pan: 288
+        - VolEnvDecay: 1200
+        - VolEnvRelease: -2050
+        - SampleId: 108
+      izone: 726
+        - KeyRange: 19018
+        - FineTune: -46
+        - OverrideRootKey: 102
+        - Attenuation: 90
+        - ExclusiveClass: 3
+        - Pan: 358
+        - VolEnvDecay: 1317
+        - VolEnvRelease: -1224
+        - SampleId: 110
+      izone: 727
+        - KeyRange: 19275
+        - FineTune: 40
+        - OverrideRootKey: 100
+        - Attenuation: 45
+        - Pan: 288
+        - VolEnvDecay: -386
+        - VolEnvRelease: -949
+        - SampleId: 116
+      izone: 728
+        - KeyRange: 19532
+        - FineTune: -45
+        - OverrideRootKey: 104
+        - Attenuation: 37
+        - Pan: 358
+        - VolEnvDecay: -3986
+        - VolEnvRelease: -7053
+        - SampleId: 113
+      izone: 729
+        - KeyRange: 19789
+        - FineTune: -45
+        - OverrideRootKey: 111
+        - Attenuation: 37
+        - Pan: 288
+        - VolEnvDecay: -2544
+        - VolEnvRelease: -7053
+        - SampleId: 113
+      izone: 730
+        - KeyRange: 20046
+        - FineTune: 35
+        - OverrideRootKey: 87
+        - Attenuation: 150
+        - ExclusiveClass: 4
+        - Pan: -216
+        - VolEnvDecay: 0
+        - VolEnvRelease: -2197
+        - SampleId: 120
+      izone: 731
+        - KeyRange: 20303
+        - FineTune: 35
+        - OverrideRootKey: 105
+        - Attenuation: 67
+        - ExclusiveClass: 4
+        - Pan: -216
+        - VolEnvDecay: 0
+        - VolEnvRelease: -2821
+        - SampleId: 120
+      izone: 732
+        - KeyRange: 20560
+        - FineTune: -32
+        - OverrideRootKey: 88
+        - Attenuation: 277
+        - ExclusiveClass: 5
+        - SampleModes: 1
+        - Pan: -429
+        - VolEnvDecay: -667
+        - VolEnvRelease: -4653
+        - SampleId: 126
+      izone: 733
+        - KeyRange: 20817
+        - FineTune: -42
+        - OverrideRootKey: 89
+        - Attenuation: 217
+        - ExclusiveClass: 5
+        - SampleModes: 1
+        - Pan: -358
+        - VolEnvDecay: 968
+        - VolEnvRelease: 455
+        - SampleId: 126
+      izone: 734
+        - KeyRange: 21074
+        - FineTune: -14
+        - OverrideRootKey: 95
+        - Attenuation: 0
+        - Pan: 288
+        - VolEnvDecay: -386
+        - VolEnvRelease: -2420
+        - SampleId: 105
+      izone: 735
+        - KeyRange: 21331
+        - FineTune: 4
+        - OverrideRootKey: 104
+        - Attenuation: 0
+        - SampleModes: 3
+        - Pan: 358
+        - VolEnvAttack: -2514
+        - VolEnvHold: -6772
+        - VolEnvDecay: 619
+        - VolEnvRelease: 338
+        - SampleId: 97
+      izone: 736
+        - KeyRange: 21331
+        - FineTune: 47
+        - OverrideRootKey: 73
+        - Attenuation: 0
+        - SampleModes: 1
+        - Pan: 358
+        - VolEnvAttack: -6688
+        - VolEnvHold: -6772
+        - VolEnvDecay: 619
+        - VolEnvRelease: -148
+        - SampleId: 119
+      izone: 737
+        - KeyRange: 21588
+        - FineTune: -12
+        - OverrideRootKey: 105
+        - Attenuation: 0
+        - SampleModes: 1
+        - Pan: 288
+        - VolEnvDecay: 1200
+        - VolEnvRelease: -148
+        - SampleId: 91
+      izone: 738
+        - KeyRange: 21845
+        - FineTune: 21
+        - OverrideRootKey: 89
+        - Attenuation: 285
+        - Pan: -429
+        - VolEnvDecay: -1586
+        - VolEnvRelease: -949
+        - SampleId: 100
+      izone: 739
+        - KeyRange: 21845
+        - FineTune: 0
+        - OverrideRootKey: 71
+        - Attenuation: 285
+        - Pan: -429
+        - VolEnvDecay: -1586
+        - VolEnvSustain: 0
+        - VolEnvRelease: -949
+        - SampleId: 146
+      izone: 740
+        - KeyRange: 22102
+        - FineTune: -18
+        - OverrideRootKey: 104
+        - Attenuation: 202
+        - ExclusiveClass: 6
+        - Pan: -358
+        - VolEnvDecay: 813
+        - VolEnvRelease: -667
+        - SampleId: 101
+      izone: 741
+        - KeyRange: 22359
+        - FineTune: -25
+        - OverrideRootKey: 113
+        - ExclusiveClass: 6
+        - Attenuation: 165
+        - SampleModes: 1
+        - Pan: -429
+        - VolEnvDecay: 1872
+        - VolEnvRelease: 1035
+        - SampleId: 95
+      izone: 742
+        - KeyRange: 22359
+        - FineTune: 50
+        - OverrideRootKey: 125
+        - ExclusiveClass: 6
+        - Attenuation: 165
+        - SampleModes: 1
+        - Pan: -429
+        - VolEnvDecay: -1586
+        - VolEnvSustain: 380
+        - VolEnvRelease: 1035
+        - SampleId: 112

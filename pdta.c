@@ -12,6 +12,10 @@ extern void emitSample(int id, int pid, void *p);
 extern void emitFilter(int type, uint8_t lo, uint8_t hi);
 #endif
 
+phdr *findPreset(int pid, int bank_id);
+zone_t *findPresetZones(phdr *phr, int n);
+int findPresetZonesCount(phdr *phr);
+
 int nphdrs, npbags, npgens, npmods, nshdrs, ninsts, nimods, nigens, nibags;
 
 phdr *phdrs;
@@ -36,22 +40,22 @@ zone_t *root;
 zone_t *presets[0xff];
 
 void *readpdta(void *pdtabuffer) {
-#define read(section)                         \
+#define srr(section)                          \
   sh = (section_header *)pdtabuffer;          \
   pdtabuffer += 8;                            \
   n##section##s = sh->size / sizeof(section); \
   section##s = (section *)pdtabuffer;         \
   pdtabuffer += sh->size;
   section_header *sh;
-  read(phdr);
-  read(pbag);
-  read(pmod);
-  read(pgen);
-  read(inst);
-  read(ibag);
-  read(imod);
-  read(igen);
-  read(shdr);
+  srr(phdr);
+  srr(pbag);
+  srr(pmod);
+  srr(pgen);
+  srr(inst);
+  srr(ibag);
+  srr(imod);
+  srr(igen);
+  srr(shdr);
   return malloc(4);
 }
 void *loadpdta(void *pdtabuffer) {
@@ -158,8 +162,11 @@ int findPresetZonesCount(phdr *phr) {
 
 zone_t *findPresetZones(phdr *phr, int nregions) {
   // generator attributes
-  short presetDefault[60] = defattrs;
+  short presetDefault[60] = {0};
   short pbagLegion[60] = {0};
+  presetDefault[VelRange] = 127 << 8;
+  presetDefault[KeyRange] = 127 << 8;
+
   zone_t *zones = (zone_t *)malloc((nregions + 1) * sizeof(zone_t));
   int found = 0;
   int instID = -1;
@@ -191,16 +198,16 @@ zone_t *findPresetZones(phdr *phr, int nregions) {
           if (instZone[SampleId] == -1) {
             memcpy(instDefault, instZone, 120);
           } else {
+            for (int i = 0; i < 60; i++) {
+              instZone[i] = add_pbag_val_to_zone(i, instZone[i], pbagLegion[i]);
+            }
             instZone[IBAGID] = ibg;
             instZone[PBagId] = j;
-
-            for (int i = 0; i < 60; i++) {
-              add_pbag_val_to_zone(i, instZone, pbagLegion[i]);
-            }
-
             memcpy(zones + found, instZone, 120);
             emitZone(phr->pid, zones + found);
             found++;
+            printf("%hu %hu %hu *** \n", instZone[VelRange],
+                   zones[found - 1].VelRange.lo, zones[found - 1].VelRange.hi);
           }
         }
       }

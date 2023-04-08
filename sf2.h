@@ -113,10 +113,6 @@ typedef struct {
       ExclusiveClass, OverrideRootKey, Dummy;
 } zone_t;
 
-phdr* findPreset(int pid, int bank_id);
-zone_t* findPresetZones(phdr* phr, int n);
-int findPresetZonesCount(phdr* phr);
-
 enum grntypes {
   StartAddrOfs,
   EndAddrOfs,
@@ -185,15 +181,16 @@ enum grntypes {
 #define defattrs                                                               \
   {                                                                            \
     /*StartAddrOfs:*/ 0, /*EndAddrOfs:*/ 0, /*StartLoopAddrOfs:*/ 0,           \
-        /*EndLoopAddrOfs:*/ 0, /*StartAddrCoarseOfs:*/ 0, /*ModLFO2Pitch:*/ 0, \
-        /*VibLFO2Pitch:*/ 0, /*ModEnv2Pitch:*/ 0, /*FilterFc:*/ 13500,         \
-        /*FilterQ:*/ 0, /*ModLFO2FilterFc:*/ 0, /*ModEnv2FilterFc:*/ 0,        \
-        /*EndAddrCoarseOfs:*/ 0, /*ModLFO2Vol:*/ 0, /*Unused1:*/ 0,            \
+        /*EndLoopAddrOfs:*/ 0, /*StartAddrCoarseOfs:*/ 0,                      \
+        /*ModLFO2Pitch:*/ -12000, /*VibLFO2Pitch:*/ -12000,                    \
+        /*ModEnv2Pitch:*/ -12000, /*FilterFc:*/ 13500, /*FilterQ:*/ 0,         \
+        /*ModLFO2FilterFc:*/ -12000, /*ModEnv2FilterFc:*/ -12000,              \
+        /*EndAddrCoarseOfs:*/ 0, /*ModLFO2Vol:*/ -12000, /*Unused1:*/ 0,       \
         /*ChorusSend:*/ 0, /*ReverbSend:*/ 0, /*Pan:*/ 0, /*IBAGID:*/ 0,       \
-        /*PBagId:*/ 0, /*Unused4:*/ 0, /*ModLFODelay:*/ 0, /*ModLFOFreq:*/ 0, \
-        /*VibLFODelay:*/ 0, /*VibLFOFreq:*/ 0, /*ModEnvDelay:*/ -12000,        \
-        /*ModEnvAttack:*/ -12000, /*ModEnvHold:*/ -12000,                      \
-        /*ModEnvDecay:*/ -12000, /*ModEnvSustain:*/ 0,                         \
+        /*PBagId:*/ 0, /*Unused4:*/ 0, /*ModLFODelay:*/ -12000,                \
+        /*ModLFOFreq:*/ 0, /*VibLFODelay:*/ -12000, /*VibLFOFreq:*/ 0,         \
+        /*ModEnvDelay:*/ -12000, /*ModEnvAttack:*/ -12000,                     \
+        /*ModEnvHold:*/ -12000, /*ModEnvDecay:*/ -12000, /*ModEnvSustain:*/ 0, \
         /*ModEnvRelease:*/ -12000, /*Key2ModEnvHold:*/ 0,                      \
         /*Key2ModEnvDecay:*/ 0, /*VolEnvDelay:*/ -12000,                       \
         /*VolEnvAttack:*/ -12000, /*VolEnvHold:*/ -12000,                      \

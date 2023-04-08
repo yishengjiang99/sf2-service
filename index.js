@@ -162,11 +162,13 @@ export default class SF2Service {
         return programNames[pid | bkid];
       },
       filterKV: function (key, vel) {
-        return zMap.filter(
+        const f = zMap.filter(
           (z) =>
             (vel == -1 || (z.VelRange.lo <= vel && z.VelRange.hi >= vel)) &&
             (key == -1 || (z.KeyRange.lo <= key && z.KeyRange.hi >= key))
         );
+        console.log(f.map(f => f));
+        return f;
       },
     };
   }

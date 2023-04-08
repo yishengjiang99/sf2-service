@@ -5,45 +5,9 @@
 static inline float fclamp(float val, float min, float max) {
   return val > max ? max : val < min ? min : val;
 }
-
-static inline int combine_pattrs(int genop, short *zoneAttr, short psetAttr) {
-  float pval, zval;
+static inline short add_pbag_val_to_zone(int genop, short ival, short pval) {
   int irange[2], prange[2];
   switch (genop) {
-    case VelRange:
-    case KeyRange:
-      irange[0] = zoneAttr[genop] & 0x007f;
-      irange[1] = zoneAttr[genop] >> 8;
-      prange[0] = psetAttr & 0x007f;
-      prange[1] = psetAttr >> 8;
-      if (irange[1] > prange[1]) irange[1] = prange[1];
-      if (irange[0] < prange[0]) irange[0] = prange[0];
-      zoneAttr[genop] = irange[0] | (irange[1] << 8);
-      return 1;
-    case StartAddrOfs:
-    case EndAddrOfs:
-    case StartLoopAddrOfs:
-    case EndLoopAddrOfs:
-      zoneAttr[genop] += psetAttr;
-      break;
-    case StartAddrCoarseOfs:
-    case EndAddrCoarseOfs:
-    case StartLoopAddrCoarseOfs:
-    case EndLoopAddrCoarseOfs:
-      zoneAttr[genop] += psetAttr << 15;
-      break;
-    case ExclusiveClass:
-      zoneAttr[genop] = (unsigned int)psetAttr;
-      break;
-    default:
-      zoneAttr[genop] = psetAttr;
-      break;
-  }
-  return 1;
-}
-static inline int add_pbag_val_to_zone(int genop, short *zoneAttr,
-                                       short psetAttr) {
-  switch (genop) {
     case StartAddrOfs:
     case EndAddrOfs:
     case StartLoopAddrOfs:
@@ -52,74 +16,62 @@ static inline int add_pbag_val_to_zone(int genop, short *zoneAttr,
     case EndAddrCoarseOfs:
     case StartLoopAddrCoarseOfs:
     case EndLoopAddrCoarseOfs:
-      // do not add
-      break;
+      return ival;
     case ModLFODelay:
     case VibLFODelay:
     case ModEnvDelay:
     case VolEnvDelay:
     case VolEnvHold:
     case ModEnvHold:
-      zoneAttr[genop] = clamp(zoneAttr[genop] + psetAttr, -12000, 5000);
-      break;
+      return clamp(ival + pval, -12000, 5000);
     case ModEnvAttack:
     case ModEnvDecay:
     case ModEnvRelease:
     case VolEnvAttack:
     case VolEnvDecay:
     case VolEnvRelease:
-      zoneAttr[genop] = clamp(zoneAttr[genop] + psetAttr, -12000, 8000);
-      break;
+      return clamp(ival + pval, -12000, 8000);
     case Key2ModEnvHold:
     case Key2ModEnvDecay:
     case Key2VolEnvHold:
     case Key2VolEnvDecay:
-      zoneAttr[genop] = (short)clamp(zoneAttr[genop] + psetAttr, -12000, 1200);
-      break;
+      return (short)clamp(ival + pval, -12000, 1200);
     case Pan:
-      zoneAttr[genop] = (short)fclamp(
-          (float)zoneAttr[genop] + (float)psetAttr * 0.001f, -.5f, .5f);
-      break;
+      return (short)fclamp((float)ival + (float)pval * 0.001f, -.5f, .5f);
     case Attenuation:
-      zoneAttr[genop] = (short)fclamp((float)zoneAttr[genop] + (float)psetAttr,
-                                      0.0f, 1440.0f);
-      break;
+      return (short)fclamp((float)ival + (float)pval, 0.0f, 1440.0f);
     case ModEnvSustain:
-      zoneAttr[genop] = (short)clamp(zoneAttr[genop] + psetAttr, 0, 1000);
-      break;
+      return (short)clamp(ival + pval, 0, 1000);
     case VolEnvSustain:
-      zoneAttr[genop] =
-          (short)fclamp((float)zoneAttr[genop] + (float)psetAttr, 0, 1400.0f);
-      break;
+      return (short)fclamp((float)ival + (float)pval, 0, 1400.0f);
     case ModLFO2Pitch:
     case VibLFO2Pitch:
     case ModLFO2FilterFc:
     case ModEnv2FilterFc:
     case ModLFO2Vol:
-      zoneAttr[genop] = (short)clamp(zoneAttr[genop] + psetAttr, -12000, 12000);
-      break;
+    case ModEnv2Pitch:
+      return (short)clamp(ival + pval, -12000, 12000);
     case FilterFc:
-      zoneAttr[genop] = (short)clamp(zoneAttr[genop] + psetAttr, 1500, 13500);
-      break;
+      return (short)clamp(ival + pval, 1500, 13500);
     case FilterQ:
-      zoneAttr[genop] = (short)clamp(zoneAttr[genop] + psetAttr, 0, 960);
-      break;
+      return (short)clamp(ival + pval, 0, 960);
     case VibLFOFreq:
     case ModLFOFreq:
-      zoneAttr[genop] = (short)clamp(zoneAttr[genop] + psetAttr, -16000, 4500);
-      break;
+      return (short)clamp(ival + pval, -16000, 4500);
     case Instrument:
-      zoneAttr[genop] = psetAttr;
-      break;
-    case VelRange:
+      return pval;
     case KeyRange:
-      combine_pattrs(genop, zoneAttr, psetAttr);
-      break;
-    case PBagId:
-      zoneAttr[genop] = 33;
-      break;
+    case VelRange:
+      irange[0] = ival & 0x007f;
+      irange[1] = ival >> 8;
+      prange[0] = pval & 0x007f;
+      prange[1] = pval >> 8;
+      if (irange[1] > prange[1]) irange[1] = prange[1];
+      if (irange[0] < prange[0]) irange[0] = prange[0];
+      ival = (short)(irange[0] + (irange[1] << 8));
+      printf("hi lo def %d %d\n %hu\n", irange[1], irange[0], ival);
+      return ival;
     default:
-      break;
+      return ival;
   }
-  return 1;
 }

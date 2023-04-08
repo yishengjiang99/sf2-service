@@ -2,17 +2,10 @@
 
 #include <assert.h>
 #include <stdio.h>
-void emitHeader(int pid, int bid, void *p) {
-  phdr *pset = (phdr *)p;
-  printf("\n\nheader %s %d %d", pset->name, pid, bid);
-}
+void emitHeader(int pid, int bid, void *p) { phdr *pset = (phdr *)p; }
 void emitZone(int pid, void *ref) {
   zone_t *zone = (zone_t *)ref;
   shdrcast *shdr = (shdrcast *)(shdrs + zone->SampleId);
-  printf("\ninst key %d **%d** %d** origpitch %hu corr%d %s\n", zone->SampleId,
-         nshdrs, zone->OverrideRootKey, shdr->originalPitch,
-         shdr->pitchCorrection, shdr->name);
-  printf("\n\t %s %d", insts[zone->Instrument].name, zone->Instrument);
 }
 void emitSample(int id, int pid, void *name) {
   // printf("\n\tsample id: %d pid %d, %s",id, pid,name);
@@ -40,10 +33,11 @@ int main() {
   char *pdtabuffer = malloc(h2->size);
   fread(pdtabuffer, h2->size, h2->size, fd);
 
-  readpdta(pdtabuffer);
-  phdr *phr = findPreset(24, 0);
+  loadpdta(pdtabuffer);
+  phdr *phr = findPreset(0, 0);
   findPresetZonesCount(phr);
   findPresetZones(phr, findPresetZonesCount(phr));
+  return 1;
   phr = findPreset(0, 0);
   findPresetZonesCount(phr);
   findPresetZones(phr, findPresetZonesCount(phr));
