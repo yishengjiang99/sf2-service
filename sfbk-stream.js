@@ -1,5 +1,6 @@
 export async function sfbkstream(url) {
-  const res = await fetch(url, { headers: { Range: "bytes=0-6400" } });
+  const res = await fetch(url, {headers: {Range: "bytes=0-6400"}}).catch(e => console.trace(e));
+  if (!res.ok) return false;
 
   const ab = await res.arrayBuffer();
 

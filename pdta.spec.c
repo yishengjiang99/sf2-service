@@ -1,55 +1,71 @@
-#include "pdta.c"
 
 #include <assert.h>
 #include <stdio.h>
-void emitHeader(int pid, int bid, void *p) { phdr *pset = (phdr *)p; }
-void emitZone(int pid, void *ref) {
-  zone_t *zone = (zone_t *)ref;
-  shdrcast *shdr = (shdrcast *)(shdrs + zone->SampleId);
+
+#include "ffmpeg_test_tool.c"
+#include "sf2.c"
+#define WAVETABLE_SIZE 4096
+float hermite4(float frac_pos, float xm1, float x0, float x1, float x2) {
+  const float c = (x1 - xm1) * 0.5f;
+  const float v = x0 - x1;
+  const float w = c + v;
+  const float a = w + v + (x2 - x0) * 0.5f;
+  const float b_neg = w + a;
+
+  return ((((a * frac_pos) - b_neg) * frac_pos + c) * frac_pos + x0);
 }
-void emitSample(int id, int pid, void *name) {
-  // printf("\n\tsample id: %d pid %d, %s",id, pid,name);
+float sdta4lerp(float *sdta, int p, float frac) {
+  float fm1 = *(sdta + p - 1);
+  float f1 = *(sdta + p);
+  float f2 = *(sdta + p + 1);
+  float f3 = *(sdta + p + 2);
+  return hermite4(frac, fm1, f1, f2, f3);
 }
-void emitFilter(int type, uint8_t lo, uint8_t hi) {}
 
 int main() {
   printf("hello\n");
   char *filename = "file.sf2";
 
   FILE *fd = fopen(filename, "r");
-  sheader_t *header = (sheader_t *)malloc(sizeof(sheader_t));
-  header2_t *h2 = (header2_t *)malloc(sizeof(header2_t));
-  fread(header, sizeof(sheader_t), 1, fd);
-  printf("%.4s %.4s %.4s %u", header->name, header->sfbk, header->list,
-         header->size);
-  fread(h2, sizeof(header2_t), 1, fd);
-  printf("\n%.4s %u", h2->name, h2->size);
-  fseek(fd, h2->size, SEEK_CUR);
-  fread(h2, sizeof(header2_t), 1, fd);
-  printf("\n%.4s %u", h2->name, h2->size);
-  fseek(fd, h2->size, SEEK_CUR);
-  fread(h2, sizeof(header2_t), 1, fd);
-  printf("\n%.4s %u", h2->name, h2->size);
-  char *pdtabuffer = malloc(h2->size);
-  fread(pdtabuffer, h2->size, h2->size, fd);
+  readsf(fd);
+  read_sdta(fd);
+  zone_t *z = filterForZone(presets[0], 65, 44);
+  zone_t *z2 = filterForZone(z, 65, 44);
 
-  loadpdta(pdtabuffer);
-  phdr *phr = findPreset(0, 0);
-  findPresetZonesCount(phr);
-  findPresetZones(phr, findPresetZonesCount(phr));
-  return 1;
-  phr = findPreset(0, 0);
-  findPresetZonesCount(phr);
-  findPresetZones(phr, findPresetZonesCount(phr));
-  for (int i = 0; i < 127; i += 1) {
-    phr = findPreset(i, 0);
+  shdrcast *sh = (shdrcast *)&shdrs[z2->SampleId];
+  printf("\n%f\n", sample_cent(z, sh));
+  float ratio = (float)sh->sampleRate /
+                (powf(2, (sample_cent(z, sh) - 6900) / 1200) * 440.0f) /
+                WAVETABLE_SIZE;
 
-    printf("\n****\n%s %d %p\n***", phr->name, phr->pid, phr);
-    // phr = findPreset(i, 0);
-    if (!phr) continue;
-
-    findPresetZonesCount(phr);
-    findPresetZones(phr, findPresetZonesCount(phr));
+  int p = sh->start;
+  float fr = 0.0f;
+  for (int i = 0; i < WAVETABLE_SIZE; i++) {
+    float f = sdta4lerp(sdta, p, fr);
+    printf("\n%f %f %f %d", fr, f, sdta[p], p);
+    fr += ratio;
+    if (fr > 1.0) {
+      fr -= 1.0;
+      p++;
+    }
   }
-  return 1;
+
+  return 0;
+}
+
+void ffp(shdrcast *sh) {
+  outfile = popen("ffplay  -loglevel debug -i pipe:0 -f wav", "w");
+  put_wav_header(sh->sampleRate, 1, sh->end - sh->start + 1);
+  float i2;
+  float r = powf(2, .5);
+  int i = sh->start;
+  i2 = (float)sh->start;
+  for (; i <= sh->end; i++) {
+    if (i2 >= sh->endloop) {
+      i2 = sh->startloop;
+    }
+    i2 += r;
+    put16(data[i]);
+  }
+  pclose(outfile);
 }

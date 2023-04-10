@@ -1,7 +1,7 @@
 {
   "name": "sf2-service",
-  "version": "1.4.2",
-  "description": "",
+  "version": "1.5.0",
+  "description": "gratuitously using webassembly to read some annoying 16-bit format. new: chrome test coverage!",
   "type": "module",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/yishengjiang99/sf2-service#readme",
   "devDependencies": {
-    "chia": "^0.0.1",
+    "chai": "^4.3.7",
     "eslint-plugin-mocha": "^10.1.0",
     "jasmine-core": "^4.6.0",
     "karma": "^6.4.1",

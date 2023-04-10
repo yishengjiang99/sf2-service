@@ -3,6 +3,7 @@ import {newSFZone} from "../zoneProxy.js"
 //const sf2url = "https://raw.githubusercontent.com/FluidSynth/fluidsynth/master/sf2/VintageDreamsWaves-v2.sf2";
 let sf2;
 const sf2url = "https://yishengjiang99.github.io/sf2rend/static/GeneralUserGS.sf2"
+// eslint-disable-next-line no-undef
 describe("load sf2 file", () => {
   before(async () => ((sf2 = new SF2Service(sf2url)), await sf2.load()));
   it("parallel download stream with transferrable buffer to message port on another thread", async () => {
