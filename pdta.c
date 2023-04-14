@@ -206,7 +206,7 @@ zone_t *findPresetZones(phdr *phr, int nregions) {
             memcpy(zones + found, instZone, 120);
             emitZone(phr->pid, zones + found);
             found++;
-                   }
+          }
         }
       }
     }

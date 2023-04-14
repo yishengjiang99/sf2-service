@@ -70,6 +70,11 @@ static inline short add_pbag_val_to_zone(int genop, short ival, short pval) {
       if (irange[0] < prange[0]) irange[0] = prange[0];
       ival = (short)(irange[0] + (irange[1] << 8));
       return ival;
+    case CoarseTune:
+      return 0;
+    case SampleModes:
+      printf("sfmod %hd %hd", ival, ival);
+      return ival;
     default:
       return ival;
   }
