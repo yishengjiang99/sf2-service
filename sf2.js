@@ -20,6 +20,7 @@ export default class SF2Service {
     };
     module.onSample = (...args) => {
       if (onSample) onSample(args);
+      console.log(args);
     };
     module.onZone = onZone || devnull;
     module.HEAPU8.set(pdtaBuffer, pdtaRef);
@@ -56,6 +57,7 @@ export default class SF2Service {
     return this.state.presetRefs;
   }
   loadProgram(pid, bkid) {
+    console.log(pid, bkid);
     const {presetRefs, heap, shdrref, sdtaStart, programNames, instRef} =
       this.state;
     const rootRef = presetRefs[pid | bkid];
@@ -66,10 +68,10 @@ export default class SF2Service {
     let url = this.url;
     for (
       let zref = rootRef, zone = zref2Zone(zref);
-      zone && zone.SampleId != -1;
+      zone && zone.SampleId != -1 && zone.Dummy >= 0;
       zone = zref2Zone((zref += 120))
     ) {
-      if (zone.SampleId == 0) continue;
+      if (zone.SampleId < 0) continue; 
       const mapKey = zone.SampleId;
       if (!shdrMap[mapKey]) {
         shdrMap[mapKey] = getShdr(zone.SampleId);
@@ -113,12 +115,17 @@ export default class SF2Service {
     }
     function getShdr(SampleId) {
       const hdrRef = shdrref + SampleId * 46;
-      const dv = heap.slice(hdrRef, hdrRef + 46);
+      const dv = heap.slice(hdrRef, hdrRef + 48);
+      console.log(hdrRef, "br", heap.byteLength);
+
       const nameStr = readASCIIHIlariously(heap, hdrRef);
+      const dvv = new DataView(dv);
+
+
 
       const [start, end, startloop, endloop, sampleRate] = new Uint32Array(
         dv,
-        20,
+        20, 
         5
       );
       const [originalPitch, pitchCorrection] = new Uint8Array(
