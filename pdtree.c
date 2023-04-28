@@ -1,8 +1,8 @@
-
 #include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "gnames.h"
 #include "pdta.c"
 #include "pdta_extern_adapt.c"
 #include "sf2.h"
@@ -15,6 +15,45 @@ typedef struct {
   uint32_t n_izones;
   igen **izones;
 } ptree;
+struct tsf_envelope {
+  float delay, attack, hold, decay, sustain, release, keynumToHold,
+      keynumToDecay;
+};
+struct tsf_voice_envelope {
+  float level, slope;
+  int samplesUntilNextSegment;
+  short segment, midiVelocity;
+  struct tsf_envelope parameters;
+  int segmentIsExponential, isAmpEnv;
+};
+struct tsf_voice_lowpass {
+  double QInv, a0, a1, b1, b2, z1, z2;
+  int active;
+};
+struct tsf_voice_lfo {
+  int samplesUntil;
+  float level, delta;
+};
+
+struct tsf_region {
+  int loop_mode;
+  unsigned int sample_rate;
+  unsigned char lokey, hikey, lovel, hivel;
+  unsigned int group, offset, end, loop_start, loop_end;
+  int transpose, tune, pitch_keycenter, pitch_keytrack;
+  float attenuation, pan;
+  struct tsf_envelope ampenv, modenv;
+  int initialFilterQ, initialFilterFc;
+  int modEnvToPitch, modEnvToFilterFc, modLfoToFilterFc, modLfoToVolume;
+  float delayModLFO;
+  int freqModLFO, modLfoToPitch;
+  float delayVibLFO;
+  int freqVibLFO, vibLfoToPitch;
+};
+
+#define _TSFREGIONOFFSET(TYPE, FIELD) \
+  v = ((TYPE *)&((struct tsf_region *)0)->FIELD) - (TYPE *)0 \ 
+  (unsigned char)(v)
 
 int main() {
   printf("hello\n");
@@ -37,63 +76,24 @@ int main() {
   char *pdtabuffer = malloc(h2->size);
   fread(pdtabuffer, h2->size, h2->size, fd);
   readpdta(pdtabuffer);
-  printf("%d", nphdrs);
-  phdr *ph = findPreset(0, 0);
-  printf("%s,", ph->name);
-}
+  int i = 0, j = 0;
+  phdr *p = phdrs;
+  pbag *pb = pbags;
+  pgen *pg = pgens;
+  printf("\n%s", p->name);
 
-typedef struct _gset {
-  pgen *pg;
-  struct _gset *next;
-} gset;
+  for (; i < npgens; i++, pg++) {
+    if (i >= (pb + 1)->pgen_id) {
+      pb++;
+      printf("\n");
+      j++;
+    }
 
-ptree *mktree(ptree *t, phdr *phr) {
-  pbag *defbag = pbags + phr->pbagNdx;
-  pbag *lastbag = pbags + (phr + 1)->pbagNdx;
-  pgen **pgs;
-  gset pset[1];
-  pgen **trace = pgs;
-  for (pbag *pg = defbag; pg < lastbag; pg++) {
-    trace = &pg;
+    if (j > (p + 1)->pbagNdx) {
+      p++;
+      printf("\n%s", p->name);
+    }
+    printf("\n\t- %s %hd", generator[pg->genid], pg->val);
   }
+  return 1;
 }
-/**
- *
- * pgen
- * pgen
- *
- * pgen filter
- * pgen
- * pgen ibagRef
- *
- * pgen filter
- * pgen
- * pgen ibagRef
- * ..
- * ..
- * igen global
- * igen
- * igen
- *
- * igen filter
- * igen
- * igen sample
- *
- * igen filter
- * igen
- * igen sample
- *
- *
- *
- *
- *
- *
- *
- *  1.defbag
- * 	2. pbag
- *
- * 	3. pbag
- *
- *
- *
- */

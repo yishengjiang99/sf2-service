@@ -84,12 +84,13 @@ typedef struct {
 typedef struct {
   char name[20];
   uint16_t pid, bankId, pbagNdx;
+
   char idc[12];
 } phdr;
 
 typedef struct {
   char name[20];
-  uint32_t start, end, startloop, endloop, sampleRate;
+  unsigned int start, end, startloop, endloop, sampleRate;
 
   unsigned char originalPitch;
   signed char pitchCorrection;

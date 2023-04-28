@@ -1,0 +1,81 @@
+preset Xylophone,13,0:
+  Global Generators: 17445
+        - 52 FineTune: -21 65515
+        - 34 VolEnvAttack: -7973 57563
+        - 16 ReverbSend: 70 70
+  Preset Generators: 17448
+        - 44 VelRange: 0 51
+        - 48 Attenuation: -80 65456
+        - 8 FilterFc: -6071 59465
+        - 41 Instrument: 213 213
+        - ibg-pbg ref: 1455, 17448
+  Preset Generators: 17452
+        - 44 VelRange: 52 66
+        - 48 Attenuation: -60 65476
+        - 8 FilterFc: -4871 60665
+        - 41 Instrument: 213 213
+        - ibg-pbg ref: 1455, 17452
+  Preset Generators: 17456
+        - 44 VelRange: 67 82
+        - 48 Attenuation: -40 65496
+        - 8 FilterFc: -4169 61367
+        - 41 Instrument: 213 213
+      - ibg-pbg ref: 1455, 17456
+  Preset Generators: 17460
+        - 44 VelRange: 83 96
+        - 48 Attenuation: -20 65516
+        - 8 FilterFc: -3284 62252
+        - 41 Instrument: 213 213
+      - ibg-pbg ref: 1455, 17460
+  Preset Generators: 17464
+        - 44 VelRange: 97 111
+        - 48 Attenuation: -10 65526
+        - 8 FilterFc: -2786 62750
+        - 41 Instrument: 213 213
+      - ibg-pbg ref: 1455, 17464
+  Preset Generators: 17468
+        - 44 VelRange: 112 127
+        - 8 FilterFc: 0 0
+        - 41 Instrument: 213 213
+      - ibg-pbg ref: 1455, 17468
+  Instruments:
+    - inst 213: Xylophone
+      default izone: 1455
+        - 34 VolEnvAttack: -8359 57177
+        - 36 VolEnvDecay: 1495 1495
+        - 22 ModLFOFreq: -536 65000
+        - 24 VibLFOFreq: -1132 64404
+        - 30 ModEnvRelease: -1074 64462
+        - 38 VolEnvRelease: 1495 1495
+      izone: 1456
+        - 43 KeyRange: 21 79
+        - 3 EndLoopAddrOfs: 0 0
+        - 50 EndLoopAddrCoarseOfs: 0 0
+        - 2 StartLoopAddrOfs: 0 0
+        - 45 StartLoopAddrCoarseOfs: 0 0
+        - 58 OverrideRootKey: 76 76
+        - 53 SampleId: 534 534
+      izone: 1457
+        - 43 KeyRange: 80 84
+        - 3 EndLoopAddrOfs: 0 0
+        - 50 EndLoopAddrCoarseOfs: 0 0
+        - 2 StartLoopAddrOfs: 0 0
+        - 45 StartLoopAddrCoarseOfs: 0 0
+        - 58 OverrideRootKey: 80 80
+        - 53 SampleId: 533 533
+      izone: 1458
+        - 43 KeyRange: 85 103
+        - 3 EndLoopAddrOfs: 0 0
+        - 50 EndLoopAddrCoarseOfs: 0 0
+        - 2 StartLoopAddrOfs: 0 0
+        - 45 StartLoopAddrCoarseOfs: 0 0
+        - 58 OverrideRootKey: 88 88
+        - 53 SampleId: 532 532
+      izone: 1459
+        - 43 KeyRange: 104 127
+        - 3 EndLoopAddrOfs: -18 65518
+        - 50 EndLoopAddrCoarseOfs: 0 0
+        - 2 StartLoopAddrOfs: 0 0
+        - 45 StartLoopAddrCoarseOfs: 0 0
+        - 58 OverrideRootKey: 108 108
+        - 53 SampleId: 531 531

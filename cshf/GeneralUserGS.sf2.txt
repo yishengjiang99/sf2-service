@@ -4918,7 +4918,7 @@ preset Marimba,12,0:
         - 44 VelRange: 0 71
         - 48 Attenuation: 10 10
         - 8 FilterFc: -3986 61550
-        - 34 VolEnvAttack: -7973 57563
+        - 34 VolEnvAttack: -2 57563
         - 41 Instrument: 110 110
       - ibg-pbg ref: 1011, 16008
   Preset Generators: 16014

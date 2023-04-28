@@ -20,7 +20,6 @@ export default class SF2Service {
     };
     module.onSample = (...args) => {
       if (onSample) onSample(args);
-      console.log(args);
     };
     module.onZone = onZone || devnull;
     module.HEAPU8.set(pdtaBuffer, pdtaRef);
@@ -57,7 +56,6 @@ export default class SF2Service {
     return this.state.presetRefs;
   }
   loadProgram(pid, bkid) {
-    console.log(pid, bkid);
     const {presetRefs, heap, shdrref, sdtaStart, programNames, instRef} =
       this.state;
     const rootRef = presetRefs[pid | bkid];
@@ -116,7 +114,6 @@ export default class SF2Service {
     function getShdr(SampleId) {
       const hdrRef = shdrref + SampleId * 46;
       const dv = heap.slice(hdrRef, hdrRef + 48);
-      console.log(hdrRef, "br", heap.byteLength);
 
       const nameStr = readASCIIHIlariously(heap, hdrRef);
       const dvv = new DataView(dv);
@@ -193,6 +190,7 @@ export default class SF2Service {
                     nSamples: (shdr.range[1] + 1 - shdr.range[0]) / 2,
                     loops: shdr.loops,
                     sampleRate: shdr.sampleRate,
+                    originalPitch: shdr.originalPitch
                   };
                 }
               })
