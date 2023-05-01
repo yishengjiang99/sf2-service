@@ -1,4 +1,5 @@
 import {sfbkstream} from "./sfbk-stream.js";
+import Module from './pdta.js';
 import {newSFZoneMap} from "./zoneProxy.js";
 import {s16ArrayBuffer2f32} from "./s16tof32.js";
 export default class SF2Service {
@@ -6,8 +7,7 @@ export default class SF2Service {
     this.url = url;
   }
   async load({onHeader, onSample, onZone} = {}) {
-    const Module = await import("./pdta.js");
-    const module = await Module.default();
+    const module = await Module();
     const {pdtaBuffer, sdtaStart, infos} = await sfbkstream(this.url);
     const programNames = [];
 

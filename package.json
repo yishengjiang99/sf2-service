@@ -32,5 +32,8 @@
     "karma-jasmine": "^5.1.0",
     "karma-mocha": "^2.0.1",
     "mocha": "^10.2.0"
+  },
+  "dependencies": {
+    "mkspin": "file:../spin"
   }
 }

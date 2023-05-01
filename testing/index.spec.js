@@ -1,5 +1,6 @@
 import SF2Service from "../index.js";
 import {newSFZone} from "../zoneProxy.js"
+import {SpinNode} from "../node_modules/mkspin/spin.js";
 //const sf2url = "https://raw.githubusercontent.com/FluidSynth/fluidsynth/master/sf2/VintageDreamsWaves-v2.sf2";
 let sf2;
 const sf2url = "https://yishengjiang99.github.io/sf2rend/static/GeneralUserGS.sf2"
@@ -8,7 +9,7 @@ describe("load sf2 file", () => {
   before(async () => ((sf2 = new SF2Service(sf2url)), await sf2.load()));
   it("parallel download stream with transferrable buffer to message port on another thread", async () => {
     const port = new MessageChannel();
-    const program = sf2.loadProgram(0, 0);
+    const program = sf2.loadProgram(0, 0); localStorage
     port.port2.onmessage = async ({data: {stream, segments}}) => {
       const reader = stream.getReader();
       expect(reader).to.exist;
@@ -77,3 +78,15 @@ describe("load sf2 file", () => {
   });
 
 });
+
+
+describe("sending to spinner", async () => {
+  let sp, sf2, ctx;
+  ctx = new OfflineAudioContext(1, 48000, 480000);
+  before(async () => ((sf2 = new SF2Service(sf2url)), await sf2.load()));
+  before(async () => {
+    await SpinNode.init();
+  });
+
+
+})  
