@@ -4,8 +4,10 @@
 
 #include "ffmpeg_test_tool.c"
 #include "sf2.c"
+#include "call_ffp.h"
 #define WAVETABLE_SIZE 4096
-float hermite4(float frac_pos, float xm1, float x0, float x1, float x2) {
+float hermite4(float frac_pos, float xm1, float x0, float x1, float x2)
+{
   const float c = (x1 - xm1) * 0.5f;
   const float v = x0 - x1;
   const float w = c + v;
@@ -14,7 +16,8 @@ float hermite4(float frac_pos, float xm1, float x0, float x1, float x2) {
 
   return ((((a * frac_pos) - b_neg) * frac_pos + c) * frac_pos + x0);
 }
-float sdta4lerp(float *sdta, int p, float frac) {
+float sdta4lerp(float *sdta, int p, float frac)
+{
   float fm1 = *(sdta + p - 1);
   float f1 = *(sdta + p);
   float f2 = *(sdta + p + 1);
@@ -22,7 +25,27 @@ float sdta4lerp(float *sdta, int p, float frac) {
   return hermite4(frac, fm1, f1, f2, f3);
 }
 
-int main() {
+void ffp1(shdrcast *sh)
+{
+  outfile = popen("ffplay  -loglevel debug -i pipe:0 -f wav", "w");
+  put_wav_header(sh->sampleRate, 1, sh->end - sh->start + 1);
+  float i2;
+  float r = powf(2, .5);
+  int i = sh->start;
+  i2 = (float)sh->start;
+  for (; i <= sh->end; i++)
+  {
+    if (i2 >= sh->endloop)
+    {
+      i2 = sh->startloop;
+    }
+    i2 += r;
+    put16(data[i]);
+  }
+  pclose(outfile);
+}
+int main()
+{
   printf("hello\n");
   char *filename = "file.sf2";
 
@@ -40,32 +63,17 @@ int main() {
 
   int p = sh->start;
   float fr = 0.0f;
-  for (int i = 0; i < WAVETABLE_SIZE; i++) {
+  for (int i = 0; i < WAVETABLE_SIZE; i++)
+  {
     float f = sdta4lerp(sdta, p, fr);
     printf("\n%f %f %f %d", fr, f, sdta[p], p);
     fr += ratio;
-    if (fr > 1.0) {
+    if (fr > 1.0)
+    {
       fr -= 1.0;
       p++;
     }
   }
-
+  ffp1(sh);
   return 0;
-}
-
-void ffp(shdrcast *sh) {
-  outfile = popen("ffplay  -loglevel debug -i pipe:0 -f wav", "w");
-  put_wav_header(sh->sampleRate, 1, sh->end - sh->start + 1);
-  float i2;
-  float r = powf(2, .5);
-  int i = sh->start;
-  i2 = (float)sh->start;
-  for (; i <= sh->end; i++) {
-    if (i2 >= sh->endloop) {
-      i2 = sh->startloop;
-    }
-    i2 += r;
-    put16(data[i]);
-  }
-  pclose(outfile);
 }
