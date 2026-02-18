@@ -44,13 +44,12 @@ async function example() {
   
   // Access zones with type inference
   for (const zone of program.zMap) {
-    const sampleId: number = zone.SampleId;
-    const keyRange = zone.KeyRange;
-    const pitchRatio = zone.calcPitchRatio(60, 44100);
+    // Type checking at compile time - these properties exist in ZMap
+    const sample = zone.shdr;
+    const pitch = zone.calcPitchRatio(60, 44100);
     
     // Access sample header
-    const shdr = zone.shdr;
-    const sampleData = await shdr.data();
+    const sampleData = await sample.data();
   }
 }
 

@@ -15,6 +15,7 @@
   },
   "include": [
     "testing/**/*.ts",
+    "type-check-example.ts",
     "sf2-service.d.ts"
   ],
   "exclude": [
