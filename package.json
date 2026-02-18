@@ -8,7 +8,8 @@
   "scripts": {
     "build": "make",
     "test1": "gcc pdta.spec.c; ./a.out",
-    "test": "npx karma start karma.conf.cjs"
+    "test": "npx karma start karma.conf.cjs",
+    "type-check": "tsc --noEmit"
   },
   "keywords": [],
   "author": "Yisheng Jiang",
