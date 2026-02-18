@@ -2,13 +2,16 @@ node_modules
 .vscode
 a.out
 coverage
+# Build artifacts
 *.gch
 *.o
-*.dat
+pdta.dat
 dist/
 bin/
+# Cache/temp directories
 cshf/
-*.txt
-*.png
-*.sf2
+# Test data files (keep readme.txt and documentation)
+/*.txt
+/*.png
+/*.sf2
 sf2_info
