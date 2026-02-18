@@ -5,6 +5,9 @@
 
 #include "sf2.h"
 
+/* Token change to verify CI rebuild detection */
+static const int CI_TEST_TOKEN = 1;
+
 /* Safe clamp macro with proper parentheses to avoid operator precedence issues */
 #define clamp(val, min, max) ((val) > (max) ? (max) : ((val) < (min) ? (min) : (val)))
 
