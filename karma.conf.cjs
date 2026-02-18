@@ -16,6 +16,7 @@ module.exports = function (config) {
     // list of files / patterns to load in the browser
     files: [
       {pattern: "*.js", type: "module"},
+      {pattern: "build/*.js", type: "module", included: false},
       {
         pattern: "./testing/*.spec.js",
         type: "module",
@@ -73,9 +74,22 @@ module.exports = function (config) {
     // available browser launchers: https://www.npmjs.com/search?q=keywords:karma-launcher
     browsers: ['Chrome'],
 
+    // Custom launcher for CI environment
+    customLaunchers: {
+      ChromeHeadlessCI: {
+        base: 'ChromeHeadless',
+        flags: [
+          '--no-sandbox',
+          '--disable-setuid-sandbox',
+          '--disable-gpu',
+          '--disable-dev-shm-usage'
+        ]
+      }
+    },
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
+    singleRun: false,
 
     // Concurrency level
     // how many browser instances should be started simultaneously
