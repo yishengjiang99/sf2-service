@@ -283,7 +283,7 @@ int findPresetZonesCount(phdr *phr) {
           pgen_t *lastig = igens + igenEnd;
           unsigned char ilokey = 0, ihikey = 127, ilovel = 0, ihivel = 127;
 
-          for (pgen_t *ig = igens + igenStart; ig->genid != SampleId && ig < lastig; ig++) {
+          for (pgen_t *ig = igens + igenStart; ig < lastig && ig->genid != SampleId; ig++) {
             if (ig->genid == KeyRange) {
               ilokey = ig->val.ranges.lo;
               ihikey = ig->val.ranges.hi;
@@ -317,7 +317,7 @@ zone_t *findPresetZones(phdr *phr, int nregions) {
   }
   
   /* Allocate zones array with bounds check */
-  if (nregions > 10000) { /* Sanity check to prevent excessive allocation */
+  if (nregions > SF2_MAX_ZONES) { /* Sanity check to prevent excessive allocation */
     return NULL;
   }
   
@@ -393,7 +393,7 @@ zone_t *findPresetZones(phdr *phr, int nregions) {
           ibag *ibgg = ibags + ibg;
           
           int igenStart = ibgg->igen_id;
-          int igenEnd = (ibg < nibags - 1) ? (ibgg + 1)->igen_id : nigens;
+          int igenEnd = (ibg < nibags - 1) ? (ibgg + 1)->igen_id : nigens - 1;
           
           /* Validate igen indices */
           if (igenStart < 0 || igenEnd > nigens || igenStart >= igenEnd) {
