@@ -1,17 +1,16 @@
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
-
 #include <stdio.h>
 
 #include "sf2.h"
 
-#define clamp(val, min, max) val > max ? max : val < min ? min \
-                                                         : val
+/* Safe clamp macro with proper parentheses to avoid operator precedence issues */
+#define clamp(val, min, max) ((val) > (max) ? (max) : ((val) < (min) ? (min) : (val)))
+
 static inline float fclamp(float val, float min, float max)
 {
-  return val > max ? max : val < min ? min
-                                     : val;
+  return val > max ? max : val < min ? min : val;
 }
 static inline short add_pbag_val_to_zone(int genop, short ival, short pval)
 {
@@ -33,41 +32,41 @@ static inline short add_pbag_val_to_zone(int genop, short ival, short pval)
   case VolEnvDelay:
   case VolEnvHold:
   case ModEnvHold:
-    return clamp(ival, -12000, 5000);
+    return clamp(ival, SF2_MIN_DELAY, SF2_MAX_DELAY_SHORT);
   case ModEnvAttack:
   case ModEnvDecay:
   case ModEnvRelease:
   case VolEnvAttack:
   case VolEnvDecay:
   case VolEnvRelease:
-    return clamp(ival, -12000, 8000);
+    return clamp(ival, SF2_MIN_DELAY, SF2_MAX_DELAY_LONG);
   case Key2ModEnvHold:
   case Key2ModEnvDecay:
   case Key2VolEnvHold:
   case Key2VolEnvDecay:
-    return (short)clamp(ival + pval, -12000, 1200);
+    return (short)clamp(ival + pval, SF2_MIN_KEY_MOD, SF2_MAX_KEY_MOD);
   case Pan:
-    return (short)fclamp((float)ival + (float)pval * 0.001f, -.5f, .5f);
+    return (short)fclamp((float)ival + (float)pval * 0.001f, SF2_MIN_PAN, SF2_MAX_PAN);
   case Attenuation:
-    return (short)fclamp((float)ival + (float)pval, 0.0f, 1440.0f);
+    return (short)fclamp((float)ival + (float)pval, SF2_MIN_ATTENUATION, SF2_MAX_ATTENUATION);
   case ModEnvSustain:
-    return (short)clamp(ival + pval, 0, 1000);
+    return (short)clamp(ival + pval, SF2_MIN_SUSTAIN, SF2_MAX_SUSTAIN_MOD);
   case VolEnvSustain:
-    return (short)fclamp((float)ival + (float)pval, 0, 1400.0f);
+    return (short)fclamp((float)ival + (float)pval, SF2_MIN_SUSTAIN, SF2_MAX_SUSTAIN_VOL);
   case ModLFO2Pitch:
   case VibLFO2Pitch:
   case ModLFO2FilterFc:
   case ModEnv2FilterFc:
   case ModLFO2Vol:
   case ModEnv2Pitch:
-    return (short)clamp(ival + pval, -12000, 12000);
+    return (short)clamp(ival + pval, SF2_MIN_MODULATION, SF2_MAX_MODULATION);
   case FilterFc:
-    return (short)clamp(ival + pval, 1500, 13500);
+    return (short)clamp(ival + pval, SF2_MIN_FILTER_FC, SF2_MAX_FILTER_FC);
   case FilterQ:
-    return (short)clamp(ival + pval, 0, 960);
+    return (short)clamp(ival + pval, SF2_MIN_FILTER_Q, SF2_MAX_FILTER_Q);
   case VibLFOFreq:
   case ModLFOFreq:
-    return (short)clamp(ival + pval, -16000, 4500);
+    return (short)clamp(ival + pval, SF2_MIN_LFO_FREQ, SF2_MAX_LFO_FREQ);
   case Instrument:
     return pval;
   case KeyRange:
@@ -126,12 +125,17 @@ zone_t *root;
 zone_t *presets[0xff];
 
 void *readpdta(void *pdtabuffer) {
-#define srr(section)                          \
-  sh = (section_header *)pdtabuffer;          \
-  pdtabuffer += 8;                            \
-  n##section##s = sh->size / sizeof(section); \
-  section##s = (section *)pdtabuffer;         \
-  pdtabuffer += sh->size;
+  if (pdtabuffer == NULL) {
+    return NULL;
+  }
+  
+#define srr(section)                                           \
+  sh = (section_header *)pdtabuffer;                           \
+  pdtabuffer = (char *)pdtabuffer + SF2_SECTION_HEADER_SIZE;   \
+  n##section##s = sh->size / sizeof(section);                  \
+  section##s = (section *)pdtabuffer;                          \
+  pdtabuffer = (char *)pdtabuffer + sh->size;
+  
   section_header *sh;
   srr(phdr);
   srr(pbag);
@@ -142,31 +146,48 @@ void *readpdta(void *pdtabuffer) {
   srr(imod);
   srr(igen);
   srr(shdr);
-  return malloc(4);
+  
+  /* Allocate minimal placeholder - caller manages memory */
+  void *result = malloc(4);
+  return result; /* May return NULL if malloc fails */
 }
 void *loadpdta(void *pdtabuffer) {
-  readpdta(pdtabuffer);
-  for (uint16_t i = 0; i < 128; i++) {
+  if (pdtabuffer == NULL) {
+    return NULL;
+  }
+  
+  void *result = readpdta(pdtabuffer);
+  if (result == NULL) {
+    return NULL;
+  }
+  
+  for (uint16_t i = 0; i < SF2_MAX_PRESETS; i++) {
     phdr *phr = findPreset(i, 0x00);
 
-    // printf("[%u %u] %s \n", phr->pid, phr->bankId,phr->name);
-    if (phr) {
+    if (phr != NULL) {
       int n = findPresetZonesCount(phr);
-      // printf("\t num %d\n",n);
-      presets[(uint32_t)i] = findPresetZones(phr, n);
+      zone_t *zones = findPresetZones(phr, n);
+      if (zones != NULL && i < SF2_MAX_BANKS) {
+        presets[i] = zones;
+      }
       emitHeader(phr->pid, phr->bankId, phr->name);
     }
-    phr = findPreset(i, 128);
+    
+    phr = findPreset(i, SF2_MAX_PRESETS);
 
-    // printf("[%u %u] %s \n", phr->pid, phr->bankId,phr->name);
-    if (phr) {
+    if (phr != NULL) {
       int n = findPresetZonesCount(phr);
-      presets[(uint32_t)i + 128] = findPresetZones(phr, n);
+      zone_t *zones = findPresetZones(phr, n);
+      if (zones != NULL && (i + SF2_MAX_PRESETS) < SF2_MAX_BANKS) {
+        presets[i + SF2_MAX_PRESETS] = zones;
+      }
       emitHeader(phr->pid, phr->bankId, phr->name);
     }
   }
-  // get mem end;
-  return malloc(4);
+  
+  /* Allocate minimal placeholder - caller manages memory */
+  void *final_result = malloc(4);
+  return final_result; /* May return NULL if malloc fails */
 }
 
 phdr *findPreset(int pid, int bank_id) {
@@ -175,7 +196,7 @@ phdr *findPreset(int pid, int bank_id) {
       return &phdrs[i];
     }
   }
-  return (void *)0;
+  return NULL;
 }
 
 #define filter_zone(g, ig)                    \
@@ -185,57 +206,101 @@ phdr *findPreset(int pid, int bank_id) {
     continue;
 
 int findPresetZonesCount(phdr *phr) {
+  if (phr == NULL) {
+    return 0;
+  }
+  
   int nregions = 0;
-  int instID = -1, lastSampId = -1;
-  for (int j = phr->pbagNdx; j < (phr + 1)->pbagNdx; j++) {
+  int pbagStart = phr->pbagNdx;
+  int pbagEnd = (phr + 1)->pbagNdx;
+  
+  /* Validate pbag indices */
+  if (pbagStart < 0 || pbagEnd > npbags || pbagStart >= pbagEnd) {
+    return 0;
+  }
+  
+  for (int j = pbagStart; j < pbagEnd; j++) {
+    if (j >= npbags) break;
+    
     pbag *pg = pbags + j;
-    pgen_t *lastg = pgens + pg[j + 1].pgen_id;
     int pgenId = pg->pgen_id;
-    instID = -1;
-    int lastPgenId = j < npbags - 1 ? pbags[j + 1].pgen_id : npgens - 1;
+    int lastPgenId = (j < npbags - 1) ? pbags[j + 1].pgen_id : npgens - 1;
+    
+    /* Validate pgen indices */
+    if (pgenId < 0 || lastPgenId > npgens || pgenId > lastPgenId) {
+      continue;
+    }
+    
     unsigned char plokey = 0, phikey = 127, plovel = 0, phivel = 127;
+    int instID = -1;
+    
     for (int k = pgenId; k < lastPgenId; k++) {
+      if (k >= npgens) break;
+      
       pgen *g = pgens + k;
-      if (k == VelRange) {
+      
+      if (g->genid == VelRange) {
         plovel = g->val.ranges.lo;
         phivel = g->val.ranges.hi;
         continue;
       }
-      if (k == KeyRange) {
+      if (g->genid == KeyRange) {
         plokey = g->val.ranges.lo;
         phikey = g->val.ranges.hi;
         continue;
       }
       if (plokey == phikey) continue;
+      
       if (g->genid == Instrument) {
         instID = g->val.uAmount;
+        
+        /* Validate instrument index */
+        if (instID < 0 || instID >= ninsts) {
+          continue;
+        }
+        
         inst *ihead = insts + instID;
         int ibgId = ihead->ibagNdx;
         int lastibg = (ihead + 1)->ibagNdx;
+        
+        /* Validate ibag indices */
+        if (ibgId < 0 || lastibg > nibags || ibgId >= lastibg) {
+          continue;
+        }
+        
         for (int ibg = ibgId; ibg < lastibg; ibg++) {
+          if (ibg >= nibags) break;
+          
           ibag *ibgg = ibags + ibg;
-          pgen_t *lastig = ibg < nibags - 1 ? igens + (ibgg + 1)->igen_id
-                                            : igens + nigens - 1;
+          int igenStart = ibgg->igen_id;
+          int igenEnd = (ibg < nibags - 1) ? (ibgg + 1)->igen_id : nigens - 1;
+          
+          /* Validate igen indices */
+          if (igenStart < 0 || igenEnd > nigens || igenStart > igenEnd) {
+            continue;
+          }
+          
+          pgen_t *lastig = igens + igenEnd;
           unsigned char ilokey = 0, ihikey = 127, ilovel = 0, ihivel = 127;
 
-          for (pgen_t *g = igens + ibgg->igen_id; g->genid != 60 && g != lastig;
-               g++) {
-            if (g->genid == KeyRange) {
-              ilokey = g->val.ranges.lo;
-              ihikey = g->val.ranges.hi;
+          for (pgen_t *ig = igens + igenStart; ig->genid != SampleId && ig < lastig; ig++) {
+            if (ig->genid == KeyRange) {
+              ilokey = ig->val.ranges.lo;
+              ihikey = ig->val.ranges.hi;
               continue;
             }
-            if (g->genid == VelRange) {
-              ilovel = g->val.ranges.lo;
-              ihivel = g->val.ranges.hi;
+            if (ig->genid == VelRange) {
+              ilovel = ig->val.ranges.lo;
+              ihivel = ig->val.ranges.hi;
               continue;
             }
-            if (k == VelRange || k == KeyRange) {
-              if (g->val.ranges.lo == g->val.ranges.hi) break;
+            if (ig->val.ranges.lo == ig->val.ranges.hi) {
+              break;
             }
-            if (g->genid == SampleId) {
-              if (g->val.uAmount >= nshdrs) break;
-              nregions++;
+            if (ig->genid == SampleId) {
+              if (ig->val.uAmount < (unsigned short)nshdrs) {
+                nregions++;
+              }
               break;
             }
           }
@@ -247,49 +312,111 @@ int findPresetZonesCount(phdr *phr) {
 }
 
 zone_t *findPresetZones(phdr *phr, int nregions) {
-  // generator attributes
-  short presetDefault[60] = {0};
-  short pbagLegion[60] = {0};
+  if (phr == NULL || nregions < 0) {
+    return NULL;
+  }
+  
+  /* Allocate zones array with bounds check */
+  if (nregions > 10000) { /* Sanity check to prevent excessive allocation */
+    return NULL;
+  }
+  
+  zone_t *zones = (zone_t *)malloc((nregions + 1) * sizeof(zone_t));
+  if (zones == NULL) {
+    return NULL;
+  }
+  
+  /* Initialize generator attributes with defaults */
+  short presetDefault[SF2_GENERATOR_COUNT] = {0};
+  short pbagLegion[SF2_GENERATOR_COUNT] = {0};
   presetDefault[VelRange] = 127 << 8;
   presetDefault[KeyRange] = 127 << 8;
 
-  zone_t *zones = (zone_t *)malloc((nregions + 1) * sizeof(zone_t));
   int found = 0;
-  int instID = -1;
-  int lastbag = (phr + 1)->pbagNdx;
-  for (int j = phr->pbagNdx; j < (phr + 1)->pbagNdx; j++) {
+  int pbagStart = phr->pbagNdx;
+  int pbagEnd = (phr + 1)->pbagNdx;
+  
+  /* Validate pbag indices */
+  if (pbagStart < 0 || pbagEnd > npbags || pbagStart >= pbagEnd) {
+    zones[0].SampleId = -1;
+    return zones;
+  }
+  
+  for (int j = pbagStart; j < pbagEnd && found < nregions; j++) {
+    if (j >= npbags) break;
+    
     pbag *pg = pbags + j;
-    pgen_t *lastg = pgens + pg[j + 1].pgen_id;
     int pgenId = pg->pgen_id;
-    int lastPgenId = j < npbags - 1 ? pbags[j + 1].pgen_id : npgens - 1;
-    memcpy(pbagLegion, presetDefault, 120);
+    int lastPgenId = (j < npbags - 1) ? pbags[j + 1].pgen_id : npgens - 1;
+    
+    /* Validate pgen indices */
+    if (pgenId < 0 || lastPgenId > npgens || pgenId > lastPgenId) {
+      continue;
+    }
+    
+    memcpy(pbagLegion, presetDefault, SF2_GENERATOR_SIZE_BYTES);
     pbagLegion[Instrument] = -1;
     pbagLegion[PBagId] = j;
+    
     for (int k = pgenId; k < lastPgenId; k++) {
+      if (k >= npgens) break;
+      
       pgen *g = pgens + k;
-      pbagLegion[g->genid] = g->val.shAmount;
+      if (g->genid < SF2_GENERATOR_COUNT) {
+        pbagLegion[g->genid] = g->val.shAmount;
+      }
+      
       if (g->genid == Instrument) {
-        inst *instptr = insts + pbagLegion[Instrument];
+        int instId = pbagLegion[Instrument];
+        
+        /* Validate instrument index */
+        if (instId < 0 || instId >= ninsts) {
+          continue;
+        }
+        
+        inst *instptr = insts + instId;
         int ibgId = instptr->ibagNdx;
         int lastibg = (instptr + 1)->ibagNdx;
-        short instDefault[60] = defattrs;
-        short instZone[60] = {0};
-        for (int ibg = ibgId; ibg < lastibg; ibg++) {
-          memcpy(instZone, instDefault, 120);
+        
+        /* Validate ibag indices */
+        if (ibgId < 0 || lastibg > nibags || ibgId >= lastibg) {
+          continue;
+        }
+        
+        short instDefault[SF2_GENERATOR_COUNT] = defattrs;
+        short instZone[SF2_GENERATOR_COUNT] = {0};
+        
+        for (int ibg = ibgId; ibg < lastibg && found < nregions; ibg++) {
+          if (ibg >= nibags) break;
+          
+          memcpy(instZone, instDefault, SF2_GENERATOR_SIZE_BYTES);
           ibag *ibgg = ibags + ibg;
-          pgen_t *lastig = igens + (ibgg + 1)->igen_id;
-          for (pgen_t *ig = igens + ibgg->igen_id; ig != lastig; ig++) {
-            instZone[ig->genid] = ig->val.shAmount;
+          
+          int igenStart = ibgg->igen_id;
+          int igenEnd = (ibg < nibags - 1) ? (ibgg + 1)->igen_id : nigens;
+          
+          /* Validate igen indices */
+          if (igenStart < 0 || igenEnd > nigens || igenStart >= igenEnd) {
+            continue;
           }
+          
+          pgen_t *lastig = igens + igenEnd;
+          
+          for (pgen_t *ig = igens + igenStart; ig < lastig; ig++) {
+            if (ig->genid < SF2_GENERATOR_COUNT) {
+              instZone[ig->genid] = ig->val.shAmount;
+            }
+          }
+          
           if (instZone[SampleId] == -1) {
-            memcpy(instDefault, instZone, 120);
+            memcpy(instDefault, instZone, SF2_GENERATOR_SIZE_BYTES);
           } else {
-            for (int i = 0; i < 60; i++) {
+            for (int i = 0; i < SF2_GENERATOR_COUNT; i++) {
               instZone[i] = add_pbag_val_to_zone(i, instZone[i], pbagLegion[i]);
             }
             instZone[IBAGID] = ibg;
             instZone[PBagId] = j;
-            memcpy(zones + found, instZone, 120);
+            memcpy(zones + found, instZone, SF2_GENERATOR_SIZE_BYTES);
             emitZone(phr->pid, zones + found);
             found++;
           }
@@ -297,26 +424,60 @@ zone_t *findPresetZones(phdr *phr, int nregions) {
       }
     }
     if (pbagLegion[Instrument] == -1) {
-      memcpy(presetDefault, pbagLegion, 120);
+      memcpy(presetDefault, pbagLegion, SF2_GENERATOR_SIZE_BYTES);
     }
   }
-  zone_t *dummy = zones + found;
-  dummy->SampleId = -1;
+  
+  /* Mark end of zones */
+  if (found < nregions + 1) {
+    zone_t *dummy = zones + found;
+    dummy->SampleId = -1;
+  }
+  
   return zones;
 }
 
 zone_t *filterForZone(zone_t *from, uint8_t key, uint8_t vel) {
-  for (zone_t *z = from; z; z++) {
-    if (z == 0 || z->SampleId == (short)-1) break;
-    if (vel > 0 && (z->VelRange.lo > vel || z->VelRange.hi < vel)) continue;
-    if (key > 0 && (z->KeyRange.lo > key || z->KeyRange.hi < key)) continue;
+  if (from == NULL) {
+    return NULL;
+  }
+  
+  for (zone_t *z = from; z != NULL; z++) {
+    if (z->SampleId == -1) {
+      break;
+    }
+    if (vel > 0 && (z->VelRange.lo > vel || z->VelRange.hi < vel)) {
+      continue;
+    }
+    if (key > 0 && (z->KeyRange.lo > key || z->KeyRange.hi < key)) {
+      continue;
+    }
     return z;
   }
-  if (vel > 0) return filterForZone(from, key, 0);
-  if (key > 0) return filterForZone(from, 0, vel);
-  return &presetZones[0];
+  
+  /* Retry with relaxed filters */
+  if (vel > 0) {
+    return filterForZone(from, key, 0);
+  }
+  if (key > 0) {
+    return filterForZone(from, 0, vel);
+  }
+  
+  /* Return first zone as fallback if presetZones exists */
+  return (presetZones != NULL) ? &presetZones[0] : NULL;
 }
 
-void *shdrref() { return shdrs; }
-void *presetRef() { return presets; }
-void *instRef(int instId) { return insts + instId; }
+void *shdrref() { 
+  return shdrs; 
+}
+
+void *presetRef() { 
+  return presets; 
+}
+
+void *instRef(int instId) { 
+  if (instId < 0 || instId >= ninsts) {
+    return NULL;
+  }
+  return insts + instId; 
+}

@@ -1,12 +1,37 @@
 #ifndef SF2_H
 #define SF2_H
 #include <stdint.h>
-typedef unsigned int uint32_t;
-typedef unsigned char uint8_t;
-typedef unsigned short uint16_t;
-typedef int int32_t;
-typedef short int16_t;
-typedef unsigned short WORD;
+
+/* Remove redundant typedef declarations - stdint.h already defines these */
+
+/* Constants for SoundFont2 format */
+#define SF2_SECTION_HEADER_SIZE 8
+#define SF2_GENERATOR_COUNT 60
+#define SF2_GENERATOR_SIZE_BYTES 120  /* 60 * sizeof(short) */
+#define SF2_MAX_PRESETS 128
+#define SF2_MAX_BANKS 256
+
+/* Generator range constants */
+#define SF2_MIN_DELAY -12000
+#define SF2_MAX_DELAY_SHORT 5000
+#define SF2_MAX_DELAY_LONG 8000
+#define SF2_MIN_MODULATION -12000
+#define SF2_MAX_MODULATION 12000
+#define SF2_MIN_KEY_MOD -12000
+#define SF2_MAX_KEY_MOD 1200
+#define SF2_MIN_PAN -0.5f
+#define SF2_MAX_PAN 0.5f
+#define SF2_MIN_ATTENUATION 0.0f
+#define SF2_MAX_ATTENUATION 1440.0f
+#define SF2_MIN_SUSTAIN 0
+#define SF2_MAX_SUSTAIN_MOD 1000
+#define SF2_MAX_SUSTAIN_VOL 1400.0f
+#define SF2_MIN_FILTER_FC 1500
+#define SF2_MAX_FILTER_FC 13500
+#define SF2_MIN_FILTER_Q 0
+#define SF2_MAX_FILTER_Q 960
+#define SF2_MIN_LFO_FREQ -16000
+#define SF2_MAX_LFO_FREQ 4500
 
 typedef struct {
   uint8_t lo, hi;
