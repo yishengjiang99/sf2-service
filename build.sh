@@ -1,5 +1,5 @@
 docker run --rm -v $(pwd):/src -u $(id -u):$(id -g) emscripten/emsdk \
-emcc sf2.c -O3 -o pdta.js \
+emcc sf2.c -O3 -o build/pdta.js \
 -s EXPORTED_RUNTIME_METHODS=['ccall','AsciiToString'] \
 -s EXPORTED_FUNCTIONS=['_malloc','_free','_loadpdta','_shdrref','_instRef','_presetRef',"_findPreset"] \
 -s INITIAL_MEMORY=67108864              \

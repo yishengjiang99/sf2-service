@@ -2,7 +2,7 @@ node_modules
 .vscode
 a.out
 coverage
-# Build artifacts
+# Build artifacts (excluding build/pdta.js which is tracked)
 *.gch
 *.o
 pdta.dat
