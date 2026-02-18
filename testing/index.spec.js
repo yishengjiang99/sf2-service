@@ -17,7 +17,7 @@ describe("load sf2 file", function() {
   });
   it("parallel download stream with transferrable buffer to message port on another thread", async () => {
     const port = new MessageChannel();
-    const program = sf2.loadProgram(0, 0); localStorage
+    const program = sf2.loadProgram(0, 0);
     port.port2.onmessage = async ({data: {stream, segments}}) => {
       const reader = stream.getReader();
       expect(reader).to.exist;
