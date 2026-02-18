@@ -273,7 +273,7 @@ int findPresetZonesCount(phdr *phr) {
           
           ibag *ibgg = ibags + ibg;
           int igenStart = ibgg->igen_id;
-          int igenEnd = (ibg < nibags - 1) ? (ibgg + 1)->igen_id : nigens - 1;
+          int igenEnd = (ibg < nibags - 1) ? (ibgg + 1)->igen_id : nigens;
           
           /* Validate igen indices */
           if (igenStart < 0 || igenEnd > nigens || igenStart > igenEnd) {
@@ -287,15 +287,18 @@ int findPresetZonesCount(phdr *phr) {
             if (ig->genid == KeyRange) {
               ilokey = ig->val.ranges.lo;
               ihikey = ig->val.ranges.hi;
+              if (ig->val.ranges.lo == ig->val.ranges.hi) {
+                break;
+              }
               continue;
             }
             if (ig->genid == VelRange) {
               ilovel = ig->val.ranges.lo;
               ihivel = ig->val.ranges.hi;
+              if (ig->val.ranges.lo == ig->val.ranges.hi) {
+                break;
+              }
               continue;
-            }
-            if (ig->val.ranges.lo == ig->val.ranges.hi) {
-              break;
             }
             if (ig->genid == SampleId) {
               if (ig->val.uAmount < (unsigned short)nshdrs) {
@@ -393,10 +396,10 @@ zone_t *findPresetZones(phdr *phr, int nregions) {
           ibag *ibgg = ibags + ibg;
           
           int igenStart = ibgg->igen_id;
-          int igenEnd = (ibg < nibags - 1) ? (ibgg + 1)->igen_id : nigens - 1;
+          int igenEnd = (ibg < nibags - 1) ? (ibgg + 1)->igen_id : nigens;
           
           /* Validate igen indices */
-          if (igenStart < 0 || igenEnd > nigens || igenStart >= igenEnd) {
+          if (igenStart < 0 || igenEnd > nigens || igenStart > igenEnd) {
             continue;
           }
           

@@ -6,7 +6,7 @@
 
 /* Constants for SoundFont2 format */
 #define SF2_SECTION_HEADER_SIZE 8
-#define SF2_GENERATOR_COUNT 60
+#define SF2_GENERATOR_COUNT 60  /* Number of generator types in SF2 spec (enum grntypes) */
 #define SF2_GENERATOR_SIZE_BYTES (SF2_GENERATOR_COUNT * sizeof(short))  /* 120 bytes */
 #define SF2_MAX_PRESETS 128
 #define SF2_MAX_BANKS 256
