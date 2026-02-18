@@ -106,7 +106,7 @@ function readAB(arb) {
     else return u16;
   };
   const readN = (n) => {
-    const ret = u8b.slice(_offset, n);
+    const ret = u8b.slice(_offset, _offset + n);
     _offset += n;
     return ret;
   };
@@ -357,6 +357,6 @@ function readASCIIHIlariously(heap, instREf) {
     }
     return nameStr;
   } catch (e) {
-    return "xxxxdasfsaf";
+    return "";
   }
 }
