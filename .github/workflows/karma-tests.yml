@@ -32,7 +32,18 @@ jobs:
       run: npm ci
 
     - name: Build project
-      run: npm run build --if-present
+      run: npm run build
+
+    - name: Verify build output is up-to-date
+      run: |
+        if [ -n "$(git status --porcelain build/)" ]; then
+          echo "Error: build/ directory has uncommitted changes after build"
+          echo "This means sf2.c or sf2.h was changed but build/pdta.js was not rebuilt"
+          echo "Please run 'npm run build' and commit the changes"
+          git status build/
+          git diff build/
+          exit 1
+        fi
 
     - name: Run Karma tests
       run: npm test -- --single-run --browsers=ChromeHeadlessCI
