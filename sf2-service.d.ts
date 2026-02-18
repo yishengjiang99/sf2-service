@@ -1,12 +1,6 @@
-
-export interface SF2Program {
-	zMap: ZMap[];
-	pid: number;
-	bkid: number;
-	shdrMap: { [key: string]: Shdr };
-	url: URL;
-	zref: number;
-	name: string;
+export interface Range {
+	hi: number;
+	lo: number;
 }
 
 export interface Shdr {
@@ -16,12 +10,10 @@ export interface Shdr {
 	SampleId: number;
 	sampleRate: number;
 	originalPitch: number;
-	url: URL;
+	url: string;
 	name: string;
-}
-
-export enum URL {
-	Sf2ServiceFileSf2 = "sf2-service/file.sf2",
+	data(): Promise<Float32Array>;
+	pcm?: Float32Array;
 }
 
 export interface ZMap {
@@ -88,17 +80,56 @@ export interface ZMap {
 	ExclusiveClass: number;
 	OverrideRootKey: number;
 	Dummy: number;
-	arr: { [key: string]: number };
 	shdr: Shdr;
-	instrument: Instrument;
+	instrument: string;
+	calcPitchRatio(key: number, sr: number): number;
 }
 
-export interface Range {
-	hi: number;
-	lo: number;
+export interface SF2Program {
+	zMap: ZMap[];
+	pid: number;
+	bkid: number;
+	shdrMap: { [key: string]: Shdr };
+	url: string;
+	zref: number;
+	name: string;
+	sampleSet: Set<number>;
+	preload(): Promise<void>;
+	filterKV(key: number, vel: number): ZMap[];
+	fetch_drop_ship_to(port: MessagePort): Promise<any>;
 }
 
-export enum Instrument {
-	The0PulseWidth75 = "0 Pulse Width 75%",
-	The0SawIncline = "0 Saw Incline",
+export interface SF2LoadOptions {
+	onHeader?: (pid: number, bid: number, name: string) => void;
+	onSample?: (...args: any[]) => void;
+	onZone?: (...args: any[]) => void;
+}
+
+export interface SF2State {
+	pdtaRef: number;
+	heapref: WeakRef<ArrayBuffer>;
+	instRef: (instid: number) => number;
+	presetRefs: Uint32Array;
+	heap: ArrayBuffer;
+	shdrref: number;
+	programNames: string[];
+	sdtaStart: number;
+	infos: [string, string][];
+}
+
+export default class SF2Service {
+	url: string;
+	state: SF2State;
+	
+	constructor(url: string);
+	
+	load(options?: SF2LoadOptions): Promise<SF2State>;
+	
+	get meta(): [string, string][];
+	
+	get programNames(): string[];
+	
+	get presets(): Uint32Array;
+	
+	loadProgram(pid: number, bkid: number): SF2Program;
 }

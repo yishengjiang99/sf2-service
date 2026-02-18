@@ -4,6 +4,7 @@
   "description": "gratuitously using webassembly to read some annoying 16-bit format. new: chrome test coverage!",
   "type": "module",
   "main": "index.js",
+  "types": "sf2-service.d.ts",
   "scripts": {
     "build": "make",
     "test1": "gcc pdta.spec.c; ./a.out",
@@ -21,6 +22,9 @@
   },
   "homepage": "https://github.com/yishengjiang99/sf2-service#readme",
   "devDependencies": {
+    "@types/chai": "^5.2.3",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^25.2.3",
     "chai": "^4.3.7",
     "eslint-plugin-mocha": "^10.1.0",
     "jasmine-core": "^4.6.0",
@@ -31,7 +35,8 @@
     "karma-firefox-launcher": "^2.1.2",
     "karma-jasmine": "^5.1.0",
     "karma-mocha": "^2.0.1",
-    "mocha": "^10.2.0"
+    "mocha": "^10.2.0",
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "mkspin": "file:../spin"
