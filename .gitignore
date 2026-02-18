@@ -2,4 +2,16 @@ node_modules
 .vscode
 a.out
 coverage
-a.out
+# Build artifacts (excluding build/pdta.js which is tracked)
+*.gch
+*.o
+pdta.dat
+dist/
+bin/
+# Cache/temp directories
+cshf/
+# Test data files (keep readme.txt and documentation)
+/*.txt
+/*.png
+/*.sf2
+sf2_info
