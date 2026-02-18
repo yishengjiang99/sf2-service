@@ -2,4 +2,13 @@ node_modules
 .vscode
 a.out
 coverage
-a.out
+*.gch
+*.o
+*.dat
+dist/
+bin/
+cshf/
+*.txt
+*.png
+*.sf2
+sf2_info
