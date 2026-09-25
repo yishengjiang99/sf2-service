@@ -27,8 +27,10 @@ async function sfbkstream(url) {
 
   const sdtaStart = readOffset.offset;
   const pdtastart = sdtaStart + sdtaSize + 4;
+  // RIFF's size field is fileLength-8, so `filesize-1` stops 8 bytes early and
+  // the parser rejects the truncated shdr. Read through EOF.
   const pdtaHeader = {
-    headers: {Range: "bytes=" + pdtastart + "-" + (filesize - 1)},
+    headers: {Range: "bytes=" + pdtastart + "-"},
   };
 
   return {
@@ -164,6 +166,10 @@ export default class SF2Service {
     module.onZone = onZone || devnull;
     module.HEAPU8.set(pdtaBuffer, pdtaRef);
     const memend = module._loadpdta(pdtaRef, pdtaBuffer.byteLength);
+    if (!memend) {
+      module._free(pdtaRef);
+      throw new Error("pdta parse failed");
+    }
     const instRef = (instid) => module._instRef(instid);
     const shdrref = module._shdrref(pdtaRef);
     const presetRefs = new Uint32Array(
@@ -203,6 +209,7 @@ export default class SF2Service {
       bkid === 0 || bkid === 128
         ? presetRefs[pid | bkid]
         : zonesFor(pid, bkid);
+    if (!rootRef) return null;
     const gRefRoot = presetRefs[0];
 
     const zMap = [];
@@ -249,6 +256,7 @@ export default class SF2Service {
       );
     }
     function zref2Zone(zref) {
+      if (!zref || zref & 1 || zref + 120 > heap.byteLength) return null;
       const zone = new Int16Array(heap, zref, 60);
       return newSFZoneMap(zref - gRefRoot, zone);
     }
