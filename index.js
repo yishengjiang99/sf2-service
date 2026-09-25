@@ -54,7 +54,6 @@ function readInfoSection(ab) {
     r.readNString(4),
     r.readNString(4),
   ];
-  console.log([riff, filesize, sig, list]);
   let infosize = r.get32();
   console.assert(bytesToString(r.readNString(4)) === "INFO");
 
