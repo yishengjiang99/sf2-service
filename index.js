@@ -163,13 +163,13 @@ export default class SF2Service {
     };
     module.onZone = onZone || devnull;
     module.HEAPU8.set(pdtaBuffer, pdtaRef);
-    const memend = module._loadpdta(pdtaRef);
+    const memend = module._loadpdta(pdtaRef, pdtaBuffer.byteLength);
     const instRef = (instid) => module._instRef(instid);
     const shdrref = module._shdrref(pdtaRef);
     const presetRefs = new Uint32Array(
       module.HEAPU32.buffer,
       module._presetRef(),
-      255
+      256
     );
     const heap = module.HEAPU8.buffer.slice(0, memend);
     const heapref = new WeakRef(heap);
@@ -183,6 +183,7 @@ export default class SF2Service {
       programNames,
       sdtaStart,
       infos,
+      zonesFor: (pid, bank) => module._sf2_zones_for(pid, bank),
     };
     return this.state;
   }
@@ -196,9 +197,12 @@ export default class SF2Service {
     return this.state.presetRefs;
   }
   loadProgram(pid, bkid) {
-    const {presetRefs, heap, shdrref, sdtaStart, programNames, instRef} =
+    const {presetRefs, heap, shdrref, sdtaStart, programNames, instRef, zonesFor} =
       this.state;
-    const rootRef = presetRefs[pid | bkid];
+    const rootRef =
+      bkid === 0 || bkid === 128
+        ? presetRefs[pid | bkid]
+        : zonesFor(pid, bkid);
     const gRefRoot = presetRefs[0];
 
     const zMap = [];

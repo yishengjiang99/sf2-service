@@ -115,6 +115,7 @@ export interface SF2State {
 	programNames: string[];
 	sdtaStart: number;
 	infos: [string, string][];
+	zonesFor?: (program: number, bank: number) => number;
 }
 
 export default class SF2Service {
